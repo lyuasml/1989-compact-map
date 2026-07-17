@@ -1,0 +1,105 @@
+a	b	program_a	program_b
+Schwerin	Rostock	Scherwin	Rostock
+Schwerin	Berlin	Scherwin	Berlin
+Rostock	Berlin	Rostock	Berlin
+German Writers	Walter Ulbricht Academy	German Writers	Ulbricht Academy
+Walter Ulbricht Academy	Berlin	Ulbricht Academy	Berlin
+Berlin	Leipzig	Berlin	Leipzig
+Erfurt	Magdeburg	Erfurt	Magdeburg
+Magdeburg	Halle	Magdeburg	Halle
+Magdeburg	Karl-Marx-Stadt	Magdeburg	K-Marx-Stadt
+Halle	Leipzig	Halle	Leipzig
+Leipzig	Lutheran Church	Leipzig	Lutheran Church
+Karl-Marx-Stadt	Halle	K-Marx-Stadt	Halle
+Karl-Marx-Stadt	Leipzig	K-Marx-Stadt	Leipzig
+Karl-Marx-Stadt	Dresden	K-Marx-Stadt	Dresden
+Dresden	Wroclaw	Dresden	Wroclaw
+Dresden	Leipzig	Dresden	Leipzig
+Dresden	Plzen	Dresden	Plzen
+Szczecin	Gdansk	Szcecin	Gdansk
+Szczecin	Poznan	Szcecin	Poznan
+Gdansk	Bialystok	Gdansk	Bialystok
+Gdansk	Warsaw	Gdansk	Warsaw
+Gdansk	Bydgoszcz	Gdansk	Bydgoszcz
+Warsaw	Lublin	Warsaw	Lublin
+Bydgoszcz	Warsaw	Bydgoszcz	Warsaw
+Poznan	Gdansk	Poznan	Gdansk
+Poznan	Polish Catholic Church	Poznan	Polish Catholic Church
+Wroclaw	Poznan	Wroclaw	Poznan
+Wroclaw	Polish Catholic Church	Wroclaw	Polish Catholic Church
+Wroclaw	Katowice	Wroclaw	Katowice
+Polish Catholic Church	Lodz	Polish Catholic Church	Lodz
+Polish Catholic Church	Krakow	Polish Catholic Church	Krakow
+Lodz	Warsaw	Lodz	Warsaw
+Lodz	Lublin	Lodz	Lublin
+Lublin	Bialystok	Lublin	Bialystok
+Warsaw	Bialystok	Warsaw	Bialystok
+Krakow	Lodz	Krakow	Lodz
+Krakow	Jagiellonian University	Krakow	Jagiellonian Univ.
+Polish Writers	Jagiellonian University	Polish Writers	Jagiellonian Univ.
+Katowice	Polish Catholic Church	Katowice	Polish Catholic Church
+Katowice	Krakow	Katowice	Krakow
+Katowice	Ostrava	Katowice	Ostrava
+Plzen	Praha	Plzen	Praha
+Plzen	Ceske Budejovice	Plzen	Ceske Budejovice
+Praha	Charles University	Praha	Charles University
+Charles University	Czech Writers	Charles University	Czech Writers
+Brno	Ostrava	Brno	Ostrava
+Brno	Bratislava	Brno	Bratislava
+Brno	Praha	Brno	Praha
+Ostrava	Czech Catholic Church	Ostrava	Czech Catholic Church
+Ostrava	Bratislava	Ostrava	Bratislava
+Czech Catholic Church	Presov	Czech Catholic Church	Presov
+Presov	Kosice	Presov	Kosice
+Kosice	Debrecen	Kosice	Debrecen
+Bratislava	Czech Catholic Church	Bratislava	Czech Catholic Church
+Ceske Budejovice	Praha	Ceske Budejovice	Praha
+Hungarian Catholic Church	Gyor	Hungarian Catholic Church	Gyor
+Hungarian Catholic Church	Szombathely	Hungarian Catholic Church	Szombathely
+Gyor	Tatabanya	Gyor	Tatabayna
+Gyor	Szekesfehervar	Gyor	Szekesfehervar
+Gyor	Szombathely	Gyor	Szombathely
+Tatabanya	Miskolc	Tatabayna	Miskolc
+Tatabanya	Budapest	Tatabayna	Budapest
+Miskolc	Debrecen	Miskolc	Debrecen
+Budapest	Miskolc	Budapest	Miskolc
+Budapest	Szeged	Budapest	Szeged
+Szeged	Timisoara	Szeged	Timisoara
+Szekesfehervar	Budapest	Szekesfehervar	Budapest
+Szombathely	Szekesfehervar	Szombathely	Szekesfehervar
+Hungarian Writers	Eotvos Lorand University	Hungarian Writers	Eotvos Lorand U.
+Budapest	Eotvos Lorand University	Budapest	Eotvos Lorand U.
+Pecs	Szeged	Pecs	Szeged
+Timisoara	Cluj	Timisoara	Cluj
+Timisoara	Craiova	Timisoara	Craiova
+Cluj	Bucuresti	Cluj	Bucuresti
+Cluj	Babes-Boylai U.	Cluj	Babes-Boylai U.
+Romanian Writers	Babes-Boylai U.	Romanian Writers	Babes-Boylai U.
+Cluj	Romanian Orthodox Church	Cluj	Romanian Orthodox Church
+Craiova	Romanian Orthodox Church	Craiova	Romanian Orthodox Church
+Craiova	Bucuresti	Craiova	Bucuresti
+Harghita Covasna	Targu Mures	Harghita Covasna	Targu Mures
+Targu Mures	Iasi	Targu Mures	Iasi
+Iasi	Brasov	Iasi	Brasov
+Iasi	Galati	Iasi	Galati
+Galati	Constanta	Galati	Constanta
+Constanta	Varna	Constanta	Varna
+Brasov	Bucuresti	Brasov	Bucuresti
+Brasov	Ploiesti	Brasov	Ploesti
+Ploiesti	Galati	Ploesti	Galati
+Bucuresti	Ploiesti	Bucuresti	Ploesti
+Bucuresti	Constanta	Bucuresti	Constanta
+Bulgarian Writers	Sofia University	Bulgarian Writers	Sofia University
+Sofia University	Sofia	Sofia University	Sofia
+Pleven	Sofia	Pleven	Sofia
+Sofia	Bulgarian Orthodox Church	Sofia	Bulgarian Orthodox Church
+Sofia	Stara Zagora	Sofia	Stara Zagora
+Sofia	Plovdiv	Sofia	Plovdiv
+Bulgarian Orthodox Church	Ruse	Bulgarian Orthodox Church	Ruse
+Ruse	Varna	Ruse	Varna
+Ruse	Burgas	Ruse	Burgas
+Ruse	Razgrad	Ruse	Razgrad
+Ruse	Stara Zagora	Ruse	Stara Zagora
+Varna	Burgas	Varna	Burgas
+Stara Zagora	Burgas	Stara Zagora	Burgas
+Plovdiv	Sliven	Plovdiv	Silven

@@ -1,0 +1,76 @@
+id	name	program_name	country	stability	battleground	group	map_x	map_y	counter_x	counter_y
+1	Babes-Boylai U.	Babes-Boylai U.	RO	1	0	u	1765	1505	914	1461
+2	Berlin	Berlin	GE	3	1	b	627	316	310	139
+3	Bialystok	Bialystok	PO	4	0	f	1543	191	1151	417
+4	Brasov	Brasov	RO	3	1	w	2206	1415	1281	1487
+5	Bratislava	Bratislava	CZ	3	1	w	1060	1103	512	972
+6	Brno	Brno	CZ	3	1	w	1001	996	497	865
+7	Bucuresti	Bucuresti	RO	3	1	b	2142	1707	1134	1760
+8	Targu Mures	Targu Mures	RO	4	0	f	1999	1289	1118	1383
+9	Budapest	Budapest	HU	3	1	b	1342	1289	774	1195
+10	Bulgarian Orthodox Church	Bulgarian Orthodox Church	BU	3	0	c	2082	1936	1081	1875
+11	Bulgarian Writers	Bulgarian Writers	BU	2	0	i	1833	2225	799	2101
+12	Burgas	Burgas	BU	3	1	w	2337	2053	1234	2062
+13	Bydgoszcz	Bydgoszcz	PO	4	0	e	1249	275	834	369
+14	Ceske Budejovice	Ceske Budejovice	CZ	3	0	w	742	927	246	730
+15	Charles University	Charles University	CZ	1	1	u	907	782	469	648
+16	Cluj	Cluj	RO	4	1	e	1807	1372	928	1370
+17	Constanta	Constanta	RO	3	0	w	2463	1735	1382	1844
+18	Craiova	Craiova	RO	4	0	f	1835	1757	933	1719
+19	Czech Catholic Church	Czech Catholic Church	CZ	5	0	c	1276	1048	662	967
+20	Czech Writers	Czech Writers	CZ	2	1	i	1028	857	546	742
+21	Debrecen	Debrecen	HU	3	1	w	1621	1152	957	1143
+22	Dresden	Dresden	GE	4	1	e	632	631	325	456
+23	Sliven	Silven	BU	4	0	f	2124	2189	1094	2158
+24	Eotvos Lorand University	Eotvos Lorand U.	HU	1	0	u	1268	1409	628	1259
+25	Galati	Galati	RO	3	1	w	2390	1607	1349	1703
+26	Gdansk	Gdansk	PO	3	1	w	1245	127	855	264
+27	German Writers	German Writers	GE	2	0	i	360	367	72	228
+28	Gyor	Gyor	HU	3	0	w	1143	1232	533	1079
+29	Halle	Halle	GE	3	0	w	491	507	218	340
+30	Harghita Covasna	Harghita Covasna	RO	4	0	m	2028	1472	1136	1496
+31	Hungarian Catholic Church	Hungarian Catholic Church	HU	5	0	c	988	1235	389	1080
+32	Hungarian Writers	Hungarian Writers	HU	2	0	i	991	1436	429	1257
+33	Iasi	Iasi	RO	3	1	w	2190	1190	1310	1335
+34	Jagiellonian University	Jagiellonian Univ.	PO	1	0	u	1282	818	831	829
+35	Karl-Marx-Stadt	K-Marx-Stadt	GE	3	1	w	452	660	175	469
+36	Kosice	Kosice	CZ	4	0	f	1567	1043	950	992
+37	Krakow	Krakow	PO	3	1	w	1281	723	871	730
+38	Leipzig	Leipzig	GE	3	1	w	662	539	369	363
+39	Lodz	Lodz	PO	3	1	w	1351	573	917	593
+40	Lublin	Lublin	PO	4	0	f	1665	678	1076	720
+41	Lutheran Church	Lutheran Church	GE	5	1	c	671	429	373	258
+42	Magdeburg	Magdeburg	GE	3	1	w	348	485	73	336
+43	Miskolc	Miskolc	HU	3	1	w	1477	1142	812	1098
+44	Ostrava	Ostrava	CZ	3	1	w	1158	929	641	831
+45	Pecs	Pecs	HU	4	0	f	1125	1470	595	1348
+46	Pleven	Pleven	BU	4	0	f	1933	1933	934	1868
+47	Ploiesti	Ploesti	RO	3	0	w	2232	1568	1299	1601
+48	Plovdiv	Plovdiv	BU	3	1	w	1971	2193	945	2118
+49	Plzen	Plzen	CZ	4	0	e	572	835	199	588
+50	Polish Catholic Church	Polish Catholic Church	PO	5	0	c	1134	545	768	530
+51	Polish Writers	Polish Writers	PO	2	0	i	1489	754	1005	842
+52	Poznan	Poznan	PO	3	1	w	988	416	642	431
+53	Praha	Praha	CZ	3	1	b	874	889	392	746
+54	Presov	Presov	CZ	4	0	f	1419	1008	805	966
+55	Razgrad	Razgrad	BU	4	0	m	2229	1963	1168	1971
+56	Romanian Orthodox Church	Romanian Orthodox Church	RO	3	0	c	1921	1621	1047	1629
+57	Romanian Writers	Romanian Writers	RO	2	0	i	1711	1620	905	1557
+58	Rostock	Rostock	GE	3	0	w	596	108	283	47
+59	Ruse	Ruse	BU	3	1	w	2220	1861	1224	1876
+60	Erfurt	Erfurt	GE	4	0	f	284	618	35	432
+61	Schwerin	Scherwin	GE	3	0	w	419	135	137	79
+62	Katowice	Katowice	PO	3	0	w	1091	722	699	690
+63	Sofia University	Sofia University	BU	1	0	u	1832	2129	792	2009
+64	Sofia	Sofia	BU	3	1	b	1962	2074	940	2011
+65	Stara Zagora	Stara Zagora	BU	4	0	e	2182	2061	1086	2062
+66	Szczecin	Szcecin	PO	3	0	w	762	165	546	249
+67	Szeged	Szeged	HU	4	1	f	1422	1418	776	1307
+68	Szekesfehervar	Szekesfehervar	HU	3	0	w	1136	1334	545	1171
+69	Szombathely	Szombathely	HU	4	0	e	966	1334	390	1173
+70	Tatabanya	Tatabayna	HU	3	0	w	1335	1178	673	1080
+71	Timisoara	Timisoara	RO	3	1	w	1527	1549	733	1464
+72	Walter Ulbricht Academy	Ulbricht Academy	GE	1	0	u	492	370	220	230
+73	Varna	Varna	BU	3	1	w	2374	1878	1328	1967
+74	Warsaw	Warsaw	PO	3	1	b	1461	405	985	466
+75	Wroclaw	Wroclaw	PO	3	1	w	910	622	569	538

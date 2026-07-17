@@ -1,0 +1,7 @@
+code	name	presence_vp	domination_vp	control_vp	battleground_vp	map_x	map_y	label_x	label_y
+GE	East Germany	3	6	9	3	440	232	454	120
+PO	Poland	3	6	9	3	1194	393	1050	250
+CZ	Czechoslovakia	2	4	6	2	740	764	353	570
+HU	Hungary	1	2	4	1	1491	1271	908	1231
+RO	Romania	2	4	6	2	1767	1232	1152	1261
+BU	Bulgaria	1	2	3	1	1765	2007	795	1886

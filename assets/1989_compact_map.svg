@@ -1,0 +1,1331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2460" height="1760" viewBox="0 0 2460 1760">
+<style>
+.title { font-family: Arial, Helvetica, sans-serif; font-size: 38px; font-weight: 850; fill: #111827; letter-spacing: 0; }
+.subtitle { font-family: Arial, Helvetica, sans-serif; font-size: 15px; fill: #374151; letter-spacing: 0; }
+.country { font-family: Arial, Helvetica, sans-serif; font-size: 22px; font-weight: 850; letter-spacing: 0; }
+.score-label { font-family: Arial, Helvetica, sans-serif; font-size: 8.5px; font-weight: 850; letter-spacing: 0; }
+.score-value { font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 900; letter-spacing: 0; }
+.space-label { font-family: Arial, Helvetica, sans-serif; font-weight: 820; letter-spacing: 0; }
+.node-index { font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-weight: 900; fill: #111827; letter-spacing: 0; }
+.chip-type { font-family: Arial, Helvetica, sans-serif; font-size: 7.5px; font-weight: 850; fill: #ffffff; }
+.chip-value { font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: 900; fill: #ffffff; }
+.slot-label { font-family: Arial, Helvetica, sans-serif; font-size: 9px; font-weight: 900; letter-spacing: 0; }
+.sp-count { font-family: Arial, Helvetica, sans-serif; font-size: 8px; font-weight: 900; fill: #ffffff; letter-spacing: 0; }
+</style>
+<rect x="0" y="0" width="2460" height="1760" fill="#f8f6ef"/>
+<text x="66" y="116" class="subtitle">W=Worker  F=Farmer  Ch=Church  St=Student  Bu=Bureaucrat  I=Intellectual  M=Minority  E=Elite</text>
+<g id="panels">
+<rect x="40" y="125" width="620" height="550" rx="18" fill="#d4d7dc" fill-opacity="0.18" stroke="none"/>
+<rect x="670" y="125" width="900" height="520" rx="18" fill="#ead37f" fill-opacity="0.18" stroke="none"/>
+<rect x="40" y="750" width="650" height="510" rx="18" fill="#9fc7dc" fill-opacity="0.18" stroke="none"/>
+<rect x="880" y="650" width="630" height="620" rx="18" fill="#ead9dc" fill-opacity="0.18" stroke="none"/>
+<rect x="40" y="1270" width="860" height="410" rx="18" fill="#f2b463" fill-opacity="0.18" stroke="none"/>
+<rect x="1730" y="750" width="660" height="540" rx="18" fill="#b7dc83" fill-opacity="0.18" stroke="none"/>
+</g><g id="edges">
+<path d="M 236.0 330.0 L 274.0 330.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 236.0 330.0 L 274.0 330.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 236.0 282.0 L 484.0 253.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 236.0 282.0 L 484.0 253.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 440.6 282.0 L 489.4 253.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 440.6 282.0 L 489.4 253.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 236.0 205.0 L 274.0 205.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 236.0 205.0 L 274.0 205.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 446.0 205.0 L 484.0 205.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 446.0 205.0 L 484.0 205.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 656.0 205.0 L 675.0 205.0 L 675.0 455.0 L 656.0 455.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 656.0 205.0 L 675.0 205.0 L 675.0 455.0 L 656.0 455.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 150.0 532.0 L 150.0 503.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 150.0 532.0 L 150.0 503.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 236.0 455.0 L 274.0 455.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 236.0 455.0 L 274.0 455.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 230.6 503.0 L 279.4 532.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 230.6 503.0 L 279.4 532.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 446.0 455.0 L 484.0 455.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 446.0 455.0 L 484.0 455.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 570.0 407.0 L 570.0 378.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 570.0 407.0 L 570.0 378.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 360.0 532.0 L 360.0 503.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 360.0 532.0 L 360.0 503.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 440.6 532.0 L 489.4 503.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 440.6 532.0 L 489.4 503.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 446.0 580.0 L 484.0 580.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 446.0 580.0 L 484.0 580.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 656.0 560.0 L 694.0 475.0" fill="none" stroke="#f8f6ef" stroke-width="8.2" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 656.0 560.0 L 694.0 475.0" fill="none" stroke="#b91c1c" stroke-width="4.0" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 570.0 532.0 L 570.0 503.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 570.0 532.0 L 570.0 503.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 536.0 628.0 L 184.0 782.0" fill="none" stroke="#f8f6ef" stroke-width="8.2" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 536.0 628.0 L 184.0 782.0" fill="none" stroke="#b91c1c" stroke-width="4.0" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 866.0 205.0 L 904.0 205.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 866.0 205.0 L 904.0 205.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 780.0 253.0 L 780.0 282.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 780.0 253.0 L 780.0 282.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1076.0 205.0 L 1410.0 282.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1076.0 205.0 L 1410.0 282.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1070.6 253.0 L 1119.4 282.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1070.6 253.0 L 1119.4 282.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 990.0 253.0 L 990.0 282.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 990.0 253.0 L 990.0 282.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1280.6 378.0 L 1329.4 407.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1280.6 378.0 L 1329.4 407.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1076.0 330.0 L 1114.0 330.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1076.0 330.0 L 1114.0 330.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 860.6 282.0 L 909.4 253.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 860.6 282.0 L 909.4 253.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 860.6 378.0 L 909.4 407.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 860.6 378.0 L 909.4 407.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 780.0 407.0 L 780.0 378.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 780.0 407.0 L 780.0 378.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 866.0 455.0 L 904.0 455.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 866.0 455.0 L 904.0 455.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 780.0 503.0 L 780.0 532.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 780.0 503.0 L 780.0 532.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1076.0 455.0 L 1114.0 455.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1076.0 455.0 L 1114.0 455.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 990.0 503.0 L 990.0 532.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 990.0 503.0 L 990.0 532.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1200.0 407.0 L 1200.0 378.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1200.0 407.0 L 1200.0 378.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1286.0 455.0 L 1324.0 455.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1286.0 455.0 L 1324.0 455.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1410.0 407.0 L 1410.0 378.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1410.0 407.0 L 1410.0 378.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1286.0 330.0 L 1324.0 330.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1286.0 330.0 L 1324.0 330.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1070.6 532.0 L 1119.4 503.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1070.6 532.0 L 1119.4 503.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1076.0 580.0 L 1114.0 580.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1076.0 580.0 L 1114.0 580.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1324.0 580.0 L 1286.0 580.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1324.0 580.0 L 1286.0 580.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 860.6 532.0 L 909.4 503.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 860.6 532.0 L 909.4 503.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 866.0 580.0 L 904.0 580.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 866.0 580.0 L 904.0 580.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 780.0 628.0 L 780.0 1080.0 L 656.0 1080.0" fill="none" stroke="#f8f6ef" stroke-width="8.2" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 780.0 628.0 L 780.0 1080.0 L 656.0 1080.0" fill="none" stroke="#b91c1c" stroke-width="4.0" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 236.0 830.0 L 274.0 830.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 236.0 830.0 L 274.0 830.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 150.0 878.0 L 150.0 907.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 150.0 878.0 L 150.0 907.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 446.0 830.0 L 484.0 830.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 446.0 830.0 L 484.0 830.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 570.0 878.0 L 570.0 907.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 570.0 878.0 L 570.0 907.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 440.6 1003.0 L 489.4 1032.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 440.6 1003.0 L 489.4 1032.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 279.4 1003.0 L 230.6 1032.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 279.4 1003.0 L 230.6 1032.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 360.0 907.0 L 360.0 878.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 360.0 907.0 L 360.0 878.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 484.0 1080.0 L 236.0 1157.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 484.0 1080.0 L 236.0 1157.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 484.0 1080.0 L 236.0 1080.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 484.0 1080.0 L 236.0 1080.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 236.0 1205.0 L 274.0 1205.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 236.0 1205.0 L 274.0 1205.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 446.0 1205.0 L 484.0 1205.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 446.0 1205.0 L 484.0 1205.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 656.0 1205.0 L 780.0 1205.0 L 780.0 1282.0" fill="none" stroke="#f8f6ef" stroke-width="8.2" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 656.0 1205.0 L 780.0 1205.0 L 780.0 1282.0" fill="none" stroke="#b91c1c" stroke-width="4.0" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 150.0 1128.0 L 150.0 1157.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 150.0 1128.0 L 150.0 1157.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 230.6 907.0 L 279.4 878.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 230.6 907.0 L 279.4 878.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 236.0 1330.0 L 274.0 1330.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 236.0 1330.0 L 274.0 1330.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 150.0 1378.0 L 150.0 1407.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 150.0 1378.0 L 150.0 1407.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 446.0 1330.0 L 484.0 1330.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 446.0 1330.0 L 484.0 1330.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 360.0 1378.0 L 360.0 1407.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 360.0 1378.0 L 360.0 1407.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 279.4 1378.0 L 230.6 1407.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 279.4 1378.0 L 230.6 1407.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 650.6 1378.0 L 699.4 1407.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 650.6 1378.0 L 699.4 1407.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 570.0 1378.0 L 570.0 1407.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 570.0 1378.0 L 570.0 1407.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 780.0 1407.0 L 780.0 1378.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 780.0 1407.0 L 780.0 1378.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 656.0 1455.0 L 694.0 1455.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 656.0 1455.0 L 694.0 1455.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 650.6 1503.0 L 699.4 1532.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 650.6 1503.0 L 699.4 1532.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 866.0 1580.0 L 990.0 1580.0 L 990.0 1253.0" fill="none" stroke="#f8f6ef" stroke-width="8.2" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 866.0 1580.0 L 990.0 1580.0 L 990.0 1253.0" fill="none" stroke="#b91c1c" stroke-width="4.0" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 446.0 1455.0 L 484.0 1455.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 446.0 1455.0 L 484.0 1455.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 236.0 1455.0 L 274.0 1455.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 236.0 1455.0 L 274.0 1455.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 236.0 1580.0 L 274.0 1580.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 236.0 1580.0 L 274.0 1580.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 489.4 1503.0 L 440.6 1532.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 489.4 1503.0 L 440.6 1532.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 656.0 1580.0 L 694.0 1580.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 656.0 1580.0 L 694.0 1580.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 904.0 1177.0 L 888.0 1177.0 L 888.0 983.0 L 904.0 983.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 904.0 1177.0 L 888.0 1177.0 L 888.0 983.0 L 904.0 983.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1076.0 1205.0 L 1114.0 1205.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1076.0 1205.0 L 1114.0 1205.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1070.6 1003.0 L 1119.4 1032.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1070.6 1003.0 L 1119.4 1032.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 990.0 907.0 L 990.0 878.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 990.0 907.0 L 990.0 878.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 990.0 753.0 L 990.0 782.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 990.0 753.0 L 990.0 782.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 990.0 1003.0 L 990.0 1032.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 990.0 1003.0 L 990.0 1032.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1119.4 1157.0 L 1070.6 1128.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1119.4 1157.0 L 1070.6 1128.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1200.0 1157.0 L 1200.0 1128.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1200.0 1157.0 L 1200.0 1128.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1286.0 705.0 L 1324.0 705.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1286.0 705.0 L 1324.0 705.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1410.0 753.0 L 1410.0 782.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1410.0 753.0 L 1410.0 782.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1324.0 830.0 L 1286.0 830.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1324.0 830.0 L 1286.0 830.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1496.0 830.0 L 1510.0 830.0 L 1510.0 1080.0 L 1496.0 1080.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1496.0 830.0 L 1510.0 830.0 L 1510.0 1080.0 L 1496.0 1080.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1410.0 1128.0 L 1410.0 1157.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1410.0 1128.0 L 1410.0 1157.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1496.0 1205.0 L 1620.0 1205.0 L 1620.0 830.0 L 1744.0 830.0" fill="none" stroke="#f8f6ef" stroke-width="8.2" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1496.0 1205.0 L 1620.0 1205.0 L 1620.0 830.0 L 1744.0 830.0" fill="none" stroke="#b91c1c" stroke-width="4.0" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1200.0 878.0 L 1200.0 1032.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1200.0 878.0 L 1200.0 1032.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1280.6 878.0 L 1329.4 907.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1280.6 878.0 L 1329.4 907.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1410.0 1003.0 L 1410.0 1032.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1410.0 1003.0 L 1410.0 1032.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1280.6 1032.0 L 1329.4 1003.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1280.6 1032.0 L 1329.4 1003.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1280.6 1128.0 L 1329.4 1157.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1280.6 1128.0 L 1329.4 1157.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1830.0 1157.0 L 1830.0 1128.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1830.0 1157.0 L 1830.0 1128.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1916.0 1080.0 L 1954.0 1080.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1916.0 1080.0 L 1954.0 1080.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 2164.0 1080.0 L 2126.0 1080.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 2164.0 1080.0 L 2126.0 1080.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 2126.0 1032.0 L 2164.0 1003.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 2126.0 1032.0 L 2164.0 1003.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 2040.0 1032.0 L 2040.0 1003.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 2040.0 1032.0 L 2040.0 1003.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 2040.0 1128.0 L 2040.0 1157.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 2040.0 1128.0 L 2040.0 1157.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 2169.4 907.0 L 2120.6 878.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 2169.4 907.0 L 2120.6 878.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1954.0 830.0 L 1916.0 830.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1954.0 830.0 L 1916.0 830.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1959.4 878.0 L 1910.6 907.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1959.4 878.0 L 1910.6 907.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 2126.0 830.0 L 2164.0 830.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 2126.0 830.0 L 2164.0 830.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 2040.0 878.0 L 2040.0 907.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 2040.0 878.0 L 2040.0 907.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1830.0 878.0 L 1830.0 907.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1830.0 878.0 L 1830.0 907.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1954.0 955.0 L 1916.0 955.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 1954.0 955.0 L 1916.0 955.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 2126.0 1205.0 L 2164.0 1205.0" fill="none" stroke="#f8f6ef" stroke-width="7.4" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/><path d="M 2126.0 1205.0 L 2164.0 1205.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-opacity="0.88" stroke-linecap="round" stroke-linejoin="round"/>
+</g><g id="panel-labels">
+<text x="70" y="652.0" class="country" fill="none" stroke="#f8f6ef" stroke-width="7" stroke-linejoin="round">E. GERMANY</text><text x="70" y="652.0" class="country" fill="#737a84">E. GERMANY</text><rect x="280.0" y="638.0" width="160" height="31" rx="6" fill="#f8f6ef" fill-opacity="0.98" stroke="#737a84" stroke-width="1.1"/><text x="360.0" y="650.0" class="score-label" text-anchor="middle" fill="#737a84">EXIST / DOM / CTRL</text><text x="360.0" y="664.0" class="score-value" text-anchor="middle" fill="#111827">3 / 6 / 9</text>
+<text x="1330" y="220.0" class="country" fill="none" stroke="#f8f6ef" stroke-width="7" stroke-linejoin="round">POLAND</text><text x="1330" y="220.0" class="country" fill="#987a1a">POLAND</text><rect x="1330.0" y="230.0" width="160" height="31" rx="6" fill="#f8f6ef" fill-opacity="0.98" stroke="#987a1a" stroke-width="1.1"/><text x="1410.0" y="242.0" class="score-label" text-anchor="middle" fill="#987a1a">EXIST / DOM / CTRL</text><text x="1410.0" y="256.0" class="score-value" text-anchor="middle" fill="#111827">3 / 6 / 9</text>
+<text x="58" y="740" class="country" fill="none" stroke="#f8f6ef" stroke-width="7" stroke-linejoin="round">CZECHOSLOVAKIA</text><text x="58" y="740" class="country" fill="#2f6f8f">CZECHOSLOVAKIA</text><rect x="280.0" y="1038.0" width="160" height="31" rx="6" fill="#f8f6ef" fill-opacity="0.98" stroke="#2f6f8f" stroke-width="1.1"/><text x="360.0" y="1050.0" class="score-label" text-anchor="middle" fill="#2f6f8f">EXIST / DOM / CTRL</text><text x="360.0" y="1064.0" class="score-value" text-anchor="middle" fill="#111827">2 / 4 / 6</text>
+<text x="790.0" y="713" class="country" fill="none" stroke="#f8f6ef" stroke-width="7" stroke-linejoin="round">ROMANIA</text><text x="790.0" y="713" class="country" fill="#9a6f77">ROMANIA</text><rect x="736.0" y="815.0" width="160" height="31" rx="6" fill="#f8f6ef" fill-opacity="0.98" stroke="#9a6f77" stroke-width="1.1"/><text x="816.0" y="827.0" class="score-label" text-anchor="middle" fill="#9a6f77">EXIST / DOM / CTRL</text><text x="816.0" y="841.0" class="score-value" text-anchor="middle" fill="#111827">2 / 4 / 6</text>
+<text x="58" y="1662" class="country" fill="none" stroke="#f8f6ef" stroke-width="7" stroke-linejoin="round">HUNGARY</text><text x="58" y="1662" class="country" fill="#a86417">HUNGARY</text><rect x="280.0" y="1640.0" width="160" height="31" rx="6" fill="#f8f6ef" fill-opacity="0.98" stroke="#a86417" stroke-width="1.1"/><text x="360.0" y="1652.0" class="score-label" text-anchor="middle" fill="#a86417">EXIST / DOM / CTRL</text><text x="360.0" y="1666.0" class="score-value" text-anchor="middle" fill="#111827">1 / 2 / 4</text>
+<text x="1748" y="1272" class="country" fill="none" stroke="#f8f6ef" stroke-width="7" stroke-linejoin="round">BULGARIA</text><text x="1748" y="1272" class="country" fill="#5c963e">BULGARIA</text><rect x="1960.0" y="1257.0" width="160" height="31" rx="6" fill="#f8f6ef" fill-opacity="0.98" stroke="#5c963e" stroke-width="1.1"/><text x="2040.0" y="1269.0" class="score-label" text-anchor="middle" fill="#5c963e">EXIST / DOM / CTRL</text><text x="2040.0" y="1283.0" class="score-value" text-anchor="middle" fill="#111827">1 / 2 / 3</text>
+</g><g id="nodes">
+<g class="node">
+<title>Babes-Boylai University - Romania</title>
+<rect x="904.0" y="782.0" width="172" height="96" rx="6" fill="#ead9dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="907.0" y="785.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="909.0" y="788.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="920.0" y="800.5" text-anchor="middle" class="node-index">31</text>
+<text x="937.0" y="796.0" font-size="9.8" class="space-label" fill="#111827">Babes-Boylai</text>
+<text x="937.0" y="808.0" font-size="9.8" class="space-label" fill="#111827">University</text>
+<rect x="904.0" y="816.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="912.0" y="829.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="990.0" y="816.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1063.0" y="829.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1026.0" y="786.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1038.0" y="802.3" text-anchor="middle" class="chip-type">St</text>
+<text x="1058.0" y="805.0" text-anchor="middle" class="chip-value">1</text>
+</g>
+<g class="node">
+<title>Berlin - Germany</title>
+<rect x="484.0" y="157.0" width="172" height="96" rx="6" fill="#d4d7dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="487.0" y="160.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="489.0" y="163.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="500.0" y="175.5" text-anchor="middle" class="node-index">03</text>
+<text x="517.0" y="179.0" font-size="11.2" class="space-label" fill="#b91c1c">Berlin</text>
+<rect x="484.0" y="191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="492.0" y="204.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="570.0" y="191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="643.0" y="204.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="637.0" y="234.0" width="14" height="14" rx="2" fill="#b91c1c" stroke="#111827" stroke-width="0.8"/>
+<text x="644.0" y="244.4" class="sp-count" text-anchor="middle">2</text>
+<rect x="606.0" y="161.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="618.0" y="177.3" text-anchor="middle" class="chip-type">Bu</text>
+<text x="638.0" y="180.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Bialystok - Poland</title>
+<rect x="1324.0" y="282.0" width="172" height="96" rx="6" fill="#ead37f" stroke="#111827" stroke-width="2.0"/>
+<rect x="1327.0" y="285.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="1329.0" y="288.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="1340.0" y="300.5" text-anchor="middle" class="node-index">12</text>
+<text x="1357.0" y="304.0" font-size="11.2" class="space-label" fill="#111827">Bialystok</text>
+<rect x="1324.0" y="316.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1332.0" y="329.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="1410.0" y="316.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1483.0" y="329.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1446.0" y="286.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1458.0" y="302.3" text-anchor="middle" class="chip-type">F</text>
+<text x="1478.0" y="305.0" text-anchor="middle" class="chip-value">4</text>
+</g>
+<g class="node">
+<title>Brasov - Romania</title>
+<rect x="1114.0" y="782.0" width="172" height="96" rx="6" fill="#ead9dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="1117.0" y="785.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="1119.0" y="788.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="1130.0" y="800.5" text-anchor="middle" class="node-index">38</text>
+<text x="1147.0" y="804.0" font-size="11.2" class="space-label" fill="#b91c1c">Brasov</text>
+<rect x="1114.0" y="816.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1122.0" y="829.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="1200.0" y="816.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1273.0" y="829.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1236.0" y="786.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1248.0" y="802.3" text-anchor="middle" class="chip-type">W</text>
+<text x="1268.0" y="805.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Bratislava - Czechoslovakia</title>
+<rect x="64.0" y="1032.0" width="172" height="96" rx="6" fill="#9fc7dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="67.0" y="1035.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="69.0" y="1038.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="80.0" y="1050.5" text-anchor="middle" class="node-index">40</text>
+<text x="97.0" y="1054.0" font-size="11.2" class="space-label" fill="#b91c1c">Bratislava</text>
+<rect x="64.0" y="1066.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="72.0" y="1079.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="150.0" y="1066.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="223.0" y="1079.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="186.0" y="1036.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="198.0" y="1052.3" text-anchor="middle" class="chip-type">W</text>
+<text x="218.0" y="1055.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Brno - Czechoslovakia</title>
+<rect x="274.0" y="907.0" width="172" height="96" rx="6" fill="#9fc7dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="277.0" y="910.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="279.0" y="913.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="290.0" y="925.5" text-anchor="middle" class="node-index">41</text>
+<text x="307.0" y="929.0" font-size="11.2" class="space-label" fill="#b91c1c">Brno</text>
+<rect x="274.0" y="941.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="282.0" y="954.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="360.0" y="941.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="433.0" y="954.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="427.0" y="984.0" width="14" height="14" rx="2" fill="#b91c1c" stroke="#111827" stroke-width="0.8"/>
+<text x="434.0" y="994.4" class="sp-count" text-anchor="middle">1</text>
+<rect x="396.0" y="911.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="408.0" y="927.3" text-anchor="middle" class="chip-type">W</text>
+<text x="428.0" y="930.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Bucuresti - Romania</title>
+<rect x="1114.0" y="1032.0" width="172" height="96" rx="6" fill="#ead9dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="1117.0" y="1035.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="1119.0" y="1038.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="1130.0" y="1050.5" text-anchor="middle" class="node-index">44</text>
+<text x="1147.0" y="1054.0" font-size="11.2" class="space-label" fill="#b91c1c">Bucuresti</text>
+<rect x="1114.0" y="1066.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1122.0" y="1079.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="1200.0" y="1066.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1273.0" y="1079.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1267.0" y="1109.0" width="14" height="14" rx="2" fill="#b91c1c" stroke="#111827" stroke-width="0.8"/>
+<text x="1274.0" y="1119.4" class="sp-count" text-anchor="middle">2</text>
+<rect x="1236.0" y="1036.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1248.0" y="1052.3" text-anchor="middle" class="chip-type">Bu</text>
+<text x="1268.0" y="1055.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Targu Mures - Romania</title>
+<rect x="1324.0" y="657.0" width="172" height="96" rx="6" fill="#ead9dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="1327.0" y="660.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="1329.0" y="663.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="1340.0" y="675.5" text-anchor="middle" class="node-index">28</text>
+<text x="1357.0" y="679.0" font-size="11.2" class="space-label" fill="#111827">Targu Mures</text>
+<rect x="1324.0" y="691.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1332.0" y="704.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="1410.0" y="691.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1483.0" y="704.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1446.0" y="661.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1458.0" y="677.3" text-anchor="middle" class="chip-type">M</text>
+<text x="1478.0" y="680.0" text-anchor="middle" class="chip-value">4</text>
+</g>
+<g class="node">
+<title>Budapest - Hungary</title>
+<rect x="484.0" y="1407.0" width="172" height="96" rx="6" fill="#f2b463" stroke="#111827" stroke-width="2.0"/>
+<rect x="487.0" y="1410.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="489.0" y="1413.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="500.0" y="1425.5" text-anchor="middle" class="node-index">64</text>
+<text x="517.0" y="1429.0" font-size="11.2" class="space-label" fill="#b91c1c">Budapest</text>
+<rect x="484.0" y="1441.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="492.0" y="1454.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="489.0" y="1484.0" width="14" height="14" rx="2" fill="#1d4ed8" stroke="#111827" stroke-width="0.8"/>
+<text x="496.0" y="1494.4" class="sp-count" text-anchor="middle">1</text>
+<rect x="570.0" y="1441.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="643.0" y="1454.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="606.0" y="1411.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="618.0" y="1427.3" text-anchor="middle" class="chip-type">Bu</text>
+<text x="638.0" y="1430.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Orthodox Church - Bulgaria</title>
+<rect x="2164.0" y="907.0" width="172" height="96" rx="6" fill="#b7dc83" stroke="#111827" stroke-width="2.0"/>
+<rect x="2167.0" y="910.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="2169.0" y="913.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="2180.0" y="925.5" text-anchor="middle" class="node-index">61</text>
+<text x="2197.0" y="921.0" font-size="9.8" class="space-label" fill="#111827">Orthodox</text>
+<text x="2197.0" y="933.0" font-size="9.8" class="space-label" fill="#111827">Church</text>
+<rect x="2164.0" y="941.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="2172.0" y="954.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="2250.0" y="941.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="2323.0" y="954.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="2286.0" y="911.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="2298.0" y="927.3" text-anchor="middle" class="chip-type">Ch</text>
+<text x="2318.0" y="930.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Bulgarian Writers - Bulgaria</title>
+<rect x="1744.0" y="1157.0" width="172" height="96" rx="6" fill="#b7dc83" stroke="#111827" stroke-width="2.0"/>
+<rect x="1747.0" y="1160.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="1749.0" y="1163.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="1760.0" y="1175.5" text-anchor="middle" class="node-index">73</text>
+<text x="1777.0" y="1171.0" font-size="9.8" class="space-label" fill="#111827">Bulgarian</text>
+<text x="1777.0" y="1183.0" font-size="9.8" class="space-label" fill="#111827">Writers</text>
+<rect x="1744.0" y="1191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1752.0" y="1204.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="1830.0" y="1191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1903.0" y="1204.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1866.0" y="1161.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1878.0" y="1177.3" text-anchor="middle" class="chip-type">I</text>
+<text x="1898.0" y="1180.0" text-anchor="middle" class="chip-value">2</text>
+</g>
+<g class="node">
+<title>Burgas - Bulgaria</title>
+<rect x="1744.0" y="907.0" width="172" height="96" rx="6" fill="#b7dc83" stroke="#111827" stroke-width="2.0"/>
+<rect x="1747.0" y="910.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="1749.0" y="913.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="1760.0" y="925.5" text-anchor="middle" class="node-index">59</text>
+<text x="1777.0" y="929.0" font-size="11.2" class="space-label" fill="#b91c1c">Burgas</text>
+<rect x="1744.0" y="941.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1752.0" y="954.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="1830.0" y="941.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1903.0" y="954.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1866.0" y="911.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1878.0" y="927.3" text-anchor="middle" class="chip-type">W</text>
+<text x="1898.0" y="930.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Bydgoszcz - Poland</title>
+<rect x="904.0" y="282.0" width="172" height="96" rx="6" fill="#ead37f" stroke="#111827" stroke-width="2.0"/>
+<rect x="907.0" y="285.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="909.0" y="288.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="920.0" y="300.5" text-anchor="middle" class="node-index">10</text>
+<text x="937.0" y="304.0" font-size="11.2" class="space-label" fill="#111827">Bydgoszcz</text>
+<rect x="904.0" y="316.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="912.0" y="329.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="990.0" y="316.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1063.0" y="329.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1057.0" y="359.0" width="14" height="14" rx="2" fill="#b91c1c" stroke="#111827" stroke-width="0.8"/>
+<text x="1064.0" y="369.4" class="sp-count" text-anchor="middle">1</text>
+<rect x="1026.0" y="286.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1038.0" y="302.3" text-anchor="middle" class="chip-type">E</text>
+<text x="1058.0" y="305.0" text-anchor="middle" class="chip-value">4</text>
+</g>
+<g class="node">
+<title>Ceske Budejovice</title>
+<rect x="64.0" y="907.0" width="172" height="96" rx="6" fill="#9fc7dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="67.0" y="910.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="69.0" y="913.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="80.0" y="925.5" text-anchor="middle" class="node-index">34</text>
+<text x="97.0" y="921.0" font-size="9.8" class="space-label" fill="#111827">Ceske</text>
+<text x="97.0" y="933.0" font-size="9.8" class="space-label" fill="#111827">Budejovice</text>
+<rect x="64.0" y="941.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="72.0" y="954.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="150.0" y="941.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="223.0" y="954.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="186.0" y="911.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="198.0" y="927.3" text-anchor="middle" class="chip-type">W</text>
+<text x="218.0" y="930.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Charles University - Czechoslovakia</title>
+<rect x="484.0" y="782.0" width="172" height="96" rx="6" fill="#9fc7dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="487.0" y="785.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="489.0" y="788.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="500.0" y="800.5" text-anchor="middle" class="node-index">30</text>
+<text x="517.0" y="796.0" font-size="9.8" class="space-label" fill="#b91c1c">Charles</text>
+<text x="517.0" y="808.0" font-size="9.8" class="space-label" fill="#b91c1c">University</text>
+<rect x="484.0" y="816.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="492.0" y="829.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="570.0" y="816.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="643.0" y="829.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="606.0" y="786.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="618.0" y="802.3" text-anchor="middle" class="chip-type">St</text>
+<text x="638.0" y="805.0" text-anchor="middle" class="chip-value">1</text>
+</g>
+<g class="node">
+<title>Cluj-Napoca - Romania</title>
+<rect x="904.0" y="907.0" width="172" height="96" rx="6" fill="#ead9dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="907.0" y="910.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="909.0" y="913.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="920.0" y="925.5" text-anchor="middle" class="node-index">37</text>
+<text x="937.0" y="929.0" font-size="11.2" class="space-label" fill="#b91c1c">Cluj-Napoca</text>
+<rect x="904.0" y="941.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="912.0" y="954.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="990.0" y="941.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1063.0" y="954.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1057.0" y="984.0" width="14" height="14" rx="2" fill="#b91c1c" stroke="#111827" stroke-width="0.8"/>
+<text x="1064.0" y="994.4" class="sp-count" text-anchor="middle">2</text>
+<rect x="1026.0" y="911.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1038.0" y="927.3" text-anchor="middle" class="chip-type">E</text>
+<text x="1058.0" y="930.0" text-anchor="middle" class="chip-value">4</text>
+</g>
+<g class="node">
+<title>Constanta - Romania</title>
+<rect x="1324.0" y="1157.0" width="172" height="96" rx="6" fill="#ead9dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="1327.0" y="1160.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="1329.0" y="1163.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="1340.0" y="1175.5" text-anchor="middle" class="node-index">51</text>
+<text x="1357.0" y="1179.0" font-size="11.2" class="space-label" fill="#111827">Constanta</text>
+<rect x="1324.0" y="1191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1332.0" y="1204.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="1410.0" y="1191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1483.0" y="1204.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1446.0" y="1161.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1458.0" y="1177.3" text-anchor="middle" class="chip-type">W</text>
+<text x="1478.0" y="1180.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Craiova - Romania</title>
+<rect x="1114.0" y="1157.0" width="172" height="96" rx="6" fill="#ead9dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="1117.0" y="1160.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="1119.0" y="1163.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="1130.0" y="1175.5" text-anchor="middle" class="node-index">50</text>
+<text x="1147.0" y="1179.0" font-size="11.2" class="space-label" fill="#111827">Craiova</text>
+<rect x="1114.0" y="1191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1122.0" y="1204.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="1200.0" y="1191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1273.0" y="1204.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1236.0" y="1161.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1248.0" y="1177.3" text-anchor="middle" class="chip-type">F</text>
+<text x="1268.0" y="1180.0" text-anchor="middle" class="chip-value">4</text>
+</g>
+<g class="node">
+<title>Catholic Church - Czechoslovakia</title>
+<rect x="64.0" y="1157.0" width="172" height="96" rx="6" fill="#9fc7dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="67.0" y="1160.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="69.0" y="1163.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="80.0" y="1175.5" text-anchor="middle" class="node-index">46</text>
+<text x="97.0" y="1171.0" font-size="9.8" class="space-label" fill="#111827">Catholic</text>
+<text x="97.0" y="1183.0" font-size="9.8" class="space-label" fill="#111827">Church</text>
+<rect x="64.0" y="1191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="72.0" y="1204.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="69.0" y="1234.0" width="14" height="14" rx="2" fill="#1d4ed8" stroke="#111827" stroke-width="0.8"/>
+<text x="76.0" y="1244.4" class="sp-count" text-anchor="middle">1</text>
+<rect x="150.0" y="1191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="223.0" y="1204.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="186.0" y="1161.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="198.0" y="1177.3" text-anchor="middle" class="chip-type">Ch</text>
+<text x="218.0" y="1180.0" text-anchor="middle" class="chip-value">5</text>
+</g>
+<g class="node">
+<title>Czech Writers - Czechoslovakia</title>
+<rect x="484.0" y="907.0" width="172" height="96" rx="6" fill="#9fc7dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="487.0" y="910.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="489.0" y="913.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="500.0" y="925.5" text-anchor="middle" class="node-index">36</text>
+<text x="517.0" y="921.0" font-size="9.8" class="space-label" fill="#b91c1c">Czech</text>
+<text x="517.0" y="933.0" font-size="9.8" class="space-label" fill="#b91c1c">Writers</text>
+<rect x="484.0" y="941.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="492.0" y="954.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="489.0" y="984.0" width="14" height="14" rx="2" fill="#1d4ed8" stroke="#111827" stroke-width="0.8"/>
+<text x="496.0" y="994.4" class="sp-count" text-anchor="middle">2</text>
+<rect x="570.0" y="941.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="643.0" y="954.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="606.0" y="911.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="618.0" y="927.3" text-anchor="middle" class="chip-type">I</text>
+<text x="638.0" y="930.0" text-anchor="middle" class="chip-value">2</text>
+</g>
+<g class="node">
+<title>Debrecen - Hungary</title>
+<rect x="694.0" y="1282.0" width="172" height="96" rx="6" fill="#f2b463" stroke="#111827" stroke-width="2.0"/>
+<rect x="697.0" y="1285.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="699.0" y="1288.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="710.0" y="1300.5" text-anchor="middle" class="node-index">58</text>
+<text x="727.0" y="1304.0" font-size="11.2" class="space-label" fill="#b91c1c">Debrecen</text>
+<rect x="694.0" y="1316.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="702.0" y="1329.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="780.0" y="1316.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="853.0" y="1329.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="816.0" y="1286.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="828.0" y="1302.3" text-anchor="middle" class="chip-type">W</text>
+<text x="848.0" y="1305.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Dresden - Germany</title>
+<rect x="484.0" y="532.0" width="172" height="96" rx="6" fill="#d4d7dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="487.0" y="535.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="489.0" y="538.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="500.0" y="550.5" text-anchor="middle" class="node-index">22</text>
+<text x="517.0" y="554.0" font-size="11.2" class="space-label" fill="#b91c1c">Dresden</text>
+<rect x="484.0" y="566.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="492.0" y="579.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="570.0" y="566.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="643.0" y="579.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="637.0" y="609.0" width="14" height="14" rx="2" fill="#b91c1c" stroke="#111827" stroke-width="0.8"/>
+<text x="644.0" y="619.4" class="sp-count" text-anchor="middle">2</text>
+<rect x="606.0" y="536.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="618.0" y="552.3" text-anchor="middle" class="chip-type">E</text>
+<text x="638.0" y="555.0" text-anchor="middle" class="chip-value">4</text>
+</g>
+<g class="node">
+<title>Sliven - Bulgaria</title>
+<rect x="2164.0" y="1157.0" width="172" height="96" rx="6" fill="#b7dc83" stroke="#111827" stroke-width="2.0"/>
+<rect x="2167.0" y="1160.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="2169.0" y="1163.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="2180.0" y="1175.5" text-anchor="middle" class="node-index">75</text>
+<text x="2197.0" y="1179.0" font-size="11.2" class="space-label" fill="#111827">Sliven</text>
+<rect x="2164.0" y="1191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="2172.0" y="1204.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="2250.0" y="1191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="2323.0" y="1204.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="2286.0" y="1161.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="2298.0" y="1177.3" text-anchor="middle" class="chip-type">F</text>
+<text x="2318.0" y="1180.0" text-anchor="middle" class="chip-value">4</text>
+</g>
+<g class="node">
+<title>Eotvos Lorand University - Hungary</title>
+<rect x="274.0" y="1532.0" width="172" height="96" rx="6" fill="#f2b463" stroke="#111827" stroke-width="2.0"/>
+<rect x="277.0" y="1535.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="279.0" y="1538.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="290.0" y="1550.5" text-anchor="middle" class="node-index">70</text>
+<text x="307.0" y="1546.0" font-size="9.8" class="space-label" fill="#111827">Eotvos Lorand</text>
+<text x="307.0" y="1558.0" font-size="9.8" class="space-label" fill="#111827">University</text>
+<rect x="274.0" y="1566.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="282.0" y="1579.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="360.0" y="1566.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="433.0" y="1579.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="396.0" y="1536.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="408.0" y="1552.3" text-anchor="middle" class="chip-type">St</text>
+<text x="428.0" y="1555.0" text-anchor="middle" class="chip-value">1</text>
+</g>
+<g class="node">
+<title>Galati - Romania</title>
+<rect x="1324.0" y="1032.0" width="172" height="96" rx="6" fill="#ead9dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="1327.0" y="1035.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="1329.0" y="1038.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="1340.0" y="1050.5" text-anchor="middle" class="node-index">45</text>
+<text x="1357.0" y="1054.0" font-size="11.2" class="space-label" fill="#b91c1c">Galati</text>
+<rect x="1324.0" y="1066.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1332.0" y="1079.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="1410.0" y="1066.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1483.0" y="1079.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1446.0" y="1036.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1458.0" y="1052.3" text-anchor="middle" class="chip-type">W</text>
+<text x="1478.0" y="1055.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Gdansk - Poland</title>
+<rect x="904.0" y="157.0" width="172" height="96" rx="6" fill="#ead37f" stroke="#111827" stroke-width="2.0"/>
+<rect x="907.0" y="160.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="909.0" y="163.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="920.0" y="175.5" text-anchor="middle" class="node-index">05</text>
+<text x="937.0" y="179.0" font-size="11.2" class="space-label" fill="#b91c1c">Gdansk</text>
+<rect x="904.0" y="191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="912.0" y="204.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="909.0" y="234.0" width="14" height="14" rx="2" fill="#1d4ed8" stroke="#111827" stroke-width="0.8"/>
+<text x="916.0" y="244.4" class="sp-count" text-anchor="middle">1</text>
+<rect x="990.0" y="191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1063.0" y="204.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1026.0" y="161.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1038.0" y="177.3" text-anchor="middle" class="chip-type">W</text>
+<text x="1058.0" y="180.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>German Writers - Germany</title>
+<rect x="64.0" y="157.0" width="172" height="96" rx="6" fill="#d4d7dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="67.0" y="160.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="69.0" y="163.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="80.0" y="175.5" text-anchor="middle" class="node-index">06</text>
+<text x="97.0" y="171.0" font-size="9.8" class="space-label" fill="#111827">German</text>
+<text x="97.0" y="183.0" font-size="9.8" class="space-label" fill="#111827">Writers</text>
+<rect x="64.0" y="191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="72.0" y="204.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="150.0" y="191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="223.0" y="204.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="186.0" y="161.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="198.0" y="177.3" text-anchor="middle" class="chip-type">I</text>
+<text x="218.0" y="180.0" text-anchor="middle" class="chip-value">2</text>
+</g>
+<g class="node">
+<title>Gyor - Hungary</title>
+<rect x="274.0" y="1282.0" width="172" height="96" rx="6" fill="#f2b463" stroke="#111827" stroke-width="2.0"/>
+<rect x="277.0" y="1285.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="279.0" y="1288.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="290.0" y="1300.5" text-anchor="middle" class="node-index">56</text>
+<text x="307.0" y="1304.0" font-size="11.2" class="space-label" fill="#111827">Gyor</text>
+<rect x="274.0" y="1316.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="282.0" y="1329.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="360.0" y="1316.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="433.0" y="1329.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="396.0" y="1286.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="408.0" y="1302.3" text-anchor="middle" class="chip-type">W</text>
+<text x="428.0" y="1305.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Halle - Germany</title>
+<rect x="274.0" y="407.0" width="172" height="96" rx="6" fill="#d4d7dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="277.0" y="410.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="279.0" y="413.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="290.0" y="425.5" text-anchor="middle" class="node-index">14</text>
+<text x="307.0" y="429.0" font-size="11.2" class="space-label" fill="#111827">Halle</text>
+<rect x="274.0" y="441.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="282.0" y="454.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="360.0" y="441.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="433.0" y="454.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="396.0" y="411.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="408.0" y="427.3" text-anchor="middle" class="chip-type">W</text>
+<text x="428.0" y="430.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Harghita/Covasna - Romania</title>
+<rect x="1114.0" y="657.0" width="172" height="96" rx="6" fill="#ead9dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="1117.0" y="660.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="1119.0" y="663.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="1130.0" y="675.5" text-anchor="middle" class="node-index">32</text>
+<text x="1147.0" y="671.0" font-size="9.8" class="space-label" fill="#111827">Harghita/</text>
+<text x="1147.0" y="683.0" font-size="9.8" class="space-label" fill="#111827">Covasna</text>
+<rect x="1114.0" y="691.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1122.0" y="704.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="1200.0" y="691.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1273.0" y="704.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1236.0" y="661.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1248.0" y="677.3" text-anchor="middle" class="chip-type">M</text>
+<text x="1268.0" y="680.0" text-anchor="middle" class="chip-value">4</text>
+</g>
+<g class="node">
+<title>Catholic Church - Hungary</title>
+<rect x="64.0" y="1282.0" width="172" height="96" rx="6" fill="#f2b463" stroke="#111827" stroke-width="2.0"/>
+<rect x="67.0" y="1285.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="69.0" y="1288.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="80.0" y="1300.5" text-anchor="middle" class="node-index">55</text>
+<text x="97.0" y="1296.0" font-size="9.8" class="space-label" fill="#111827">Catholic</text>
+<text x="97.0" y="1308.0" font-size="9.8" class="space-label" fill="#111827">Church</text>
+<rect x="64.0" y="1316.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="72.0" y="1329.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="69.0" y="1359.0" width="14" height="14" rx="2" fill="#1d4ed8" stroke="#111827" stroke-width="0.8"/>
+<text x="76.0" y="1369.4" class="sp-count" text-anchor="middle">1</text>
+<rect x="150.0" y="1316.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="223.0" y="1329.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="186.0" y="1286.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="198.0" y="1302.3" text-anchor="middle" class="chip-type">Ch</text>
+<text x="218.0" y="1305.0" text-anchor="middle" class="chip-value">5</text>
+</g>
+<g class="node">
+<title>Hungarian Writers - Hungary</title>
+<rect x="64.0" y="1532.0" width="172" height="96" rx="6" fill="#f2b463" stroke="#111827" stroke-width="2.0"/>
+<rect x="67.0" y="1535.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="69.0" y="1538.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="80.0" y="1550.5" text-anchor="middle" class="node-index">69</text>
+<text x="97.0" y="1546.0" font-size="9.8" class="space-label" fill="#111827">Hungarian</text>
+<text x="97.0" y="1558.0" font-size="9.8" class="space-label" fill="#111827">Writers</text>
+<rect x="64.0" y="1566.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="72.0" y="1579.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="150.0" y="1566.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="223.0" y="1579.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="186.0" y="1536.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="198.0" y="1552.3" text-anchor="middle" class="chip-type">I</text>
+<text x="218.0" y="1555.0" text-anchor="middle" class="chip-value">2</text>
+</g>
+<g class="node">
+<title>Iasi - Romania</title>
+<rect x="1324.0" y="782.0" width="172" height="96" rx="6" fill="#ead9dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="1327.0" y="785.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="1329.0" y="788.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="1340.0" y="800.5" text-anchor="middle" class="node-index">33</text>
+<text x="1357.0" y="804.0" font-size="11.2" class="space-label" fill="#b91c1c">Iasi</text>
+<rect x="1324.0" y="816.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1332.0" y="829.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="1410.0" y="816.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1483.0" y="829.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1446.0" y="786.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1458.0" y="802.3" text-anchor="middle" class="chip-type">W</text>
+<text x="1478.0" y="805.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Jagiellonian University - Poland</title>
+<rect x="1114.0" y="532.0" width="172" height="96" rx="6" fill="#ead37f" stroke="#111827" stroke-width="2.0"/>
+<rect x="1117.0" y="535.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="1119.0" y="538.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="1130.0" y="550.5" text-anchor="middle" class="node-index">25</text>
+<text x="1147.0" y="546.0" font-size="9.8" class="space-label" fill="#111827">Jagiellonian</text>
+<text x="1147.0" y="558.0" font-size="9.8" class="space-label" fill="#111827">University</text>
+<rect x="1114.0" y="566.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1122.0" y="579.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="1200.0" y="566.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1273.0" y="579.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1236.0" y="536.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1248.0" y="552.3" text-anchor="middle" class="chip-type">St</text>
+<text x="1268.0" y="555.0" text-anchor="middle" class="chip-value">1</text>
+</g>
+<g class="node">
+<title>Karl-Marx-Stadt - Germany</title>
+<rect x="274.0" y="532.0" width="172" height="96" rx="6" fill="#d4d7dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="277.0" y="535.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="279.0" y="538.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="290.0" y="550.5" text-anchor="middle" class="node-index">21</text>
+<text x="307.0" y="546.0" font-size="9.8" class="space-label" fill="#b91c1c">Karl-Marx-</text>
+<text x="307.0" y="558.0" font-size="9.8" class="space-label" fill="#b91c1c">Stadt</text>
+<rect x="274.0" y="566.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="282.0" y="579.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="360.0" y="566.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="433.0" y="579.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="396.0" y="536.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="408.0" y="552.3" text-anchor="middle" class="chip-type">W</text>
+<text x="428.0" y="555.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Kosice - Czechoslovakia</title>
+<rect x="484.0" y="1157.0" width="172" height="96" rx="6" fill="#9fc7dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="487.0" y="1160.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="489.0" y="1163.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="500.0" y="1175.5" text-anchor="middle" class="node-index">48</text>
+<text x="517.0" y="1179.0" font-size="11.2" class="space-label" fill="#111827">Kosice</text>
+<rect x="484.0" y="1191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="492.0" y="1204.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="570.0" y="1191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="643.0" y="1204.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="606.0" y="1161.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="618.0" y="1177.3" text-anchor="middle" class="chip-type">F</text>
+<text x="638.0" y="1180.0" text-anchor="middle" class="chip-value">4</text>
+</g>
+<g class="node">
+<title>Krakow - Poland</title>
+<rect x="904.0" y="532.0" width="172" height="96" rx="6" fill="#ead37f" stroke="#111827" stroke-width="2.0"/>
+<rect x="907.0" y="535.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="909.0" y="538.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="920.0" y="550.5" text-anchor="middle" class="node-index">24</text>
+<text x="937.0" y="554.0" font-size="11.2" class="space-label" fill="#b91c1c">Krakow</text>
+<rect x="904.0" y="566.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="912.0" y="579.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="909.0" y="609.0" width="14" height="14" rx="2" fill="#1d4ed8" stroke="#111827" stroke-width="0.8"/>
+<text x="916.0" y="619.4" class="sp-count" text-anchor="middle">1</text>
+<rect x="990.0" y="566.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1063.0" y="579.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1026.0" y="536.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1038.0" y="552.3" text-anchor="middle" class="chip-type">W</text>
+<text x="1058.0" y="555.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Leipzig - Germany</title>
+<rect x="484.0" y="407.0" width="172" height="96" rx="6" fill="#d4d7dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="487.0" y="410.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="489.0" y="413.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="500.0" y="425.5" text-anchor="middle" class="node-index">15</text>
+<text x="517.0" y="429.0" font-size="11.2" class="space-label" fill="#b91c1c">Leipzig</text>
+<rect x="484.0" y="441.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="492.0" y="454.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="570.0" y="441.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="643.0" y="454.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="606.0" y="411.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="618.0" y="427.3" text-anchor="middle" class="chip-type">W</text>
+<text x="638.0" y="430.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Lodz - Poland</title>
+<rect x="1114.0" y="407.0" width="172" height="96" rx="6" fill="#ead37f" stroke="#111827" stroke-width="2.0"/>
+<rect x="1117.0" y="410.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="1119.0" y="413.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="1130.0" y="425.5" text-anchor="middle" class="node-index">18</text>
+<text x="1147.0" y="429.0" font-size="11.2" class="space-label" fill="#b91c1c">Lodz</text>
+<rect x="1114.0" y="441.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1122.0" y="454.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="1200.0" y="441.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1273.0" y="454.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1236.0" y="411.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1248.0" y="427.3" text-anchor="middle" class="chip-type">W</text>
+<text x="1268.0" y="430.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Lublin - Poland</title>
+<rect x="1324.0" y="407.0" width="172" height="96" rx="6" fill="#ead37f" stroke="#111827" stroke-width="2.0"/>
+<rect x="1327.0" y="410.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="1329.0" y="413.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="1340.0" y="425.5" text-anchor="middle" class="node-index">19</text>
+<text x="1357.0" y="429.0" font-size="11.2" class="space-label" fill="#111827">Lublin</text>
+<rect x="1324.0" y="441.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1332.0" y="454.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="1410.0" y="441.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1483.0" y="454.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1477.0" y="484.0" width="14" height="14" rx="2" fill="#b91c1c" stroke="#111827" stroke-width="0.8"/>
+<text x="1484.0" y="494.4" class="sp-count" text-anchor="middle">1</text>
+<rect x="1446.0" y="411.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1458.0" y="427.3" text-anchor="middle" class="chip-type">F</text>
+<text x="1478.0" y="430.0" text-anchor="middle" class="chip-value">4</text>
+</g>
+<g class="node">
+<title>Lutheran Church - Germany</title>
+<rect x="484.0" y="282.0" width="172" height="96" rx="6" fill="#d4d7dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="487.0" y="285.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="489.0" y="288.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="500.0" y="300.5" text-anchor="middle" class="node-index">08</text>
+<text x="517.0" y="296.0" font-size="9.8" class="space-label" fill="#b91c1c">Lutheran</text>
+<text x="517.0" y="308.0" font-size="9.8" class="space-label" fill="#b91c1c">Church</text>
+<rect x="484.0" y="316.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="492.0" y="329.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="489.0" y="359.0" width="14" height="14" rx="2" fill="#1d4ed8" stroke="#111827" stroke-width="0.8"/>
+<text x="496.0" y="369.4" class="sp-count" text-anchor="middle">1</text>
+<rect x="570.0" y="316.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="643.0" y="329.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="606.0" y="286.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="618.0" y="302.3" text-anchor="middle" class="chip-type">Ch</text>
+<text x="638.0" y="305.0" text-anchor="middle" class="chip-value">5</text>
+</g>
+<g class="node">
+<title>Magdeburg - Germany</title>
+<rect x="64.0" y="407.0" width="172" height="96" rx="6" fill="#d4d7dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="67.0" y="410.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="69.0" y="413.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="80.0" y="425.5" text-anchor="middle" class="node-index">13</text>
+<text x="97.0" y="429.0" font-size="11.2" class="space-label" fill="#b91c1c">Magdeburg</text>
+<rect x="64.0" y="441.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="72.0" y="454.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="150.0" y="441.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="223.0" y="454.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="186.0" y="411.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="198.0" y="427.3" text-anchor="middle" class="chip-type">W</text>
+<text x="218.0" y="430.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Miskolc - Hungary</title>
+<rect x="694.0" y="1407.0" width="172" height="96" rx="6" fill="#f2b463" stroke="#111827" stroke-width="2.0"/>
+<rect x="697.0" y="1410.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="699.0" y="1413.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="710.0" y="1425.5" text-anchor="middle" class="node-index">65</text>
+<text x="727.0" y="1429.0" font-size="11.2" class="space-label" fill="#b91c1c">Miskolc</text>
+<rect x="694.0" y="1441.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="702.0" y="1454.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="780.0" y="1441.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="853.0" y="1454.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="816.0" y="1411.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="828.0" y="1427.3" text-anchor="middle" class="chip-type">W</text>
+<text x="848.0" y="1430.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Ostrava - Czechoslovakia</title>
+<rect x="484.0" y="1032.0" width="172" height="96" rx="6" fill="#9fc7dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="487.0" y="1035.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="489.0" y="1038.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="500.0" y="1050.5" text-anchor="middle" class="node-index">42</text>
+<text x="517.0" y="1054.0" font-size="11.2" class="space-label" fill="#b91c1c">Ostrava</text>
+<rect x="484.0" y="1066.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="492.0" y="1079.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="570.0" y="1066.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="643.0" y="1079.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="606.0" y="1036.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="618.0" y="1052.3" text-anchor="middle" class="chip-type">W</text>
+<text x="638.0" y="1055.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Pecs - Hungary</title>
+<rect x="484.0" y="1532.0" width="172" height="96" rx="6" fill="#f2b463" stroke="#111827" stroke-width="2.0"/>
+<rect x="487.0" y="1535.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="489.0" y="1538.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="500.0" y="1550.5" text-anchor="middle" class="node-index">71</text>
+<text x="517.0" y="1554.0" font-size="11.2" class="space-label" fill="#111827">Pecs</text>
+<rect x="484.0" y="1566.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="492.0" y="1579.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="570.0" y="1566.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="643.0" y="1579.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="606.0" y="1536.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="618.0" y="1552.3" text-anchor="middle" class="chip-type">F</text>
+<text x="638.0" y="1555.0" text-anchor="middle" class="chip-value">4</text>
+</g>
+<g class="node">
+<title>Pleven - Bulgaria</title>
+<rect x="2164.0" y="1032.0" width="172" height="96" rx="6" fill="#b7dc83" stroke="#111827" stroke-width="2.0"/>
+<rect x="2167.0" y="1035.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="2169.0" y="1038.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="2180.0" y="1050.5" text-anchor="middle" class="node-index">68</text>
+<text x="2197.0" y="1054.0" font-size="11.2" class="space-label" fill="#111827">Pleven</text>
+<rect x="2164.0" y="1066.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="2172.0" y="1079.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="2250.0" y="1066.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="2323.0" y="1079.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="2286.0" y="1036.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="2298.0" y="1052.3" text-anchor="middle" class="chip-type">F</text>
+<text x="2318.0" y="1055.0" text-anchor="middle" class="chip-value">4</text>
+</g>
+<g class="node">
+<title>Ploiesti - Romania</title>
+<rect x="1324.0" y="907.0" width="172" height="96" rx="6" fill="#ead9dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="1327.0" y="910.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="1329.0" y="913.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="1340.0" y="925.5" text-anchor="middle" class="node-index">39</text>
+<text x="1357.0" y="929.0" font-size="11.2" class="space-label" fill="#111827">Ploiesti</text>
+<rect x="1324.0" y="941.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1332.0" y="954.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="1410.0" y="941.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1483.0" y="954.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1446.0" y="911.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1458.0" y="927.3" text-anchor="middle" class="chip-type">W</text>
+<text x="1478.0" y="930.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Plovdiv - Bulgaria</title>
+<rect x="1954.0" y="1157.0" width="172" height="96" rx="6" fill="#b7dc83" stroke="#111827" stroke-width="2.0"/>
+<rect x="1957.0" y="1160.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="1959.0" y="1163.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="1970.0" y="1175.5" text-anchor="middle" class="node-index">74</text>
+<text x="1987.0" y="1179.0" font-size="11.2" class="space-label" fill="#b91c1c">Plovdiv</text>
+<rect x="1954.0" y="1191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1962.0" y="1204.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="2040.0" y="1191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="2113.0" y="1204.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="2076.0" y="1161.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="2088.0" y="1177.3" text-anchor="middle" class="chip-type">W</text>
+<text x="2108.0" y="1180.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Plzen - Czechoslovakia</title>
+<rect x="64.0" y="782.0" width="172" height="96" rx="6" fill="#9fc7dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="67.0" y="785.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="69.0" y="788.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="80.0" y="800.5" text-anchor="middle" class="node-index">29</text>
+<text x="97.0" y="804.0" font-size="11.2" class="space-label" fill="#111827">Plzen</text>
+<rect x="64.0" y="816.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="72.0" y="829.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="150.0" y="816.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="223.0" y="829.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="217.0" y="859.0" width="14" height="14" rx="2" fill="#b91c1c" stroke="#111827" stroke-width="0.8"/>
+<text x="224.0" y="869.4" class="sp-count" text-anchor="middle">2</text>
+<rect x="186.0" y="786.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="198.0" y="802.3" text-anchor="middle" class="chip-type">E</text>
+<text x="218.0" y="805.0" text-anchor="middle" class="chip-value">4</text>
+</g>
+<g class="node">
+<title>Catholic Church - Poland</title>
+<rect x="904.0" y="407.0" width="172" height="96" rx="6" fill="#ead37f" stroke="#111827" stroke-width="2.0"/>
+<rect x="907.0" y="410.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="909.0" y="413.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="920.0" y="425.5" text-anchor="middle" class="node-index">17</text>
+<text x="937.0" y="421.0" font-size="9.8" class="space-label" fill="#111827">Catholic</text>
+<text x="937.0" y="433.0" font-size="9.8" class="space-label" fill="#111827">Church</text>
+<rect x="904.0" y="441.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="912.0" y="454.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="909.0" y="484.0" width="14" height="14" rx="2" fill="#1d4ed8" stroke="#111827" stroke-width="0.8"/>
+<text x="916.0" y="494.4" class="sp-count" text-anchor="middle">5</text>
+<rect x="990.0" y="441.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1063.0" y="454.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1026.0" y="411.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1038.0" y="427.3" text-anchor="middle" class="chip-type">Ch</text>
+<text x="1058.0" y="430.0" text-anchor="middle" class="chip-value">5</text>
+</g>
+<g class="node">
+<title>Polish Writers - Poland</title>
+<rect x="1324.0" y="532.0" width="172" height="96" rx="6" fill="#ead37f" stroke="#111827" stroke-width="2.0"/>
+<rect x="1327.0" y="535.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="1329.0" y="538.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="1340.0" y="550.5" text-anchor="middle" class="node-index">26</text>
+<text x="1357.0" y="546.0" font-size="9.8" class="space-label" fill="#111827">Polish</text>
+<text x="1357.0" y="558.0" font-size="9.8" class="space-label" fill="#111827">Writers</text>
+<rect x="1324.0" y="566.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1332.0" y="579.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="1410.0" y="566.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1483.0" y="579.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1446.0" y="536.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1458.0" y="552.3" text-anchor="middle" class="chip-type">I</text>
+<text x="1478.0" y="555.0" text-anchor="middle" class="chip-value">2</text>
+</g>
+<g class="node">
+<title>Poznan - Poland</title>
+<rect x="694.0" y="282.0" width="172" height="96" rx="6" fill="#ead37f" stroke="#111827" stroke-width="2.0"/>
+<rect x="697.0" y="285.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="699.0" y="288.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="710.0" y="300.5" text-anchor="middle" class="node-index">09</text>
+<text x="727.0" y="304.0" font-size="11.2" class="space-label" fill="#b91c1c">Poznan</text>
+<rect x="694.0" y="316.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="702.0" y="329.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="780.0" y="316.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="853.0" y="329.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="816.0" y="286.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="828.0" y="302.3" text-anchor="middle" class="chip-type">W</text>
+<text x="848.0" y="305.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Praha - Czechoslovakia</title>
+<rect x="274.0" y="782.0" width="172" height="96" rx="6" fill="#9fc7dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="277.0" y="785.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="279.0" y="788.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="290.0" y="800.5" text-anchor="middle" class="node-index">35</text>
+<text x="307.0" y="804.0" font-size="11.2" class="space-label" fill="#b91c1c">Praha</text>
+<rect x="274.0" y="816.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="282.0" y="829.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="360.0" y="816.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="433.0" y="829.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="427.0" y="859.0" width="14" height="14" rx="2" fill="#b91c1c" stroke="#111827" stroke-width="0.8"/>
+<text x="434.0" y="869.4" class="sp-count" text-anchor="middle">2</text>
+<rect x="396.0" y="786.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="408.0" y="802.3" text-anchor="middle" class="chip-type">Bu</text>
+<text x="428.0" y="805.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Presov - Czechoslovakia</title>
+<rect x="274.0" y="1157.0" width="172" height="96" rx="6" fill="#9fc7dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="277.0" y="1160.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="279.0" y="1163.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="290.0" y="1175.5" text-anchor="middle" class="node-index">47</text>
+<text x="307.0" y="1179.0" font-size="11.2" class="space-label" fill="#111827">Presov</text>
+<rect x="274.0" y="1191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="282.0" y="1204.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="360.0" y="1191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="433.0" y="1204.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="396.0" y="1161.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="408.0" y="1177.3" text-anchor="middle" class="chip-type">F</text>
+<text x="428.0" y="1180.0" text-anchor="middle" class="chip-value">4</text>
+</g>
+<g class="node">
+<title>Razgrad - Bulgaria</title>
+<rect x="2164.0" y="782.0" width="172" height="96" rx="6" fill="#b7dc83" stroke="#111827" stroke-width="2.0"/>
+<rect x="2167.0" y="785.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="2169.0" y="788.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="2180.0" y="800.5" text-anchor="middle" class="node-index">54</text>
+<text x="2197.0" y="804.0" font-size="11.2" class="space-label" fill="#111827">Razgrad</text>
+<rect x="2164.0" y="816.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="2172.0" y="829.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="2250.0" y="816.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="2323.0" y="829.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="2286.0" y="786.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="2298.0" y="802.3" text-anchor="middle" class="chip-type">M</text>
+<text x="2318.0" y="805.0" text-anchor="middle" class="chip-value">4</text>
+</g>
+<g class="node">
+<title>Orthodox Church - Romania</title>
+<rect x="904.0" y="1032.0" width="172" height="96" rx="6" fill="#ead9dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="907.0" y="1035.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="909.0" y="1038.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="920.0" y="1050.5" text-anchor="middle" class="node-index">43</text>
+<text x="937.0" y="1046.0" font-size="9.8" class="space-label" fill="#111827">Orthodox</text>
+<text x="937.0" y="1058.0" font-size="9.8" class="space-label" fill="#111827">Church</text>
+<rect x="904.0" y="1066.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="912.0" y="1079.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="990.0" y="1066.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1063.0" y="1079.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1026.0" y="1036.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1038.0" y="1052.3" text-anchor="middle" class="chip-type">Ch</text>
+<text x="1058.0" y="1055.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Romanian Writers - Romania</title>
+<rect x="904.0" y="657.0" width="172" height="96" rx="6" fill="#ead9dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="907.0" y="660.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="909.0" y="663.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="920.0" y="675.5" text-anchor="middle" class="node-index">27</text>
+<text x="937.0" y="671.0" font-size="9.8" class="space-label" fill="#111827">Romanian</text>
+<text x="937.0" y="683.0" font-size="9.8" class="space-label" fill="#111827">Writers</text>
+<rect x="904.0" y="691.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="912.0" y="704.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="990.0" y="691.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1063.0" y="704.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1026.0" y="661.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1038.0" y="677.3" text-anchor="middle" class="chip-type">I</text>
+<text x="1058.0" y="680.0" text-anchor="middle" class="chip-value">2</text>
+</g>
+<g class="node">
+<title>Rostock - Germany</title>
+<rect x="274.0" y="282.0" width="172" height="96" rx="6" fill="#d4d7dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="277.0" y="285.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="279.0" y="288.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="290.0" y="300.5" text-anchor="middle" class="node-index">02</text>
+<text x="307.0" y="304.0" font-size="11.2" class="space-label" fill="#111827">Rostock</text>
+<rect x="274.0" y="316.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="282.0" y="329.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="360.0" y="316.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="433.0" y="329.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="396.0" y="286.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="408.0" y="302.3" text-anchor="middle" class="chip-type">W</text>
+<text x="428.0" y="305.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Ruse - Bulgaria</title>
+<rect x="1954.0" y="782.0" width="172" height="96" rx="6" fill="#b7dc83" stroke="#111827" stroke-width="2.0"/>
+<rect x="1957.0" y="785.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="1959.0" y="788.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="1970.0" y="800.5" text-anchor="middle" class="node-index">53</text>
+<text x="1987.0" y="804.0" font-size="11.2" class="space-label" fill="#b91c1c">Ruse</text>
+<rect x="1954.0" y="816.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1962.0" y="829.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="2040.0" y="816.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="2113.0" y="829.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="2076.0" y="786.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="2088.0" y="802.3" text-anchor="middle" class="chip-type">W</text>
+<text x="2108.0" y="805.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Erfurt - Germany</title>
+<rect x="64.0" y="532.0" width="172" height="96" rx="6" fill="#d4d7dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="67.0" y="535.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="69.0" y="538.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="80.0" y="550.5" text-anchor="middle" class="node-index">20</text>
+<text x="97.0" y="554.0" font-size="11.2" class="space-label" fill="#111827">Erfurt</text>
+<rect x="64.0" y="566.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="72.0" y="579.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="150.0" y="566.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="223.0" y="579.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="186.0" y="536.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="198.0" y="552.3" text-anchor="middle" class="chip-type">F</text>
+<text x="218.0" y="555.0" text-anchor="middle" class="chip-value">4</text>
+</g>
+<g class="node">
+<title>Schwerin - Germany</title>
+<rect x="64.0" y="282.0" width="172" height="96" rx="6" fill="#d4d7dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="67.0" y="285.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="69.0" y="288.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="80.0" y="300.5" text-anchor="middle" class="node-index">01</text>
+<text x="97.0" y="304.0" font-size="11.2" class="space-label" fill="#111827">Schwerin</text>
+<rect x="64.0" y="316.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="72.0" y="329.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="150.0" y="316.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="223.0" y="329.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="186.0" y="286.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="198.0" y="302.3" text-anchor="middle" class="chip-type">W</text>
+<text x="218.0" y="305.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Katowice - Poland</title>
+<rect x="694.0" y="532.0" width="172" height="96" rx="6" fill="#ead37f" stroke="#111827" stroke-width="2.0"/>
+<rect x="697.0" y="535.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="699.0" y="538.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="710.0" y="550.5" text-anchor="middle" class="node-index">23</text>
+<text x="727.0" y="554.0" font-size="11.2" class="space-label" fill="#111827">Katowice</text>
+<rect x="694.0" y="566.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="702.0" y="579.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="780.0" y="566.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="853.0" y="579.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="816.0" y="536.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="828.0" y="552.3" text-anchor="middle" class="chip-type">W</text>
+<text x="848.0" y="555.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Sofia University - Bulgaria</title>
+<rect x="1744.0" y="1032.0" width="172" height="96" rx="6" fill="#b7dc83" stroke="#111827" stroke-width="2.0"/>
+<rect x="1747.0" y="1035.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="1749.0" y="1038.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="1760.0" y="1050.5" text-anchor="middle" class="node-index">66</text>
+<text x="1777.0" y="1046.0" font-size="9.8" class="space-label" fill="#111827">Sofia</text>
+<text x="1777.0" y="1058.0" font-size="9.8" class="space-label" fill="#111827">University</text>
+<rect x="1744.0" y="1066.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1752.0" y="1079.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="1830.0" y="1066.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1903.0" y="1079.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1866.0" y="1036.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1878.0" y="1052.3" text-anchor="middle" class="chip-type">St</text>
+<text x="1898.0" y="1055.0" text-anchor="middle" class="chip-value">1</text>
+</g>
+<g class="node">
+<title>Sofia - Bulgaria</title>
+<rect x="1954.0" y="1032.0" width="172" height="96" rx="6" fill="#b7dc83" stroke="#111827" stroke-width="2.0"/>
+<rect x="1957.0" y="1035.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="1959.0" y="1038.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="1970.0" y="1050.5" text-anchor="middle" class="node-index">67</text>
+<text x="1987.0" y="1054.0" font-size="11.2" class="space-label" fill="#b91c1c">Sofia</text>
+<rect x="1954.0" y="1066.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1962.0" y="1079.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="2040.0" y="1066.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="2113.0" y="1079.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="2107.0" y="1109.0" width="14" height="14" rx="2" fill="#b91c1c" stroke="#111827" stroke-width="0.8"/>
+<text x="2114.0" y="1119.4" class="sp-count" text-anchor="middle">2</text>
+<rect x="2076.0" y="1036.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="2088.0" y="1052.3" text-anchor="middle" class="chip-type">Bu</text>
+<text x="2108.0" y="1055.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Stara Zagora - Bulgaria</title>
+<rect x="1954.0" y="907.0" width="172" height="96" rx="6" fill="#b7dc83" stroke="#111827" stroke-width="2.0"/>
+<rect x="1957.0" y="910.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="1959.0" y="913.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="1970.0" y="925.5" text-anchor="middle" class="node-index">60</text>
+<text x="1987.0" y="929.0" font-size="11.2" class="space-label" fill="#111827">Stara Zagora</text>
+<rect x="1954.0" y="941.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1962.0" y="954.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="2040.0" y="941.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="2113.0" y="954.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="2107.0" y="984.0" width="14" height="14" rx="2" fill="#b91c1c" stroke="#111827" stroke-width="0.8"/>
+<text x="2114.0" y="994.4" class="sp-count" text-anchor="middle">1</text>
+<rect x="2076.0" y="911.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="2088.0" y="927.3" text-anchor="middle" class="chip-type">E</text>
+<text x="2108.0" y="930.0" text-anchor="middle" class="chip-value">4</text>
+</g>
+<g class="node">
+<title>Szczecin - Poland</title>
+<rect x="694.0" y="157.0" width="172" height="96" rx="6" fill="#ead37f" stroke="#111827" stroke-width="2.0"/>
+<rect x="697.0" y="160.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="699.0" y="163.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="710.0" y="175.5" text-anchor="middle" class="node-index">04</text>
+<text x="727.0" y="179.0" font-size="11.2" class="space-label" fill="#111827">Szczecin</text>
+<rect x="694.0" y="191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="702.0" y="204.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="780.0" y="191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="853.0" y="204.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="816.0" y="161.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="828.0" y="177.3" text-anchor="middle" class="chip-type">W</text>
+<text x="848.0" y="180.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Szeged - Hungary</title>
+<rect x="694.0" y="1532.0" width="172" height="96" rx="6" fill="#f2b463" stroke="#111827" stroke-width="2.0"/>
+<rect x="697.0" y="1535.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="699.0" y="1538.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="710.0" y="1550.5" text-anchor="middle" class="node-index">72</text>
+<text x="727.0" y="1554.0" font-size="11.2" class="space-label" fill="#b91c1c">Szeged</text>
+<rect x="694.0" y="1566.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="702.0" y="1579.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="699.0" y="1609.0" width="14" height="14" rx="2" fill="#1d4ed8" stroke="#111827" stroke-width="0.8"/>
+<text x="706.0" y="1619.4" class="sp-count" text-anchor="middle">1</text>
+<rect x="780.0" y="1566.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="853.0" y="1579.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="816.0" y="1536.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="828.0" y="1552.3" text-anchor="middle" class="chip-type">F</text>
+<text x="848.0" y="1555.0" text-anchor="middle" class="chip-value">4</text>
+</g>
+<g class="node">
+<title>Szekesfehervar - Hungary</title>
+<rect x="274.0" y="1407.0" width="172" height="96" rx="6" fill="#f2b463" stroke="#111827" stroke-width="2.0"/>
+<rect x="277.0" y="1410.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="279.0" y="1413.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="290.0" y="1425.5" text-anchor="middle" class="node-index">63</text>
+<text x="307.0" y="1429.0" font-size="11.2" class="space-label" fill="#111827">Szekesfehervar</text>
+<rect x="274.0" y="1441.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="282.0" y="1454.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="279.0" y="1484.0" width="14" height="14" rx="2" fill="#1d4ed8" stroke="#111827" stroke-width="0.8"/>
+<text x="286.0" y="1494.4" class="sp-count" text-anchor="middle">1</text>
+<rect x="360.0" y="1441.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="433.0" y="1454.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="396.0" y="1411.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="408.0" y="1427.3" text-anchor="middle" class="chip-type">W</text>
+<text x="428.0" y="1430.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Szombathely</title>
+<rect x="64.0" y="1407.0" width="172" height="96" rx="6" fill="#f2b463" stroke="#111827" stroke-width="2.0"/>
+<rect x="67.0" y="1410.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="69.0" y="1413.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="80.0" y="1425.5" text-anchor="middle" class="node-index">62</text>
+<text x="97.0" y="1429.0" font-size="11.2" class="space-label" fill="#111827">Szombathely</text>
+<rect x="64.0" y="1441.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="72.0" y="1454.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="150.0" y="1441.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="223.0" y="1454.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="217.0" y="1484.0" width="14" height="14" rx="2" fill="#b91c1c" stroke="#111827" stroke-width="0.8"/>
+<text x="224.0" y="1494.4" class="sp-count" text-anchor="middle">1</text>
+<rect x="186.0" y="1411.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="198.0" y="1427.3" text-anchor="middle" class="chip-type">E</text>
+<text x="218.0" y="1430.0" text-anchor="middle" class="chip-value">4</text>
+</g>
+<g class="node">
+<title>Tatabanya - Hungary</title>
+<rect x="484.0" y="1282.0" width="172" height="96" rx="6" fill="#f2b463" stroke="#111827" stroke-width="2.0"/>
+<rect x="487.0" y="1285.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="489.0" y="1288.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="500.0" y="1300.5" text-anchor="middle" class="node-index">57</text>
+<text x="517.0" y="1304.0" font-size="11.2" class="space-label" fill="#111827">Tatabanya</text>
+<rect x="484.0" y="1316.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="492.0" y="1329.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="570.0" y="1316.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="643.0" y="1329.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="606.0" y="1286.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="618.0" y="1302.3" text-anchor="middle" class="chip-type">W</text>
+<text x="638.0" y="1305.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Timisoara - Romania</title>
+<rect x="904.0" y="1157.0" width="172" height="96" rx="6" fill="#ead9dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="907.0" y="1160.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="909.0" y="1163.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="920.0" y="1175.5" text-anchor="middle" class="node-index">49</text>
+<text x="937.0" y="1179.0" font-size="11.2" class="space-label" fill="#b91c1c">Timisoara</text>
+<rect x="904.0" y="1191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="912.0" y="1204.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="990.0" y="1191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1063.0" y="1204.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1026.0" y="1161.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1038.0" y="1177.3" text-anchor="middle" class="chip-type">W</text>
+<text x="1058.0" y="1180.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Walter Ulbricht Academy - Germany</title>
+<rect x="274.0" y="157.0" width="172" height="96" rx="6" fill="#d4d7dc" stroke="#111827" stroke-width="2.0"/>
+<rect x="277.0" y="160.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="279.0" y="163.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="290.0" y="175.5" text-anchor="middle" class="node-index">07</text>
+<text x="307.0" y="171.0" font-size="9.8" class="space-label" fill="#111827">Walter Ulbricht</text>
+<text x="307.0" y="183.0" font-size="9.8" class="space-label" fill="#111827">Academy</text>
+<rect x="274.0" y="191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="282.0" y="204.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="360.0" y="191.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="433.0" y="204.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="396.0" y="161.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="408.0" y="177.3" text-anchor="middle" class="chip-type">St</text>
+<text x="428.0" y="180.0" text-anchor="middle" class="chip-value">1</text>
+</g>
+<g class="node">
+<title>Varna - Bulgaria</title>
+<rect x="1744.0" y="782.0" width="172" height="96" rx="6" fill="#b7dc83" stroke="#111827" stroke-width="2.0"/>
+<rect x="1747.0" y="785.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="1749.0" y="788.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="1760.0" y="800.5" text-anchor="middle" class="node-index">52</text>
+<text x="1777.0" y="804.0" font-size="11.2" class="space-label" fill="#b91c1c">Varna</text>
+<rect x="1744.0" y="816.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1752.0" y="829.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="1830.0" y="816.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1903.0" y="829.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1866.0" y="786.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1878.0" y="802.3" text-anchor="middle" class="chip-type">W</text>
+<text x="1898.0" y="805.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Warszawa - Poland</title>
+<rect x="1114.0" y="282.0" width="172" height="96" rx="6" fill="#ead37f" stroke="#111827" stroke-width="2.0"/>
+<rect x="1117.0" y="285.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="1119.0" y="288.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="1130.0" y="300.5" text-anchor="middle" class="node-index">11</text>
+<text x="1147.0" y="304.0" font-size="11.2" class="space-label" fill="#b91c1c">Warszawa</text>
+<rect x="1114.0" y="316.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1122.0" y="329.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="1200.0" y="316.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="1273.0" y="329.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="1267.0" y="359.0" width="14" height="14" rx="2" fill="#b91c1c" stroke="#111827" stroke-width="0.8"/>
+<text x="1274.0" y="369.4" class="sp-count" text-anchor="middle">1</text>
+<rect x="1236.0" y="286.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="1248.0" y="302.3" text-anchor="middle" class="chip-type">Bu</text>
+<text x="1268.0" y="305.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+<g class="node">
+<title>Wroclaw - Poland</title>
+<rect x="694.0" y="407.0" width="172" height="96" rx="6" fill="#ead37f" stroke="#111827" stroke-width="2.0"/>
+<rect x="697.0" y="410.0" width="166" height="29" rx="4" fill="#fffaf1" fill-opacity="0.38" stroke="#111827" stroke-opacity="0.15" stroke-width="0.8"/>
+<rect x="699.0" y="413.0" width="22" height="17" rx="3" fill="#f8f6ef" fill-opacity="0.92" stroke="#111827" stroke-width="0.8"/>
+<text x="710.0" y="425.5" text-anchor="middle" class="node-index">16</text>
+<text x="727.0" y="429.0" font-size="11.2" class="space-label" fill="#b91c1c">Wroclaw</text>
+<rect x="694.0" y="441.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#1d4ed8" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="702.0" y="454.0" class="slot-label" text-anchor="start" fill="#1d4ed8">D</text>
+<rect x="780.0" y="441.0" width="86.0" height="62.0" rx="0" fill="#fff4cf" stroke="#b91c1c" stroke-opacity="0.55" stroke-width="1.15"/>
+<text x="853.0" y="454.0" class="slot-label" text-anchor="end" fill="#b91c1c">C</text>
+<rect x="816.0" y="411.0" width="45" height="26" rx="3" fill="#111827"/>
+<text x="828.0" y="427.3" text-anchor="middle" class="chip-type">W</text>
+<text x="848.0" y="430.0" text-anchor="middle" class="chip-value">3</text>
+</g>
+</g>
+</svg>

@@ -1,0 +1,3297 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+    <title>1989 Compact Map (Interactive)</title>
+    <style>
+      :root {
+        color-scheme: light;
+      }
+      * {
+        box-sizing: border-box;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f5f7;
+        color: #111827;
+        overflow: hidden;
+      }
+      .app {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 8px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: minmax(0, 1fr);
+        gap: 8px;
+        overflow: hidden;
+      }
+      h1 {
+        margin: 0 0 6px;
+        font-size: 24px;
+      }
+      .hint {
+        margin: 0 0 10px;
+        color: #334155;
+        font-size: 14px;
+      }
+      .top-bar {
+        display: none;
+        grid-column: 2;
+        grid-row: 1;
+        flex-direction: column;
+        gap: 8px;
+        align-items: stretch;
+        min-height: 0;
+        margin: 0;
+        overflow: hidden;
+      }
+      .status {
+        flex: 1;
+        margin: 0;
+        padding: 8px 10px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        background: #ecfeff;
+        color: #0f172a;
+        font-size: 13px;
+        min-height: 34px;
+      }
+      .vp-tracker {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-width: 0;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        background: #f8fafc;
+        color: #0f172a;
+        font-size: 12px;
+        overflow: hidden;
+      }
+      .vp-value {
+        margin: 0;
+        width: 100%;
+        border: 0;
+        background: transparent;
+        color: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font: inherit;
+        font-size: 22px;
+        font-weight: 900;
+        text-align: center;
+        cursor: pointer;
+        user-select: none;
+        padding: 7px 8px;
+      }
+      .vp-value.vp-positive {
+        background: #dbeafe;
+        color: #1d4ed8;
+      }
+      .vp-value.vp-negative {
+        background: #fee2e2;
+        color: #b91c1c;
+      }
+      .vp-value.vp-neutral {
+        background: #f8fafc;
+        color: #111827;
+      }
+      .phase-tracker {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-width: 0;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        background: #f8fafc;
+        color: #0f172a;
+        font-size: 12px;
+        overflow: hidden;
+      }
+      .phase-value {
+        margin: 0;
+        width: 100%;
+        border: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        color: inherit;
+        font: inherit;
+        font-size: 22px;
+        font-weight: 900;
+        text-align: center;
+        cursor: pointer;
+        user-select: none;
+        border-radius: 0;
+        padding: 7px 8px;
+      }
+      .phase-value.phase-early {
+        background: #dbeafe;
+      }
+      .phase-value.phase-mid {
+        background: #fef3c7;
+      }
+      .phase-value.phase-late {
+        background: #fee2e2;
+      }
+      .route-tracker {
+        margin: 0;
+        padding: 6px 8px;
+        width: 100%;
+        min-width: 0;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        background: #f8fafc;
+        color: #0f172a;
+        font-size: 12px;
+      }
+      .route-track {
+        margin: 3px 0 0;
+        display: flex;
+        gap: 4px;
+        justify-content: center;
+      }
+      .route-slot {
+        width: 22px;
+        height: 22px;
+        border: 1.5px solid #111827;
+        background: #ffffff;
+      }
+      .route-slot.filled {
+        background: #1d4ed8;
+      }
+      .map-control-fo {
+        overflow: visible;
+      }
+      .map-control-cluster {
+        width: 100%;
+        height: 100%;
+        pointer-events: auto;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .map-top-controls {
+        display: grid;
+        grid-template-columns: repeat(10, minmax(0, 1fr));
+        grid-template-rows: 76px 34px;
+        gap: 6px;
+        align-items: stretch;
+      }
+      .map-top-controls .vp-tracker {
+        grid-column: 1 / 6;
+      }
+      .map-top-controls .phase-tracker {
+        grid-column: 6 / 11;
+      }
+      .map-top-controls .vp-tracker,
+      .map-top-controls .phase-tracker {
+        height: 76px;
+      }
+      .map-top-controls .vp-value,
+      .map-top-controls .phase-value {
+        height: 100%;
+        padding: 5px 10px;
+        font-size: 34px;
+      }
+      .map-top-controls .state-button {
+        height: 34px;
+        border: 1.5px solid #111827;
+        border-radius: 8px;
+        background: #ffffff;
+        color: #111827;
+        font-size: 16px;
+        font-weight: 900;
+        cursor: pointer;
+      }
+      .map-top-controls .dice-game {
+        grid-column: 1 / 3;
+      }
+      .map-top-controls .language-game {
+        grid-column: 3 / 5;
+      }
+      .map-top-controls .save-game {
+        grid-column: 5 / 7;
+      }
+      .map-top-controls .load-game {
+        grid-column: 7 / 9;
+      }
+      .map-top-controls .reset-game {
+        grid-column: 9 / 11;
+      }
+      .app .status,
+      .app .page-header {
+        display: none !important;
+      }
+      .dice-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        background: rgba(15, 23, 42, 0.48);
+      }
+      .dice-modal[hidden] {
+        display: none;
+      }
+      .dice-dialog {
+        position: relative;
+        width: min(360px, calc(100vw - 32px));
+        border: 2px solid #111827;
+        border-radius: 8px;
+        background: #ffffff;
+        color: #111827;
+        padding: 22px;
+        text-align: center;
+        box-shadow: 0 18px 55px rgba(15, 23, 42, 0.28);
+      }
+      .dice-dialog h2 {
+        margin: 0 38px 12px;
+        font-size: 24px;
+        letter-spacing: 0;
+      }
+      .dice-result {
+        width: 132px;
+        height: 132px;
+        margin: 0 auto 18px;
+        border: 3px solid #111827;
+        border-radius: 8px;
+        display: grid;
+        place-items: center;
+        background: #f8fafc;
+        font-size: 88px;
+        font-weight: 900;
+        line-height: 1;
+        transition: background-color 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+      }
+      .dice-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .dice-actions button,
+      .dice-close-icon {
+        border: 1.5px solid #111827;
+        border-radius: 6px;
+        background: #ffffff;
+        color: #111827;
+        font: inherit;
+        font-size: 17px;
+        font-weight: 900;
+        cursor: pointer;
+      }
+      .dice-actions button {
+        height: 42px;
+      }
+      .dice-close-icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        font-size: 24px;
+        line-height: 1;
+      }
+      .tiananmen-tracker {
+        margin: 0;
+        padding: 8px 10px;
+        width: 100%;
+        min-width: 0;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        background: #f8fafc;
+        color: #0f172a;
+        font-size: 18px;
+        display: grid;
+        grid-template-columns: 232px minmax(0, 1fr);
+        gap: 6px;
+        align-items: stretch;
+      }
+      .tiananmen-fail-controls {
+        min-width: 0;
+        display: grid;
+        grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 6px;
+      }
+      .tiananmen-side-row {
+        min-width: 0;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 4px;
+      }
+      .tiananmen-fail-button,
+      .tiananmen-attempt-button {
+        min-width: 0;
+        border: 1.5px solid currentColor;
+        border-radius: 5px;
+        background: #ffffff;
+        font: inherit;
+        font-size: 16px;
+        font-weight: 900;
+        line-height: 1.05;
+        white-space: pre-line;
+        cursor: pointer;
+      }
+      .tiananmen-fail-button.dem,
+      .tiananmen-attempt-button.dem {
+        color: #1d4ed8;
+      }
+      .tiananmen-fail-button.com,
+      .tiananmen-attempt-button.com {
+        color: #b91c1c;
+      }
+      .tiananmen-fail-button.dem.active,
+      .tiananmen-attempt-button.dem.active {
+        background: #1d4ed8;
+        color: #ffffff;
+      }
+      .tiananmen-fail-button.com.active,
+      .tiananmen-attempt-button.com.active {
+        background: #b91c1c;
+        color: #ffffff;
+      }
+      .tiananmen-track {
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        gap: 4px;
+        height: 100%;
+      }
+      .tiananmen-slot {
+        border: 1.5px solid #111827;
+        background: #ffffff;
+        border-radius: 5px;
+        padding: 6px 7px;
+        min-width: 0;
+        min-height: 0;
+        flex: 1 1 0;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: 34px minmax(0, 1fr) 34px;
+        gap: 4px;
+        align-items: center;
+        font-size: 18px;
+        line-height: 1.08;
+        color: #334155;
+      }
+      .tiananmen-slot.reached-dem {
+        box-shadow: inset 0 3px 0 #1d4ed8;
+      }
+      .tiananmen-slot.reached-com {
+        box-shadow: inset 0 -3px 0 #b91c1c;
+      }
+      .tiananmen-slot.reached-dem.reached-com {
+        box-shadow: inset 0 3px 0 #1d4ed8, inset 0 -3px 0 #b91c1c;
+      }
+      .tiananmen-target {
+        width: 100%;
+        min-width: 0;
+        height: 34px;
+        border-radius: 4px;
+        display: grid;
+        place-items: center;
+        border: 1.4px solid currentColor;
+        background: #ffffff;
+        font-weight: 900;
+        font-size: 22px;
+        line-height: 1;
+        cursor: pointer;
+      }
+      .tiananmen-target.dem {
+        color: #1d4ed8;
+      }
+      .tiananmen-target.com {
+        color: #b91c1c;
+      }
+      .tiananmen-target.current-dem {
+        background: #1d4ed8;
+        color: #ffffff;
+        border-color: #1d4ed8;
+      }
+      .tiananmen-target.current-com {
+        background: #b91c1c;
+        color: #ffffff;
+        border-color: #b91c1c;
+      }
+      .tiananmen-slot .track-main {
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #111827;
+        font-weight: 800;
+      }
+      .tiananmen-slot.effect-dem .effect {
+        color: #1d4ed8;
+      }
+      .tiananmen-slot.effect-com .effect {
+        color: #b91c1c;
+      }
+      .tiananmen-slot.effect-inactive .effect {
+        color: #6b7280;
+      }
+      .tiananmen-slot .effect {
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        font-size: 17px;
+      }
+      .map-tiananmen .tiananmen-tracker {
+        height: 100%;
+        padding: 8px;
+      }
+      .map-tiananmen .tiananmen-slot {
+        height: 100%;
+        padding: 6px 7px;
+      }
+      .map-info-panel,
+      .country-info-panel {
+        width: 100%;
+        height: 100%;
+        border: 1.4px solid #111827;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.94);
+        color: #111827;
+        overflow: hidden;
+        pointer-events: none;
+      }
+      .map-info-panel {
+        padding: 8px 10px;
+        font-size: 18px;
+        line-height: 1.18;
+        font-weight: 800;
+      }
+      .type-legend-panel {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px 18px;
+        align-content: center;
+        font-size: 24px;
+      }
+      .type-legend-panel span {
+        white-space: nowrap;
+      }
+      .power-rules-panel {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+      .power-rules-panel strong {
+        font-size: 20px;
+      }
+      .country-info-panel {
+        padding: 6px 8px;
+        font-size: 15px;
+        line-height: 1.12;
+        display: grid;
+        gap: 2px;
+      }
+      .country-info-panel .country-info-title {
+        font-size: 17px;
+        font-weight: 900;
+      }
+      .country-info-panel .country-score-line {
+        font-size: 18px;
+        font-weight: 900;
+      }
+      .country-info-panel .dem-text {
+        color: #1d4ed8;
+      }
+      .country-info-panel .com-text {
+        color: #b91c1c;
+      }
+      .country-info-panel .muted-text {
+        color: #4b5563;
+      }
+      .map-info-panel .dem-text,
+      .country-info-panel .dem-text {
+        color: #1d4ed8;
+      }
+      .map-info-panel .com-text,
+      .country-info-panel .com-text {
+        color: #b91c1c;
+      }
+      .map-info-panel .muted-text,
+      .country-info-panel .muted-text {
+        color: #4b5563;
+      }
+      .country-table-panel {
+        padding: 8px;
+        font-size: 17px;
+        line-height: 1.05;
+        pointer-events: auto;
+      }
+      .country-table-panel table {
+        width: 100%;
+        height: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+      }
+      .country-table-panel th,
+      .country-table-panel td {
+        border-bottom: 1px solid rgba(17, 24, 39, 0.22);
+        padding: 3px 4px;
+        text-align: center;
+        vertical-align: middle;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .country-table-panel th {
+        font-size: 15px;
+        font-weight: 900;
+        background: rgba(241, 245, 249, 0.82);
+      }
+      .country-table-panel td {
+        font-weight: 800;
+      }
+      .country-table-panel .country-cell {
+        text-align: left;
+        width: 22%;
+      }
+      .country-table-panel .wide-cell {
+        width: 18%;
+      }
+      .country-table-panel .power-button {
+        width: 100%;
+        min-width: 0;
+        border: 1.2px solid currentColor;
+        border-radius: 5px;
+        background: #ffffff;
+        font: inherit;
+        font-size: 15px;
+        font-weight: 900;
+        cursor: pointer;
+        padding: 2px 3px;
+      }
+      .country-table-panel .power-button.power-dem {
+        color: #1d4ed8;
+      }
+      .country-table-panel .power-button.power-com {
+        color: #b91c1c;
+      }
+      .country-table-panel .power-bonus-note,
+      .country-table-panel .power-value-note {
+        color: #b91c1c;
+        margin-left: 4px;
+        font-weight: 900;
+      }
+      .country-table-panel .draw-separator {
+        color: #111827;
+        margin: 0 3px;
+      }
+      .stage {
+        grid-column: 1;
+        grid-row: 1;
+        min-width: 0;
+        min-height: 0;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        background: #ffffff;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        width: 100%;
+        height: auto;
+        max-height: 100%;
+        aspect-ratio: 2460 / 1605;
+      }
+      .stage svg {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        display: block;
+      }
+      .interactive-node {
+        cursor: pointer;
+        transition: filter 0.15s ease;
+      }
+      .interactive-node .slot-label {
+        display: none;
+        pointer-events: none;
+      }
+      .interactive-node .chip-type,
+      .interactive-node .chip-value,
+      .interactive-node .space-label,
+      .interactive-node .sp-count,
+      .interactive-node .chip-value-left,
+      .interactive-node .chip-value-right {
+        pointer-events: none;
+        user-select: none;
+      }
+      .interactive-node .node-index {
+        visibility: hidden;
+      }
+      .interactive-node .chip-type,
+      .interactive-node .space-label {
+        font-weight: 800;
+      }
+      .interactive-node .chip-type {
+        font-size: 34px;
+        fill: #006b5f;
+        stroke: #ffffff;
+        stroke-width: 0.65px;
+        paint-order: stroke fill;
+      }
+      .interactive-node .space-label:not(.important-space) {
+        fill: #111827;
+      }
+      .interactive-node .space-label.important-space {
+        fill: #7c3aed;
+      }
+      .interactive-node:hover {
+        filter: brightness(1.03);
+      }
+      .interactive-node circle,
+      .interactive-node rect,
+      .interactive-node path,
+      .interactive-node text {
+        transition: opacity 0.12s ease;
+      }
+      .value-bg {
+        stroke: #111827;
+        stroke-width: 1.15;
+        fill: #ffffff;
+        opacity: 0.96;
+        pointer-events: none;
+      }
+      .value-bg-dominant-left,
+      .value-bg-dominant-right {
+        opacity: 0.95;
+      }
+      .value-bg-dominant-left {
+        fill: #1d4ed8;
+      }
+      .value-bg-dominant-right {
+        fill: #b91c1c;
+      }
+      .chip-value-left,
+      .chip-value-right {
+        font-size: 56px;
+        font-weight: 900;
+        letter-spacing: -0.5px;
+        dominant-baseline: middle;
+        text-anchor: middle;
+        pointer-events: none;
+        user-select: none;
+        paint-order: stroke fill;
+      }
+      .chip-value-left {
+        fill: #1d4ed8;
+      }
+      .chip-value-right {
+        fill: #b91c1c;
+      }
+      .chip-value-left.dominant,
+      .chip-value-right.dominant {
+        fill: #ffffff;
+      }
+      .top-sep-line {
+        stroke: #9aa2b1;
+        stroke-width: 1;
+        fill: none;
+      }
+      .chip-stability {
+        fill: #be123c;
+        stroke: #ffffff;
+        stroke-width: 0.65px;
+        font-weight: 700;
+        pointer-events: none;
+        paint-order: stroke fill;
+        dominant-baseline: middle;
+      }
+      .chip-value-hidden {
+        visibility: hidden;
+      }
+
+      .debug-overlay {
+        margin-top: 8px;
+        border: 1px dashed #94a3b8;
+        border-radius: 8px;
+        background: #f8fafc;
+        color: #0f172a;
+        padding: 8px;
+        font-size: 11px;
+        max-height: 140px;
+        overflow: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        white-space: pre-wrap;
+        line-height: 1.25;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="app">
+      <div class="top-bar">
+        <p class="status" id="status">Loading map...</p>
+        <aside class="vp-tracker" id="vp-tracker" title="Left click -1, right click +1">
+          <button class="vp-value" id="vp-value" type="button" data-value="0">VP: <strong>0</strong></button>
+        </aside>
+        <aside class="phase-tracker" id="phase-tracker" title="Left click -1, right click +1">
+          <button class="phase-value phase-early" id="phase-value" type="button" data-value="1">Turn: <strong>1</strong></button>
+        </aside>
+        <button class="state-button dice-game" id="dice-game" type="button">Roll</button>
+        <button class="state-button language-game" id="language-game" type="button">中文</button>
+        <button class="state-button save-game" id="save-game" type="button">Save</button>
+        <button class="state-button load-game" id="load-game" type="button">Load</button>
+        <button class="state-button reset-game" id="reset-game" type="button">Reset</button>
+        <aside class="tiananmen-tracker" id="tiananmen-tracker" title="Top numbers adjust D; bottom numbers adjust C. Left click +1, right click -1">
+          <span id="tiananmen-dem-value" hidden>0</span>
+          <span id="tiananmen-com-value" hidden>0</span>
+          <span class="tiananmen-fail-controls" aria-label="Last Tiananmen attempt failed">
+            <span class="tiananmen-side-row">
+              <button class="tiananmen-fail-button dem" id="tiananmen-dem-failed" type="button" aria-pressed="false" title="Toggle D last attempt failed">D FAIL</button>
+              <button class="tiananmen-attempt-button dem" id="tiananmen-dem-attempted" type="button" aria-pressed="false" title="Toggle D attempted this turn">D TRIED OFF</button>
+            </span>
+            <span class="tiananmen-side-row">
+              <button class="tiananmen-fail-button com" id="tiananmen-com-failed" type="button" aria-pressed="false" title="Toggle C last attempt failed">C FAIL</button>
+              <button class="tiananmen-attempt-button com" id="tiananmen-com-attempted" type="button" aria-pressed="false" title="Toggle C attempted this turn">C TRIED OFF</button>
+            </span>
+          </span>
+          <p class="tiananmen-track" id="tiananmen-track" aria-label="Tiananmen Square track"></p>
+        </aside>
+        <aside class="route-tracker" id="route-tracker" title="Baltic Way (left click -1, right click +1)">
+          <p class="route-track" id="route-track" aria-label="Baltic Way progress">
+            <span class="route-slot" data-index="0"></span>
+            <span class="route-slot" data-index="1"></span>
+            <span class="route-slot" data-index="2"></span>
+            <span class="route-slot" data-index="3"></span>
+            <span class="route-slot" data-index="4"></span>
+          </p>
+          <p class="route-value" id="route-value" style="display:none;">0</p>
+        </aside>
+      </div>
+      <section class="stage" id="map-root" aria-live="polite"></section>
+    </main>
+
+    <div class="dice-modal" id="dice-modal" hidden>
+      <section class="dice-dialog" role="dialog" aria-modal="true" aria-labelledby="dice-title">
+        <button class="dice-close-icon" id="dice-close-icon" type="button" aria-label="Close">×</button>
+        <h2 id="dice-title">Die Roll</h2>
+        <div class="dice-result" id="dice-result" aria-live="polite">1</div>
+        <div class="dice-actions">
+          <button id="dice-reroll" type="button">Roll Again</button>
+          <button id="dice-close" type="button">Close</button>
+        </div>
+      </section>
+    </div>
+
+    <pre id="debug-overlay" class="debug-overlay" aria-live="polite" style="display:none;"></pre>
+
+    <script type="module">
+      const MAP_URL = "assets/1989_compact_map.svg?v=20260718";
+      const SP_SETUP_TSV = "data/opening_support.tsv";
+      const SPACES_TSV = "data/spaces.tsv";
+      const EDGES_TSV = "data/edges.tsv";
+      const root = document.getElementById("map-root");
+      const status = document.getElementById("status");
+      const vpTracker = document.getElementById("vp-tracker");
+      const vpValue = document.getElementById("vp-value");
+      const phaseTracker = document.getElementById("phase-tracker");
+      const phaseValue = document.getElementById("phase-value");
+      const diceButton = document.getElementById("dice-game");
+      const languageButton = document.getElementById("language-game");
+      const saveButton = document.getElementById("save-game");
+      const loadButton = document.getElementById("load-game");
+      const resetButton = document.getElementById("reset-game");
+      const routeTracker = document.getElementById("route-tracker");
+      const routeValue = document.getElementById("route-value");
+      const routeSlots = document.querySelectorAll("#route-track .route-slot");
+      const tiananmenTracker = document.getElementById("tiananmen-tracker");
+      const tiananmenDemValue = document.getElementById("tiananmen-dem-value");
+      const tiananmenComValue = document.getElementById("tiananmen-com-value");
+      const tiananmenDemFailed = document.getElementById("tiananmen-dem-failed");
+      const tiananmenComFailed = document.getElementById("tiananmen-com-failed");
+      const tiananmenDemAttempted = document.getElementById("tiananmen-dem-attempted");
+      const tiananmenComAttempted = document.getElementById("tiananmen-com-attempted");
+      const tiananmenTrack = document.getElementById("tiananmen-track");
+      const diceModal = document.getElementById("dice-modal");
+      const diceTitle = document.getElementById("dice-title");
+      const diceResult = document.getElementById("dice-result");
+      const diceReroll = document.getElementById("dice-reroll");
+      const diceClose = document.getElementById("dice-close");
+      const diceCloseIcon = document.getElementById("dice-close-icon");
+      const debugOverlay = document.getElementById("debug-overlay");
+      const query = new URLSearchParams(window.location.search);
+      const DEBUG_MODE = query.get("debug") === "1" || query.get("debugMode") === "1";
+      const SMOKE_TEST = query.get("smokeTest") === "1" || query.get("smoke") === "1";
+      const SAVE_KEY = "ts1989CompactMapInteractiveState.v1";
+      const COOKIE_SAVE_KEY = "ts1989CompactMapState";
+      const LANGUAGE_KEY = "ts1989CompactMapLanguage";
+      document.addEventListener("contextmenu", (event) => {
+        event.preventDefault();
+      }, { capture: true });
+      const PARTY_STABILITY = {};
+      const PARTY_SP = {};
+      const SPACE_META = {};
+      const SPACE_ADJACENCY = new Map();
+      let interactiveNodes = [];
+      let autoSaveReady = false;
+      let currentLanguage = "en";
+      try {
+        currentLanguage = localStorage.getItem(LANGUAGE_KEY) === "zh" ? "zh" : "en";
+      } catch (error) {
+        currentLanguage = "en";
+      }
+      const DICE_PALETTES = [
+        { background: "#dbeafe", color: "#1d4ed8" },
+        { background: "#fee2e2", color: "#b91c1c" },
+        { background: "#dcfce7", color: "#166534" },
+        { background: "#fef3c7", color: "#92400e" },
+        { background: "#f3e8ff", color: "#7e22ce" },
+        { background: "#cffafe", color: "#155e75" },
+      ];
+      let lastDicePaletteIndex = -1;
+      const TIANANMEN_FAILURE = { D: false, C: false };
+      const TIANANMEN_ATTEMPTED = { D: false, C: false };
+      const COUNTRY_CODE = {
+        Germany: "GE",
+        Poland: "PO",
+        Czechoslovakia: "CZ",
+        Hungary: "HU",
+        Romania: "RO",
+        Bulgaria: "BU",
+      };
+      const COUNTRY_BY_CODE = Object.fromEntries(Object.entries(COUNTRY_CODE).map(([name, code]) => [code, name]));
+      const COUNTRY_SCORING = {
+        GE: { label: "East Germany", presence: 3, domination: 6, control: 9, power: 3 },
+        PO: { label: "Poland", presence: 3, domination: 6, control: 9, power: 3 },
+        CZ: { label: "Czechoslovakia", presence: 2, domination: 4, control: 6, power: 2 },
+        HU: { label: "Hungary", presence: 1, domination: 2, control: 4, power: 1 },
+        RO: { label: "Romania", presence: 2, domination: 4, control: 6, power: 2 },
+        BU: { label: "Bulgaria", presence: 1, domination: 2, control: 3, power: 1 },
+      };
+      const COUNTRY_ORDER = ["GE", "PO", "CZ", "HU", "RO", "BU"];
+      const TYPE_LEGEND = [
+        ["W", "Worker", "工人"],
+        ["F", "Farmer", "农民"],
+        ["C", "Church", "教会"],
+        ["S", "Student", "学生"],
+        ["B", "Bureaucrat", "官僚"],
+        ["I", "Intellectual", "知识分子"],
+        ["M", "Minority", "少数族裔"],
+        ["E", "Elite", "精英"],
+      ];
+      const TYPE_CODE_ZH = {
+        W: "工",
+        F: "农",
+        C: "教",
+        S: "学",
+        B: "官",
+        I: "知",
+        M: "少",
+        E: "精",
+      };
+      const I18N = {
+        en: {
+          pageTitle: "1989 Compact Map (Interactive)",
+          vp: "VP",
+          turn: "Turn",
+          roll: "Roll",
+          language: "中文",
+          save: "Save",
+          load: "Load",
+          reset: "Reset",
+          country: "Country",
+          scoring: "Scoring",
+          draw: "Draw",
+          power: "Power",
+          current: "Current",
+          countryTableLabel: "Country scoring and Power Struggle quick reference",
+          dieRoll: "Die Roll",
+          rollAgain: "Roll Again",
+          close: "Close",
+          stability: "Stability",
+          area: "area",
+          fail: "FAIL",
+          nextRoll: "NEXT ROLL",
+          tried: "TRIED",
+          on: "ON",
+          off: "OFF",
+          vpHint: "Left click -1, right click +1",
+          turnHint: "Left click -1, right click +1",
+          tiananmenHint: "Top numbers adjust D; bottom numbers adjust C. Left click +1, right click -1",
+          failHint: "Toggle last attempt failed",
+          triedHint: "Toggle attempted this turn",
+          targetHint: "left click +1, right click -1",
+          loadConfirm: "Load saved game state? Current board state will be replaced.",
+          loadCanceled: "Load canceled.",
+          noSavePrompt: "No saved state was found. Paste save data JSON here:",
+          noSave: "Load canceled: no save data.",
+          loadError: "Could not load save data",
+          resetConfirm: "Reset the game to setup? Current SP, VP, turn, and Tiananmen progress will be restored.",
+          resetDone: "Game reset to setup.",
+          saveUnavailable: "Local storage is unavailable. Copy this save data:",
+          unknownTime: "unknown time",
+          restorePower: "Left click: restore C*0",
+          topplePower: "Left click: topple; right click: adjust * count",
+        },
+        zh: {
+          pageTitle: "1989 紧凑电子地图",
+          vp: "VP",
+          turn: "回合",
+          roll: "投骰",
+          language: "English",
+          save: "保存",
+          load: "读取",
+          reset: "重置",
+          country: "国家",
+          scoring: "计分",
+          draw: "抓牌",
+          power: "掌权",
+          current: "当前",
+          countryTableLabel: "国家计分与权力斗争速查",
+          dieRoll: "投骰结果",
+          rollAgain: "再投一次",
+          close: "关闭",
+          stability: "稳定度",
+          area: "区域",
+          fail: "失败",
+          nextRoll: "下次投骰",
+          tried: "已尝试",
+          on: "开",
+          off: "关",
+          vpHint: "左键 -1，右键 +1",
+          turnHint: "左键 -1，右键 +1",
+          tiananmenHint: "上方数字调整 D，下方数字调整 C；左键前进，右键后退",
+          failHint: "切换上次尝试失败标记",
+          triedHint: "切换本回合已尝试标记",
+          targetHint: "左键前进，右键后退",
+          loadConfirm: "读取存档？当前盘面将被覆盖。",
+          loadCanceled: "已取消读取。",
+          noSavePrompt: "未找到存档，请粘贴存档 JSON：",
+          noSave: "没有可读取的存档。",
+          loadError: "无法读取存档",
+          resetConfirm: "重置到开局？当前 SP、VP、回合与天安门进度将被恢复。",
+          resetDone: "游戏已重置到开局。",
+          saveUnavailable: "本地存储不可用，请复制以下存档数据：",
+          unknownTime: "未知时间",
+          restorePower: "左键：恢复 C*0",
+          topplePower: "左键：下台；右键：调整 * 数量",
+        },
+      };
+      const COUNTRY_LABELS = {
+        en: { GE: "E.Germany", PO: "Poland", CZ: "Czech.", HU: "Hungary", RO: "Romania", BU: "Bulgaria" },
+        zh: { GE: "东德", PO: "波兰", CZ: "捷克", HU: "匈牙利", RO: "罗马尼亚", BU: "保加利亚" },
+      };
+      const SPACE_LABEL_ZH = {
+        "GE|Schwerin": ["什未林"],
+        "GE|Rostock": ["罗斯托克"],
+        "GE|Berlin": ["柏林"],
+        "GE|Walter Ulbricht Academy": ["瓦尔特·乌布利希", "学院"],
+        "GE|German Writers": ["东德作家"],
+        "GE|Lutheran Church": ["路德宗教会"],
+        "GE|Halle": ["哈雷"],
+        "GE|Magdeburg": ["马格德堡"],
+        "GE|Leipzig": ["莱比锡"],
+        "GE|Erfurt": ["埃尔福特"],
+        "GE|Karl-Marx-Stadt": ["卡尔·马克思城"],
+        "GE|Dresden": ["德累斯顿"],
+        "PO|Szczecin": ["什切青"],
+        "PO|Poznan": ["波兹南"],
+        "PO|Wroclaw": ["弗罗茨瓦夫"],
+        "PO|Catholic Church": ["波兰天主教会"],
+        "PO|Bydgoszcz": ["比得哥什"],
+        "PO|Katowice": ["卡托维兹"],
+        "PO|Gdansk": ["格但斯克"],
+        "PO|Warszawa": ["华沙"],
+        "PO|Lodz": ["罗兹"],
+        "PO|Krakow": ["克拉科夫"],
+        "PO|Jagiellonian University": ["雅盖隆大学"],
+        "PO|Polish Writers": ["波兰作家"],
+        "PO|Lublin": ["卢布林"],
+        "PO|Bialystok": ["比亚韦斯托克"],
+        "CZ|Plzen": ["比尔森"],
+        "CZ|Ceske Budejovice": ["捷克布杰约维采"],
+        "CZ|Praha": ["布拉格"],
+        "CZ|Charles University": ["查理大学"],
+        "CZ|Czech Writers": ["捷克作家"],
+        "CZ|Brno": ["布尔诺"],
+        "CZ|Ostrava": ["俄斯特拉发"],
+        "CZ|Bratislava": ["布拉迪斯拉发"],
+        "CZ|Catholic Church": ["捷克天主教会"],
+        "CZ|Presov": ["普雷绍夫"],
+        "CZ|Kosice": ["科希策"],
+        "HU|Catholic Church": ["匈牙利天主教会"],
+        "HU|Szombathely": ["松博特海伊"],
+        "HU|Hungarian Writers": ["匈牙利作家"],
+        "HU|Gyor": ["杰尔"],
+        "HU|Szekesfehervar": ["塞克什白堡"],
+        "HU|Pecs": ["佩奇"],
+        "HU|Eotvos Lorand University": ["厄特沃什·罗兰", "大学"],
+        "HU|Tatabanya": ["陶陶巴尼奥"],
+        "HU|Budapest": ["布达佩斯"],
+        "HU|Szeged": ["塞格德"],
+        "HU|Miskolc": ["米什科尔茨"],
+        "HU|Debrecen": ["德布勒森"],
+        "RO|Timisoara": ["蒂米什瓦拉"],
+        "RO|Cluj-Napoca": ["克卢日-纳波卡"],
+        "RO|Babes-Boylai University": ["巴贝什-博尧伊", "大学"],
+        "RO|Romanian Writers": ["罗马尼亚作家"],
+        "RO|Craiova": ["克拉约瓦"],
+        "RO|Orthodox Church": ["罗马尼亚东正教会"],
+        "RO|Harghita/Covasna": ["哈尔吉塔/", "科瓦斯纳"],
+        "RO|Targu Mures": ["特尔古穆列什"],
+        "RO|Iasi": ["雅西"],
+        "RO|Brasov": ["布拉索夫"],
+        "RO|Ploiesti": ["普洛耶什蒂"],
+        "RO|Bucuresti": ["布加勒斯特"],
+        "RO|Galati": ["加拉茨"],
+        "RO|Constanta": ["康斯坦察"],
+        "BU|Sofia University": ["索非亚大学"],
+        "BU|Bulgarian Writers": ["保加利亚作家"],
+        "BU|Pleven": ["普列文"],
+        "BU|Sofia": ["索非亚"],
+        "BU|Plovdiv": ["普罗夫迪夫"],
+        "BU|Orthodox Church": ["保加利亚东正教会"],
+        "BU|Stara Zagora": ["旧扎戈拉"],
+        "BU|Sliven": ["斯利文"],
+        "BU|Ruse": ["鲁塞"],
+        "BU|Razgrad": ["拉兹格勒"],
+        "BU|Burgas": ["布尔加斯"],
+        "BU|Varna": ["瓦尔纳"],
+      };
+      const LEADER_BY_GROUP = {
+        w: "W",
+        c: "C",
+        i: "I",
+        e: "E",
+        u: "S",
+      };
+      const MAP_INFO_HOSTS = {
+        country: {},
+        countryTable: null,
+        typeLegend: null,
+      };
+      const COUNTRY_POWER_STATE = Object.fromEntries(COUNTRY_ORDER.map((code) => [code, { side: "C", count: 0 }]));
+      const NODE_NAME_ALIAS_BY_COUNTRY = {
+        "Warszawa|PO": "Warsaw",
+        "Cluj-Napoca|RO": "Cluj",
+        "Catholic Church|PO": "Polish Catholic Church",
+        "Catholic Church|CZ": "Czech Catholic Church",
+        "Catholic Church|HU": "Hungarian Catholic Church",
+        "Orthodox Church|RO": "Romanian Orthodox Church",
+        "Orthodox Church|BU": "Bulgarian Orthodox Church",
+        "Babes-Boylai University|RO": "Babes-Boylai U.",
+        "Harghita/Covasna|RO": "Harghita Covasna",
+      };
+      // Tiananmen track: rules 6.3.1-6.3.7 plus decompiled bc/bd track labels and target totals.
+      const TIANANMEN_STEPS = [
+        { dem: "Start", com: "Start", demTarget: 0, comTarget: 0, effect: "No effect", effectZh: "无效果" },
+        { dem: "Reformer Memorialized", com: "Reformer Discredited", demTarget: 5, comTarget: 6, effect: "Tiananmen +1", effectZh: "天安门检定 +1" },
+        { dem: "Students Rally", com: "Students Dispersed", demTarget: 5, comTarget: 6, effect: "1 Ops card as 2 Ops", effectZh: "1 Ops 牌视为 2 Ops" },
+        { dem: "Foreign News Coverage", com: "People's Daily Denounces Protestors", demTarget: 6, comTarget: 7, effect: "Draw 3, keep 1 now", effectZh: "立即抽 3 留 1" },
+        { dem: "Student Hunger Strike", com: "Students Arrested", demTarget: 6, comTarget: 7, effect: "Remove 2 opponent SP now", effectZh: "立即移除对手 2 SP" },
+        { dem: "Goddess of Democracy", com: "Structure Removed", demTarget: 7, comTarget: 8, effect: "Swap 1 card at turn start", effectZh: "回合开始可换 1 张牌" },
+        { dem: "Local PLA Support", com: "Rural Divisions Summoned to Beijing", demTarget: 8, comTarget: 7, effect: "Free 2 Ops check at turn end", effectZh: "回合结束免费 2 Ops 检定" },
+        { dem: "Square Barricaded", com: "Protesters Massacred", demTarget: 9, comTarget: 6, effect: "Once/turn: no opponent event", effectZh: "每回合一次不触发对手事件" },
+        { dem: "Political Pluralism", com: "Most Favored Trade Status Awarded", demTarget: 10, comTarget: 5, effect: "Once/turn: Ops + event", effectZh: "每回合一次 Ops + 事件" },
+      ];
+
+      function tr(key) {
+        return I18N[currentLanguage]?.[key] ?? I18N.en[key] ?? key;
+      }
+
+      function getTiananmenEffect(step) {
+        return currentLanguage === "zh" ? step.effectZh : step.effect;
+      }
+
+      function parseTsv(url) {
+        return fetch(url)
+          .then((res) => {
+            if (!res.ok) {
+              throw new Error(`HTTP ${res.status}`);
+            }
+            return res.text();
+          })
+          .then((raw) => {
+            const rows = raw.trim().split(/\r?\n/);
+            if (!rows.length) {
+              return [];
+            }
+            const delimiter = rows[0].includes("\t") ? "\t" : ",";
+            return rows.map((line) => line.split(delimiter).map((s) => s.trim()));
+          });
+      }
+
+      async function loadGameData() {
+        const [setupRows, spaceRows, edgeRows] = await Promise.all([
+          parseTsv(SP_SETUP_TSV),
+          parseTsv(SPACES_TSV),
+          parseTsv(EDGES_TSV),
+        ]);
+
+        setupRows.slice(1).forEach((row) => {
+          const [name, dem, com] = row;
+          if (!name) {
+            return;
+          }
+          PARTY_SP[name] = {
+            dem: Math.max(0, Number.parseInt(dem || "0", 10) || 0),
+            com: Math.max(0, Number.parseInt(com || "0", 10) || 0),
+          };
+        });
+
+        spaceRows.slice(1).forEach((row) => {
+          const [, name, , country, stability, battleground, group] = row;
+          if (!name) {
+            return;
+          }
+          const stabilityValue = Number.parseInt(stability || "0", 10) || 0;
+          PARTY_STABILITY[name] = stabilityValue;
+          SPACE_META[name] = {
+            country,
+            stability: stabilityValue,
+            battleground: battleground === "1",
+            group,
+          };
+        });
+
+        edgeRows.slice(1).forEach((row) => {
+          const [a, b] = row;
+          if (!a || !b) {
+            return;
+          }
+          if (!SPACE_ADJACENCY.has(a)) SPACE_ADJACENCY.set(a, new Set());
+          if (!SPACE_ADJACENCY.has(b)) SPACE_ADJACENCY.set(b, new Set());
+          SPACE_ADJACENCY.get(a).add(b);
+          SPACE_ADJACENCY.get(b).add(a);
+        });
+      }
+
+      function setStatus(text) {
+        if (status) {
+          status.textContent = text;
+        }
+        if (DEBUG_MODE && debugOverlay) {
+          const now = new Date().toLocaleTimeString("zh-CN", { hour12: false });
+          const lines = String(text || "").split("\n");
+          const compact = lines.length > 1 ? `${lines[0]} ...` : String(text || "");
+          debugOverlay.textContent = `${now} ${compact}\n${debugOverlay.textContent || ""}`.trim().slice(0, 5000);
+          debugOverlay.style.display = "block";
+        }
+      }
+
+      function logDebugLine(text) {
+        if (!debugOverlay) {
+          return;
+        }
+        debugOverlay.style.display = "block";
+        const now = new Date().toLocaleTimeString("zh-CN", { hour12: false });
+        debugOverlay.textContent = `${now} ${text}\n${debugOverlay.textContent || ""}`.trim().slice(0, 5000);
+      }
+
+      function toNumber(text) {
+        const raw = String(text).trim();
+        const n = Number.parseInt(raw, 10);
+        return Number.isFinite(n) ? n : 0;
+      }
+
+      function resolveCanonicalNodeName(spaceName, countryName) {
+        const code = COUNTRY_CODE[countryName];
+        if (code) {
+          const alias = NODE_NAME_ALIAS_BY_COUNTRY[`${spaceName}|${code}`];
+          if (alias) {
+            return alias;
+          }
+        }
+        return spaceName;
+      }
+
+      function getPartyForNode(spaceName, countryName) {
+        const canonicalSpaceName = resolveCanonicalNodeName(spaceName, countryName);
+        const direct = PARTY_SP[canonicalSpaceName];
+        if (direct) {
+          return direct;
+        }
+        return null;
+      }
+
+      function getStabilityForNode(spaceName, countryName) {
+        const canonicalSpaceName = resolveCanonicalNodeName(spaceName, countryName);
+        const direct = PARTY_STABILITY[canonicalSpaceName];
+        if (Number.isFinite(direct)) {
+          return direct;
+        }
+        return 0;
+      }
+
+      function getSpaceMetaForNode(spaceName, countryName) {
+        const canonicalSpaceName = resolveCanonicalNodeName(spaceName, countryName);
+        return SPACE_META[canonicalSpaceName] || null;
+      }
+
+      function getTrackerValue(element, fallback = 0) {
+        return Number.parseInt(element?.dataset.value || element?.textContent || String(fallback), 10) || fallback;
+      }
+
+      function setTrackerButton(element, label, value) {
+        if (!element) {
+          return;
+        }
+        element.dataset.value = String(value);
+        const valueText = element.querySelector("strong");
+        if (valueText) {
+          const labelNode = [...element.childNodes].find((node) => node.nodeType === 3);
+          if (labelNode) {
+            labelNode.textContent = `${label}: `;
+          }
+          valueText.textContent = String(value);
+          return;
+        }
+        element.textContent = `${label}: ${value}`;
+      }
+
+      function applyVpClass(value) {
+        if (!vpValue) {
+          return;
+        }
+        vpValue.classList.remove("vp-positive", "vp-negative", "vp-neutral");
+        vpValue.classList.add(value > 0 ? "vp-positive" : value < 0 ? "vp-negative" : "vp-neutral");
+      }
+
+      function renderTypeLegend() {
+        const host = MAP_INFO_HOSTS.typeLegend;
+        if (!host) {
+          return;
+        }
+        const hidden = currentLanguage === "zh";
+        host.hidden = hidden;
+        host.style.display = hidden ? "none" : "";
+        if (host.parentElement) {
+          host.parentElement.style.display = "";
+          host.parentElement.setAttribute("visibility", hidden ? "hidden" : "visible");
+        }
+        host.innerHTML = currentLanguage === "zh"
+          ? ""
+          : TYPE_LEGEND.map((entry) => `<span><strong>${entry[0]}</strong> = ${entry[1]}</span>`).join("");
+      }
+
+      function getOriginalNodeNameLines(node) {
+        try {
+          const lines = JSON.parse(node.dataset.originalNameLines || "[]");
+          if (Array.isArray(lines) && lines.length) {
+            return lines;
+          }
+        } catch (error) {
+          // Fall through to the stable English space name.
+        }
+        return [node.dataset.space || ""];
+      }
+
+      function getNodeDisplayLines(node) {
+        if (currentLanguage !== "zh") {
+          return getOriginalNodeNameLines(node);
+        }
+        const key = `${node.dataset.countryCode || ""}|${node.dataset.space || ""}`;
+        return SPACE_LABEL_ZH[key] || getOriginalNodeNameLines(node);
+      }
+
+      function normalizeCategoryCode(code) {
+        return ({ Bu: "B", St: "S", Ch: "C" })[(code || "").trim()] || (code || "").trim();
+      }
+
+      function getDisplayCategoryCode(code) {
+        const normalized = normalizeCategoryCode(code);
+        return currentLanguage === "zh" ? (TYPE_CODE_ZH[normalized] || normalized) : normalized;
+      }
+
+      function getBalancedNameSplit(name) {
+        const value = (name || "").trim();
+        if (!value) {
+          return null;
+        }
+        if (currentLanguage === "zh") {
+          const chars = [...value];
+          if (chars.length < 4) {
+            return null;
+          }
+          const center = chars.length / 2;
+          const punctuation = new Set(["·", "-", "/", "（", "）", "(", ")"]);
+          let bestIndex = -1;
+          let bestPenalty = Number.POSITIVE_INFINITY;
+          for (let i = 1; i < chars.length; i += 1) {
+            const punctuationPenalty = punctuation.has(chars[i - 1]) || punctuation.has(chars[i]) ? 2 : 0;
+            const penalty = Math.abs(i - center) + punctuationPenalty;
+            if (penalty < bestPenalty) {
+              bestPenalty = penalty;
+              bestIndex = i;
+            }
+          }
+          return bestIndex > 0 ? [chars.slice(0, bestIndex).join(""), chars.slice(bestIndex).join("")] : null;
+        }
+
+        const candidates = [];
+        for (let i = 1; i < value.length - 1; i += 1) {
+          if (value[i] === " ") {
+            candidates.push([value.slice(0, i).trim(), value.slice(i + 1).trim()]);
+          } else if (value[i] === "-") {
+            candidates.push([value.slice(0, i + 1).trim(), value.slice(i + 1).trim()]);
+          }
+        }
+        return candidates
+          .filter((parts) => parts[0] && parts[1])
+          .sort((a, b) => Math.abs(a[0].length - a[1].length) - Math.abs(b[0].length - b[1].length))[0] || null;
+      }
+
+      function measureTextFitSize(textEl, text, width, height) {
+        if (!textEl || width <= 0 || height <= 0) {
+          return 0;
+        }
+        const previousText = textEl.textContent;
+        const previousSize = textEl.style.fontSize;
+        textEl.textContent = text;
+        let lo = 3;
+        let hi = 64;
+        let best = 2;
+        for (let step = 0; step < 14; step += 1) {
+          const mid = Math.floor((lo + hi) / 2);
+          textEl.style.fontSize = `${mid}px`;
+          const fits = textEl.getComputedTextLength() <= width && Math.max(2, textEl.getBBox().height) <= height;
+          if (fits) {
+            best = mid;
+            lo = mid + 1;
+          } else {
+            hi = mid - 1;
+          }
+        }
+        textEl.textContent = previousText;
+        textEl.style.fontSize = previousSize;
+        return best;
+      }
+
+      function chooseNameLines(node, requestedLines, outer) {
+        const cleaned = (requestedLines || []).map((line) => String(line || "").trim()).filter(Boolean);
+        if (!cleaned.length || !outer) {
+          return cleaned.length ? cleaned : [""];
+        }
+        const probe = node.querySelector("text.space-label");
+        if (!probe) {
+          return cleaned;
+        }
+        const joined = currentLanguage === "zh" ? cleaned.join("") : (node.dataset.space || cleaned.join(" "));
+        const candidates = [[joined], cleaned.slice(0, 2)];
+        const balanced = getBalancedNameSplit(joined);
+        if (balanced) {
+          candidates.push(balanced);
+        }
+        const unique = candidates.filter((candidate, index, all) => {
+          const key = JSON.stringify(candidate);
+          return candidate.every(Boolean) && all.findIndex((item) => JSON.stringify(item) === key) === index;
+        });
+        const nodeX = getRectValue(outer, "x");
+        const nameLeft = nodeX + NODE_TEMPLATE.categoryWidth + 3;
+        const nameRight = nodeX + NODE_TEMPLATE.width - NODE_TEMPLATE.stabilityWidth - 5;
+        const availableWidth = Math.max(4, nameRight - nameLeft);
+        const availableHeight = NODE_TEMPLATE.topRowHeight - 2;
+        return unique
+          .map((lines) => {
+            const lineHeight = availableHeight / Math.max(1, lines.length);
+            const fontSize = Math.min(...lines.map((line) => measureTextFitSize(probe, line, availableWidth, lineHeight)));
+            return { lines, fontSize };
+          })
+          .sort((a, b) => b.fontSize - a.fontSize || a.lines.length - b.lines.length)[0].lines;
+      }
+
+      function renderNodeNames() {
+        interactiveNodes.forEach((node) => {
+          const outer = [...node.querySelectorAll("rect")].find((rect) => {
+            const width = getRectValue(rect, "width");
+            const height = getRectValue(rect, "height");
+            return Math.abs(width - NODE_TEMPLATE.width) < 0.5 && Math.abs(height - NODE_TEMPLATE.height) < 0.5;
+          });
+          if (!outer) {
+            return;
+          }
+          const requestedLines = getNodeDisplayLines(node);
+          const key = `${node.dataset.countryCode || ""}|${node.dataset.space || ""}`;
+          node.dataset.displayName = currentLanguage === "zh" ? requestedLines.join("") : (node.dataset.space || requestedLines.join(" "));
+          node.dataset.displayLanguage = currentLanguage;
+          node.dataset.translationMissing = currentLanguage === "zh" && !SPACE_LABEL_ZH[key] ? "1" : "0";
+          ensureNameTexts(node, requestedLines, outer, node.dataset.battleground === "1");
+          const lines = chooseNameLines(node, requestedLines, outer);
+          ensureNameTexts(node, lines, outer, node.dataset.battleground === "1");
+          ensureChipTypeText(node, node.dataset.categoryCode || node.querySelector("text.chip-type")?.textContent || "");
+          layoutNodeTopTexts(node, {
+            outer,
+            typeText: node.querySelector("text.chip-type"),
+          }, { nameLines: lines });
+          node.querySelectorAll("[data-slot-side]").forEach((slot) => {
+            slot.setAttribute("aria-label", `${node.dataset.displayName} ${slot.dataset.slotSide} ${tr("area")}`);
+          });
+        });
+      }
+
+      function applyLanguage({ persist = true } = {}) {
+        document.documentElement.lang = currentLanguage === "zh" ? "zh-CN" : "en";
+        document.title = tr("pageTitle");
+        setTrackerButton(vpValue, tr("vp"), getTrackerValue(vpValue, 0));
+        setTrackerButton(phaseValue, tr("turn"), getTrackerValue(phaseValue, 1));
+        if (diceButton) diceButton.textContent = tr("roll");
+        if (languageButton) languageButton.textContent = tr("language");
+        if (saveButton) saveButton.textContent = tr("save");
+        if (loadButton) loadButton.textContent = tr("load");
+        if (resetButton) resetButton.textContent = tr("reset");
+        if (diceTitle) diceTitle.textContent = tr("dieRoll");
+        if (diceReroll) diceReroll.textContent = tr("rollAgain");
+        if (diceClose) diceClose.textContent = tr("close");
+        if (diceCloseIcon) diceCloseIcon.setAttribute("aria-label", tr("close"));
+        if (vpTracker) vpTracker.title = tr("vpHint");
+        if (phaseTracker) phaseTracker.title = tr("turnHint");
+        if (tiananmenTracker) tiananmenTracker.title = tr("tiananmenHint");
+        if (tiananmenDemFailed) tiananmenDemFailed.title = `D: ${tr("failHint")}`;
+        if (tiananmenComFailed) tiananmenComFailed.title = `C: ${tr("failHint")}`;
+        if (tiananmenDemAttempted) tiananmenDemAttempted.title = `D: ${tr("triedHint")}`;
+        if (tiananmenComAttempted) tiananmenComAttempted.title = `C: ${tr("triedHint")}`;
+        renderTypeLegend();
+        renderTiananmenTrack();
+        refreshCountryPanels();
+        renderNodeNames();
+        interactiveNodes.forEach(updateNodeTooltip);
+        try {
+          localStorage.setItem(LANGUAGE_KEY, currentLanguage);
+        } catch (error) {
+          // Game-state persistence remains available through the cookie fallback.
+        }
+        if (persist) {
+          persistGameState();
+        }
+      }
+
+      function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "zh" : "en";
+        applyLanguage();
+      }
+
+      function rollDie() {
+        const random = new Uint32Array(2);
+        let result;
+        let colorRandom;
+        if (window.crypto?.getRandomValues) {
+          window.crypto.getRandomValues(random);
+          result = (random[0] % 6) + 1;
+          colorRandom = random[1];
+        } else {
+          result = Math.floor(Math.random() * 6) + 1;
+          colorRandom = Math.floor(Math.random() * 0x100000000);
+        }
+        if (diceResult) {
+          let paletteIndex;
+          if (lastDicePaletteIndex < 0) {
+            paletteIndex = colorRandom % DICE_PALETTES.length;
+          } else {
+            paletteIndex = colorRandom % (DICE_PALETTES.length - 1);
+            if (paletteIndex >= lastDicePaletteIndex) {
+              paletteIndex += 1;
+            }
+          }
+          lastDicePaletteIndex = paletteIndex;
+          const palette = DICE_PALETTES[paletteIndex];
+          diceResult.textContent = String(result);
+          diceResult.style.backgroundColor = palette.background;
+          diceResult.style.color = palette.color;
+          diceResult.style.borderColor = palette.color;
+          diceResult.dataset.palette = String(paletteIndex);
+        }
+        setStatus(currentLanguage === "zh" ? `投骰结果：${result}` : `Die roll: ${result}`);
+        return result;
+      }
+
+      function openDiceModal() {
+        if (!diceModal) {
+          return;
+        }
+        rollDie();
+        diceModal.hidden = false;
+        diceReroll?.focus();
+      }
+
+      function closeDiceModal() {
+        if (!diceModal) {
+          return;
+        }
+        diceModal.hidden = true;
+        diceButton?.focus();
+      }
+
+      function updateVp(delta) {
+        const current = getTrackerValue(vpValue, 0);
+        const next = current + delta;
+        setTrackerButton(vpValue, tr("vp"), next);
+        applyVpClass(next);
+        persistGameState();
+        setStatus(`VP tracker: ${next}`);
+      }
+
+      function getPhaseClass(value) {
+        if (value <= 3) return "phase-early";
+        if (value <= 7) return "phase-mid";
+        return "phase-late";
+      }
+
+      function updatePhase(delta) {
+        const current = getTrackerValue(phaseValue, 1);
+        const next = Math.min(10, Math.max(1, current + delta));
+        const nextClass = getPhaseClass(next);
+        if (next !== current) {
+          TIANANMEN_ATTEMPTED.D = false;
+          TIANANMEN_ATTEMPTED.C = false;
+          renderTiananmenAttemptedMarkers();
+        }
+        if (phaseValue) {
+          phaseValue.classList.remove("phase-early", "phase-mid", "phase-late");
+          phaseValue.classList.add(nextClass);
+          setTrackerButton(phaseValue, tr("turn"), next);
+        }
+        persistGameState();
+        setStatus(`Turn: ${next} (1-3 blue, 4-7 yellow, 8-10 red)`);
+      }
+
+      function renderRoute(count) {
+        routeSlots.forEach((slot, index) => {
+          slot.classList.toggle("filled", index < count);
+        });
+      }
+
+      function getTiananmenPositions() {
+        return {
+          dem: Number.parseInt(tiananmenDemValue?.textContent || "0", 10) || 0,
+          com: Number.parseInt(tiananmenComValue?.textContent || "0", 10) || 0,
+        };
+      }
+
+      function getTiananmenEffectClass(index, dem, com) {
+        if (index === 0 || (dem >= index && com >= index)) {
+          return "effect-inactive";
+        }
+        if (dem >= index) {
+          return "effect-dem";
+        }
+        if (com >= index) {
+          return "effect-com";
+        }
+        return "";
+      }
+
+      function bindTiananmenTarget(element, side) {
+        element.addEventListener("click", (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          updateTiananmen(side, +1);
+        });
+        element.addEventListener("contextmenu", (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          updateTiananmen(side, -1);
+        });
+      }
+
+      function renderTiananmenFailureMarkers() {
+        [
+          ["D", tiananmenDemFailed],
+          ["C", tiananmenComFailed],
+        ].forEach(([side, button]) => {
+          if (!button) {
+            return;
+          }
+          const active = Boolean(TIANANMEN_FAILURE[side]);
+          button.classList.toggle("active", active);
+          button.setAttribute("aria-pressed", String(active));
+          button.textContent = active ? `${side}\n${tr("nextRoll")}\n+1` : `${side}\n${tr("fail")}`;
+        });
+      }
+
+      function renderTiananmenAttemptedMarkers() {
+        [
+          ["D", tiananmenDemAttempted],
+          ["C", tiananmenComAttempted],
+        ].forEach(([side, button]) => {
+          if (!button) {
+            return;
+          }
+          const active = Boolean(TIANANMEN_ATTEMPTED[side]);
+          button.classList.toggle("active", active);
+          button.setAttribute("aria-pressed", String(active));
+          button.textContent = `${side}\n${tr("tried")}\n${active ? tr("on") : tr("off")}`;
+        });
+      }
+
+      function toggleTiananmenFailure(side) {
+        if (side !== "D" && side !== "C") {
+          return;
+        }
+        TIANANMEN_FAILURE[side] = !TIANANMEN_FAILURE[side];
+        if (TIANANMEN_FAILURE[side]) {
+          TIANANMEN_ATTEMPTED[side] = true;
+        }
+        renderTiananmenFailureMarkers();
+        renderTiananmenAttemptedMarkers();
+        persistGameState();
+        setStatus(`Tiananmen ${side} last attempt: ${TIANANMEN_FAILURE[side] ? "failed" : "cleared"}`);
+      }
+
+      function toggleTiananmenAttempted(side) {
+        if (side !== "D" && side !== "C") {
+          return;
+        }
+        TIANANMEN_ATTEMPTED[side] = !TIANANMEN_ATTEMPTED[side];
+        renderTiananmenAttemptedMarkers();
+        persistGameState();
+        setStatus(`Tiananmen ${side} attempted this turn: ${TIANANMEN_ATTEMPTED[side] ? "on" : "off"}`);
+      }
+
+      function renderTiananmenTrack() {
+        if (!tiananmenTrack) {
+          return;
+        }
+        const { dem, com } = getTiananmenPositions();
+        tiananmenTrack.textContent = "";
+        TIANANMEN_STEPS.forEach((step, index) => {
+          const slot = document.createElement("span");
+          slot.className = "tiananmen-slot";
+          slot.dataset.index = String(index);
+          const effectClass = getTiananmenEffectClass(index, dem, com);
+          if (effectClass) {
+            slot.classList.add(effectClass);
+          }
+          if (index <= dem) {
+            slot.classList.add("reached-dem");
+          }
+          if (index <= com) {
+            slot.classList.add("reached-com");
+          }
+          slot.title = [
+            `Space ${index}`,
+            `D ${step.demTarget || "-"}: ${step.dem}`,
+            `C ${step.comTarget || "-"}: ${step.com}`,
+            getTiananmenEffect(step),
+          ].join("\n");
+
+          const demTarget = document.createElement("span");
+          demTarget.className = `tiananmen-target dem${index === dem ? " current-dem" : ""}`;
+          demTarget.textContent = String(step.demTarget);
+          demTarget.title = `D: ${tr("targetHint")}`;
+          bindTiananmenTarget(demTarget, "D");
+
+          const main = document.createElement("span");
+          main.className = "track-main";
+
+          const effect = document.createElement("span");
+          effect.className = "effect";
+          effect.textContent = getTiananmenEffect(step);
+          main.appendChild(effect);
+
+          const comTarget = document.createElement("span");
+          comTarget.className = `tiananmen-target com${index === com ? " current-com" : ""}`;
+          comTarget.textContent = String(step.comTarget);
+          comTarget.title = `C: ${tr("targetHint")}`;
+          bindTiananmenTarget(comTarget, "C");
+
+          slot.appendChild(demTarget);
+          slot.appendChild(main);
+          slot.appendChild(comTarget);
+          tiananmenTrack.appendChild(slot);
+        });
+        renderTiananmenFailureMarkers();
+        renderTiananmenAttemptedMarkers();
+      }
+
+      function updateRoute(delta) {
+        const current = Number.parseInt(routeValue?.textContent || "0", 10) || 0;
+        const next = Math.min(5, Math.max(0, current + delta));
+        routeValue.textContent = String(next);
+        renderRoute(next);
+        persistGameState();
+        setStatus(`Baltic Way: ${next} / 5`);
+      }
+
+      function updateTiananmen(side, delta) {
+        const valueEl = side === "D" ? tiananmenDemValue : tiananmenComValue;
+        if (!valueEl) {
+          return;
+        }
+        const current = Number.parseInt(valueEl.textContent || "0", 10) || 0;
+        const next = Math.min(TIANANMEN_STEPS.length - 1, Math.max(0, current + delta));
+        if (next > current) {
+          TIANANMEN_FAILURE[side] = false;
+          TIANANMEN_ATTEMPTED[side] = true;
+        }
+        valueEl.textContent = String(next);
+        renderTiananmenTrack();
+        const currentStep = TIANANMEN_STEPS[next] || TIANANMEN_STEPS[0];
+        const label = side === "D" ? currentStep.dem : currentStep.com;
+        const target = side === "D" ? currentStep.demTarget : currentStep.comTarget;
+        persistGameState();
+        setStatus(`Tiananmen ${side}: ${next} (${label}, target ${target || "-"})`);
+      }
+
+      function inferInitialSide(node) {
+        const dem = Number.parseInt(node.dataset.dem || "0", 10) || 0;
+        const com = Number.parseInt(node.dataset.com || "0", 10) || 0;
+        if (com > dem) {
+          return "C";
+        }
+        return "D";
+      }
+
+      const SVG_NS = "http://www.w3.org/2000/svg";
+      const COLOR_D = "#1d4ed8";
+      const COLOR_C = "#b91c1c";
+      const NODE_TEMPLATE = {
+        width: 172,
+        height: 96,
+        slotWidth: 86,
+        slotHeight: 62,
+        topRowHeight: 29,
+        categoryWidth: 24,
+        stabilityWidth: 14,
+      };
+      const MAP_CONTROL_LAYOUT = {
+        top: { x: 1540, y: 140, width: 840, height: 116 },
+        countryTable: { x: 1540, y: 264, width: 840, height: 432 },
+        tiananmen: { x: 1040, y: 1320, width: 1350, height: 205 },
+        typeLegend: { x: 1040, y: 1538, width: 1350, height: 132 },
+      };
+
+      function createMapControlHost(svgEl, id, box, className) {
+        svgEl.querySelector(`#${id}`)?.remove();
+        const foreignObject = document.createElementNS(SVG_NS, "foreignObject");
+        foreignObject.id = id;
+        foreignObject.classList.add("map-control-fo");
+        foreignObject.setAttribute("x", String(box.x));
+        foreignObject.setAttribute("y", String(box.y));
+        foreignObject.setAttribute("width", String(box.width));
+        foreignObject.setAttribute("height", String(box.height));
+        foreignObject.setAttribute("overflow", "visible");
+        if ((className.includes("map-info-panel") && !className.includes("country-table-panel")) || className.includes("country-info-panel")) {
+          foreignObject.style.pointerEvents = "none";
+        }
+
+        const host = document.createElement("div");
+        host.className = `map-control-cluster ${className}`;
+        foreignObject.appendChild(host);
+        svgEl.appendChild(foreignObject);
+        return host;
+      }
+
+      function mountMapTrackers(svgEl) {
+        const topHost = createMapControlHost(svgEl, "map-top-control-host", MAP_CONTROL_LAYOUT.top, "map-top-controls");
+        [vpTracker, phaseTracker, diceButton, languageButton, saveButton, loadButton, resetButton].forEach((tracker) => {
+          if (tracker) {
+            topHost.appendChild(tracker);
+          }
+        });
+
+        const tiananmenHost = createMapControlHost(svgEl, "map-tiananmen-control-host", MAP_CONTROL_LAYOUT.tiananmen, "map-tiananmen");
+        if (tiananmenTracker) {
+          tiananmenHost.appendChild(tiananmenTracker);
+        }
+      }
+
+      function mountStaticInfoPanels(svgEl) {
+        MAP_INFO_HOSTS.typeLegend = createMapControlHost(svgEl, "map-type-legend-host", MAP_CONTROL_LAYOUT.typeLegend, "map-info-panel type-legend-panel");
+        renderTypeLegend();
+      }
+
+      function mountCountryInfoPanels(svgEl) {
+        MAP_INFO_HOSTS.country = {};
+        MAP_INFO_HOSTS.countryTable = createMapControlHost(svgEl, "country-info-table", MAP_CONTROL_LAYOUT.countryTable, "map-info-panel country-table-panel");
+        MAP_INFO_HOSTS.countryTable.addEventListener("click", (event) => {
+          const button = event.target.closest?.(".power-button");
+          if (!button) {
+            return;
+          }
+          event.preventDefault();
+          updateCountryPower(button.dataset.country, "toggle");
+        });
+        MAP_INFO_HOSTS.countryTable.addEventListener("contextmenu", (event) => {
+          const button = event.target.closest?.(".power-button");
+          if (!button) {
+            return;
+          }
+          event.preventDefault();
+          updateCountryPower(button.dataset.country, "count");
+        });
+      }
+
+      function getNodeControlSide(node) {
+        const dem = Number.parseInt(node.dataset.dem || "0", 10) || 0;
+        const com = Number.parseInt(node.dataset.com || "0", 10) || 0;
+        const stability = Number.parseInt(node.dataset.stability || "0", 10) || 0;
+        if (stability <= 0) {
+          return "";
+        }
+        if (dem - com >= stability) {
+          return "D";
+        }
+        if (com - dem >= stability) {
+          return "C";
+        }
+        return "";
+      }
+
+      function summarizeCountry(code) {
+        const countryNodes = interactiveNodes.filter((node) => node.dataset.countryCode === code);
+        const summary = {
+          D: { controlled: 0, battleground: 0, leaders: new Set() },
+          C: { controlled: 0, battleground: 0, leaders: new Set() },
+          totalBattleground: 0,
+        };
+
+        countryNodes.forEach((node) => {
+          const isBattleground = node.dataset.battleground === "1";
+          if (isBattleground) {
+            summary.totalBattleground += 1;
+          }
+          const side = getNodeControlSide(node);
+          if (!side) {
+            return;
+          }
+          summary[side].controlled += 1;
+          if (isBattleground) {
+            summary[side].battleground += 1;
+          }
+          const leader = LEADER_BY_GROUP[node.dataset.groupCode || ""];
+          if (leader) {
+            summary[side].leaders.add(leader);
+          }
+        });
+
+        return summary;
+      }
+
+      function computeCountrySideScore(scoring, sideSummary, opponentSummary, totalBattleground) {
+        if (sideSummary.controlled <= 0) {
+          return { base: 0, battleground: 0, total: 0, status: "No presence" };
+        }
+
+        const nonBattleground = sideSummary.controlled - sideSummary.battleground;
+        let base = scoring.presence;
+        let status = "Presence";
+        if (
+          sideSummary.controlled > opponentSummary.controlled &&
+          totalBattleground > 0 &&
+          sideSummary.battleground === totalBattleground
+        ) {
+          base = scoring.control;
+          status = "Control";
+        } else if (
+          sideSummary.controlled > opponentSummary.controlled &&
+          sideSummary.battleground > opponentSummary.battleground &&
+          sideSummary.battleground > 0 &&
+          nonBattleground > 0
+        ) {
+          base = scoring.domination;
+          status = "Domination";
+        }
+
+        const battleground = sideSummary.battleground;
+        return {
+          base,
+          battleground,
+          total: base + battleground,
+          status,
+        };
+      }
+
+      function formatLeaders(leaders) {
+        const values = [...leaders].sort();
+        return values.length ? values.join("/") : "-";
+      }
+
+      function formatNetScoreValue(net) {
+        if (net > 0) {
+          return `<span class="dem-text">D +${net}</span>`;
+        }
+        if (net < 0) {
+          return `<span class="com-text">C +${Math.abs(net)}</span>`;
+        }
+        return `<span class="muted-text">0</span>`;
+      }
+
+      function formatNetScore(demScore, comScore, powerBonus = 0) {
+        return formatNetScoreValue(demScore.total - comScore.total);
+      }
+
+      function getPowerDrawCount(controlledSpaces) {
+        return controlledSpaces > 0 ? 4 + 2 * controlledSpaces : 0;
+      }
+
+      function clampInt(value, min, max, fallback = min) {
+        const parsed = Number.parseInt(value, 10);
+        if (!Number.isFinite(parsed)) {
+          return fallback;
+        }
+        return Math.min(max, Math.max(min, parsed));
+      }
+
+      function getNodeSaveKey(node, index = 0) {
+        const country = node.dataset.countryCode || "";
+        const space = node.dataset.space || node.dataset.baseTitle || `node-${index}`;
+        return `${country}|${space}`;
+      }
+
+      function collectGameState() {
+        return {
+          version: 1,
+          savedAt: new Date().toISOString(),
+          language: currentLanguage,
+          vp: getTrackerValue(vpValue, 0),
+          turn: getTrackerValue(phaseValue, 1),
+          route: Number.parseInt(routeValue?.textContent || "0", 10) || 0,
+          tiananmen: {
+            ...getTiananmenPositions(),
+            failed: {
+              dem: TIANANMEN_FAILURE.D,
+              com: TIANANMEN_FAILURE.C,
+            },
+            attempted: {
+              dem: TIANANMEN_ATTEMPTED.D,
+              com: TIANANMEN_ATTEMPTED.C,
+            },
+          },
+          power: Object.fromEntries(COUNTRY_ORDER.map((code) => {
+            const state = COUNTRY_POWER_STATE[code] || { side: "C", count: 0 };
+            return [code, {
+              side: state.side === "D" ? "D" : "C",
+              count: clampInt(state.count, 0, 4, 0),
+            }];
+          })),
+          spaces: interactiveNodes.map((node, index) => ({
+            key: getNodeSaveKey(node, index),
+            space: node.dataset.space || "",
+            countryCode: node.dataset.countryCode || "",
+            dem: clampInt(node.dataset.dem, 0, 99, 0),
+            com: clampInt(node.dataset.com, 0, 99, 0),
+            stability: clampInt(node.dataset.stability, 0, 9, 0),
+            side: node.dataset.side || inferInitialSide(node),
+          })),
+        };
+      }
+
+      function writeLocalSave(payload) {
+        try {
+          localStorage.setItem(SAVE_KEY, JSON.stringify(payload));
+          return true;
+        } catch (error) {
+          return false;
+        }
+      }
+
+      function readLocalSave() {
+        try {
+          return localStorage.getItem(SAVE_KEY);
+        } catch (error) {
+          return "";
+        }
+      }
+
+      function collectCookieState() {
+        return {
+          v: 1,
+          at: new Date().toISOString(),
+          l: currentLanguage,
+          vp: getTrackerValue(vpValue, 0),
+          tu: getTrackerValue(phaseValue, 1),
+          r: Number.parseInt(routeValue?.textContent || "0", 10) || 0,
+          tn: [
+            clampInt(tiananmenDemValue?.textContent, 0, TIANANMEN_STEPS.length - 1, 0),
+            clampInt(tiananmenComValue?.textContent, 0, TIANANMEN_STEPS.length - 1, 0),
+          ],
+          tf: [TIANANMEN_FAILURE.D ? 1 : 0, TIANANMEN_FAILURE.C ? 1 : 0],
+          ta: [TIANANMEN_ATTEMPTED.D ? 1 : 0, TIANANMEN_ATTEMPTED.C ? 1 : 0],
+          p: COUNTRY_ORDER.map((code) => {
+            const state = COUNTRY_POWER_STATE[code] || { side: "C", count: 0 };
+            return `${state.side === "D" ? "D" : "C"}${clampInt(state.count, 0, 4, 0)}`;
+          }).join("."),
+          sp: interactiveNodes.map((node) => {
+            return `${clampInt(node.dataset.dem, 0, 99, 0)}.${clampInt(node.dataset.com, 0, 99, 0)}`;
+          }).join("_"),
+        };
+      }
+
+      function readCookieValue(name) {
+        const prefix = `${name}=`;
+        return document.cookie
+          .split(";")
+          .map((entry) => entry.trim())
+          .find((entry) => entry.startsWith(prefix))
+          ?.slice(prefix.length) || "";
+      }
+
+      function writeCookieState(payload) {
+        try {
+          const encoded = encodeURIComponent(JSON.stringify(payload));
+          const maxAge = 60 * 60 * 24 * 365;
+          const attrs = location.protocol === "file:"
+            ? `; max-age=${maxAge}`
+            : `; max-age=${maxAge}; path=/; SameSite=Lax`;
+          document.cookie = `${COOKIE_SAVE_KEY}=${encoded}${attrs}`;
+          return readCookieValue(COOKIE_SAVE_KEY) === encoded;
+        } catch (error) {
+          return false;
+        }
+      }
+
+      function expandCookieState(compact) {
+        if (!compact || typeof compact !== "object") {
+          throw new Error("Invalid cookie save data.");
+        }
+        const powerTokens = String(compact.p || "").split(".");
+        const spTokens = String(compact.sp || "").split("_");
+        return {
+          version: compact.v || 1,
+          savedAt: compact.at || "",
+          language: compact.l === "zh" ? "zh" : compact.l === "en" ? "en" : undefined,
+          vp: compact.vp,
+          turn: compact.tu,
+          route: compact.r,
+          tiananmen: {
+            dem: Array.isArray(compact.tn) ? compact.tn[0] : 0,
+            com: Array.isArray(compact.tn) ? compact.tn[1] : 0,
+            failed: {
+              dem: Array.isArray(compact.tf) && compact.tf[0] === 1,
+              com: Array.isArray(compact.tf) && compact.tf[1] === 1,
+            },
+            attempted: {
+              dem: Array.isArray(compact.ta) && compact.ta[0] === 1,
+              com: Array.isArray(compact.ta) && compact.ta[1] === 1,
+            },
+          },
+          power: Object.fromEntries(COUNTRY_ORDER.map((code, index) => {
+            const token = powerTokens[index] || "C0";
+            return [code, {
+              side: token.startsWith("D") ? "D" : "C",
+              count: clampInt(token.slice(1), 0, 4, 0),
+            }];
+          })),
+          spaces: interactiveNodes.map((node, index) => {
+            const [dem, com] = (spTokens[index] || "0.0").split(".");
+            return {
+              key: getNodeSaveKey(node, index),
+              dem,
+              com,
+              stability: node.dataset.stability || node.dataset.initialStability || "0",
+              side: clampInt(com, 0, 99, 0) > clampInt(dem, 0, 99, 0) ? "C" : "D",
+            };
+          }),
+        };
+      }
+
+      function readCookieState() {
+        const encoded = readCookieValue(COOKIE_SAVE_KEY);
+        if (!encoded) {
+          return null;
+        }
+        try {
+          return expandCookieState(JSON.parse(decodeURIComponent(encoded)));
+        } catch (error) {
+          return null;
+        }
+      }
+
+      function persistGameState({ force = false } = {}) {
+        if (!force && !autoSaveReady) {
+          return false;
+        }
+        const cookieStored = writeCookieState(collectCookieState());
+        const localStored = writeLocalSave(collectGameState());
+        return cookieStored || localStored;
+      }
+
+      function applyGameState(state) {
+        if (!state || typeof state !== "object" || !Array.isArray(state.spaces)) {
+          throw new Error("Invalid save data.");
+        }
+
+        if (state.language === "zh" || state.language === "en") {
+          currentLanguage = state.language;
+        }
+        const vp = clampInt(state.vp, -99, 99, 0);
+        setTrackerButton(vpValue, tr("vp"), vp);
+        applyVpClass(vp);
+        const turn = clampInt(state.turn, 1, 10, 1);
+        if (phaseValue) {
+          phaseValue.classList.remove("phase-early", "phase-mid", "phase-late");
+          phaseValue.classList.add(getPhaseClass(turn));
+          setTrackerButton(phaseValue, tr("turn"), turn);
+        }
+        if (routeValue) {
+          const route = clampInt(state.route, 0, 5, 0);
+          routeValue.textContent = String(route);
+          renderRoute(route);
+        }
+        if (tiananmenDemValue) {
+          tiananmenDemValue.textContent = String(clampInt(state.tiananmen?.dem, 0, TIANANMEN_STEPS.length - 1, 0));
+        }
+        if (tiananmenComValue) {
+          tiananmenComValue.textContent = String(clampInt(state.tiananmen?.com, 0, TIANANMEN_STEPS.length - 1, 0));
+        }
+        TIANANMEN_FAILURE.D = Boolean(state.tiananmen?.failed?.dem);
+        TIANANMEN_FAILURE.C = Boolean(state.tiananmen?.failed?.com);
+        TIANANMEN_ATTEMPTED.D = Boolean(state.tiananmen?.attempted?.dem);
+        TIANANMEN_ATTEMPTED.C = Boolean(state.tiananmen?.attempted?.com);
+
+        COUNTRY_ORDER.forEach((code) => {
+          const saved = state.power?.[code];
+          const target = COUNTRY_POWER_STATE[code];
+          if (!target || !saved) {
+            return;
+          }
+          target.side = saved.side === "D" ? "D" : "C";
+          target.count = target.side === "C" ? clampInt(saved.count, 0, 4, 0) : 0;
+        });
+
+        const nodesByKey = new Map(interactiveNodes.map((node, index) => [getNodeSaveKey(node, index), node]));
+        state.spaces.forEach((saved) => {
+          const node = nodesByKey.get(saved.key);
+          if (!node) {
+            return;
+          }
+          node.dataset.dem = String(clampInt(saved.dem, 0, 99, 0));
+          node.dataset.com = String(clampInt(saved.com, 0, 99, 0));
+          node.dataset.stability = String(clampInt(saved.stability, 0, 9, Number.parseInt(node.dataset.stability || "0", 10) || 0));
+          node.dataset.side = saved.side === "C" ? "C" : "D";
+          applyDominanceStyle(node);
+          updateNodeTooltip(node);
+        });
+
+        renderTiananmenTrack();
+        refreshCountryPanels();
+        applyLanguage({ persist: false });
+        persistGameState({ force: true });
+      }
+
+      function saveGameState() {
+        const payload = collectGameState();
+        const stored = writeLocalSave(payload);
+        const cookieStored = persistGameState({ force: true });
+        const stamp = new Date(payload.savedAt).toLocaleString(currentLanguage === "zh" ? "zh-CN" : "en-US", { hour12: false });
+        if (stored || cookieStored) {
+          setStatus(`Saved game state: ${stamp}`);
+          return;
+        }
+        window.prompt(tr("saveUnavailable"), JSON.stringify(payload));
+      }
+
+      function loadGameState() {
+        const ok = window.confirm(tr("loadConfirm"));
+        if (!ok) {
+          setStatus(tr("loadCanceled"));
+          return;
+        }
+
+        let state = readCookieState();
+        let source = state ? "cookie" : "";
+        let raw = "";
+        if (!state) {
+          raw = readLocalSave();
+          source = raw ? "local save" : "";
+        }
+        if (!state && !raw) {
+          raw = window.prompt(tr("noSavePrompt")) || "";
+          source = raw ? "pasted save" : "";
+        }
+        if (!state && !raw.trim()) {
+          setStatus(tr("noSave"));
+          return;
+        }
+        try {
+          if (!state) {
+            state = JSON.parse(raw);
+          }
+          applyGameState(state);
+          const stamp = state.savedAt ? new Date(state.savedAt).toLocaleString(currentLanguage === "zh" ? "zh-CN" : "en-US", { hour12: false }) : tr("unknownTime");
+          setStatus(`Loaded ${source || "save"}: ${stamp}`);
+        } catch (error) {
+          window.alert(`${tr("loadError")}: ${error.message || error}`);
+        }
+      }
+
+      function formatPowerState(code) {
+        const state = COUNTRY_POWER_STATE[code] || { side: "C", count: 0 };
+        if (state.side === "D") {
+          return `<button class="power-button power-dem" type="button" data-country="${code}" title="${tr("restorePower")}">D</button>`;
+        }
+        return `<button class="power-button power-com" type="button" data-country="${code}" title="${tr("topplePower")}">C*${state.count}</button>`;
+      }
+
+      function getPowerBonus(code, scoring) {
+        const state = COUNTRY_POWER_STATE[code] || { side: "C", count: 0 };
+        return state.side === "C" ? scoring.power * state.count : 0;
+      }
+
+      function formatPowerBonusNote(powerBonus) {
+        if (powerBonus <= 0) {
+          return "";
+        }
+        return `<span class="power-bonus-note">(C +${powerBonus})</span>`;
+      }
+
+      function updateCountryPower(code, action) {
+        if (!code || !COUNTRY_POWER_STATE[code]) {
+          return;
+        }
+        const state = COUNTRY_POWER_STATE[code];
+        if (action === "toggle") {
+          if (state.side === "C") {
+            state.side = "D";
+          } else {
+            state.side = "C";
+            state.count = 0;
+          }
+        } else if (action === "count") {
+          if (state.side === "C") {
+            state.count = (state.count + 1) % 5;
+          }
+        }
+        refreshCountryPanels();
+        const scoring = COUNTRY_SCORING[code];
+        persistGameState();
+        setStatus(`${scoring?.label || code} power: ${state.side === "D" ? "D" : `C*${state.count}`}`);
+      }
+
+      function shortCountryLabel(code, label) {
+        return COUNTRY_LABELS[currentLanguage]?.[code] || label;
+      }
+
+      function refreshCountryPanels() {
+        const host = MAP_INFO_HOSTS.countryTable;
+        if (!host) {
+          return;
+        }
+        const rows = COUNTRY_ORDER.map((code) => {
+          const scoring = COUNTRY_SCORING[code];
+          const summary = summarizeCountry(code);
+          const demScore = computeCountrySideScore(scoring, summary.D, summary.C, summary.totalBattleground);
+          const comScore = computeCountrySideScore(scoring, summary.C, summary.D, summary.totalBattleground);
+          const drawD = getPowerDrawCount(summary.D.controlled);
+          const drawC = getPowerDrawCount(summary.C.controlled);
+          const powerBonus = getPowerBonus(code, scoring);
+          return `
+            <tr>
+              <td class="country-cell">${shortCountryLabel(code, scoring.label)}</td>
+              <td>${scoring.presence}/${scoring.domination}/${scoring.control} <span class="power-value-note">(P${scoring.power})</span></td>
+              <td><span class="dem-text">${drawD}</span><span class="draw-separator">/</span><span class="com-text">${drawC}</span></td>
+              <td>${formatPowerState(code)}</td>
+              <td>${formatNetScore(demScore, comScore)}${formatPowerBonusNote(powerBonus)}</td>
+            </tr>
+          `;
+        }).join("");
+        host.innerHTML = `
+          <table aria-label="${tr("countryTableLabel")}">
+            <thead>
+              <tr>
+                <th class="country-cell">${tr("country")}</th>
+                <th>${tr("scoring")}</th>
+                <th>${tr("draw")}</th>
+                <th>${tr("power")}</th>
+                <th>${tr("current")}</th>
+              </tr>
+            </thead>
+            <tbody>${rows}</tbody>
+          </table>
+        `;
+      }
+
+      function resetGameToStart() {
+        const ok = window.confirm(tr("resetConfirm"));
+        if (!ok) {
+          return;
+        }
+        interactiveNodes.forEach((node) => {
+          node.dataset.dem = node.dataset.initialDem || "0";
+          node.dataset.com = node.dataset.initialCom || "0";
+          node.dataset.stability = node.dataset.initialStability || node.dataset.stability || "0";
+          node.dataset.side = inferInitialSide(node);
+          applyDominanceStyle(node);
+          updateNodeTooltip(node);
+        });
+        interactiveNodes.forEach(updateNodeTooltip);
+        setTrackerButton(vpValue, tr("vp"), 0);
+        applyVpClass(0);
+        if (phaseValue) {
+          phaseValue.classList.remove("phase-early", "phase-mid", "phase-late");
+          phaseValue.classList.add("phase-early");
+          setTrackerButton(phaseValue, tr("turn"), 1);
+        }
+        if (routeValue) {
+          routeValue.textContent = "0";
+        }
+        if (tiananmenDemValue) {
+          tiananmenDemValue.textContent = "0";
+        }
+        if (tiananmenComValue) {
+          tiananmenComValue.textContent = "0";
+        }
+        TIANANMEN_FAILURE.D = false;
+        TIANANMEN_FAILURE.C = false;
+        TIANANMEN_ATTEMPTED.D = false;
+        TIANANMEN_ATTEMPTED.C = false;
+        Object.values(COUNTRY_POWER_STATE).forEach((state) => {
+          state.side = "C";
+          state.count = 0;
+        });
+        renderRoute(0);
+        renderTiananmenTrack();
+        refreshCountryPanels();
+        persistGameState({ force: true });
+        setStatus(tr("resetDone"));
+      }
+
+      function getNodeSlotRects(node) {
+        return [...node.querySelectorAll("rect")].filter((rect) => {
+          const width = Number.parseFloat(rect.getAttribute("width") || "0");
+          const height = Number.parseFloat(rect.getAttribute("height") || "0");
+          return Math.abs(width - NODE_TEMPLATE.slotWidth) < 0.5 && Math.abs(height - NODE_TEMPLATE.slotHeight) < 0.5;
+        }).sort((a, b) => {
+          const ax = Number.parseFloat(a.getAttribute("x") || "0");
+          const bx = Number.parseFloat(b.getAttribute("x") || "0");
+          return ax - bx;
+        });
+      }
+
+      function getRectValue(rect, attr) {
+        return Number.parseFloat(rect?.getAttribute(attr) || "0") || 0;
+      }
+
+      function getRectBounds(rect) {
+        const x = getRectValue(rect, "x");
+        const y = getRectValue(rect, "y");
+        const width = getRectValue(rect, "width");
+        const height = getRectValue(rect, "height");
+        return {
+          x,
+          y,
+          width,
+          height,
+          left: x,
+          top: y,
+          right: x + width,
+          bottom: y + height,
+        };
+      }
+
+      function collectNameLines(node, fallback) {
+        const lines = [...node.querySelectorAll("text.space-label")].map((line) => line.textContent.trim()).filter(Boolean);
+        if (lines.length) {
+          return lines;
+        }
+        if (fallback) {
+          return [fallback];
+        }
+        return [""];
+      }
+
+      function ensureNameTexts(node, lines, outer, important = false) {
+        const desired = lines.length ? lines : [""];
+        const existing = [...node.querySelectorAll("text.space-label")];
+        const nodes = [];
+        for (let i = 0; i < desired.length; i += 1) {
+          let lineText = existing[i];
+          if (!lineText) {
+            lineText = document.createElementNS(SVG_NS, "text");
+            lineText.setAttribute("class", "space-label");
+            lineText.setAttribute("text-anchor", "middle");
+            lineText.setAttribute("dominant-baseline", "middle");
+            lineText.setAttribute("font-size", "11.2");
+            lineText.style.pointerEvents = "none";
+            lineText.style.userSelect = "none";
+            node.appendChild(lineText);
+          }
+          lineText.textContent = desired[i];
+          lineText.setAttribute("dominant-baseline", "middle");
+          lineText.setAttribute("y", String(getRectValue(outer, "y") + 5));
+          lineText.classList.remove("chip-value-hidden");
+          lineText.classList.toggle("important-space", Boolean(important));
+          nodes.push(lineText);
+        }
+        for (let i = desired.length; i < existing.length; i += 1) {
+          existing[i].classList.add("chip-value-hidden");
+        }
+        return nodes;
+      }
+
+      function ensureTopSeparators(node, params) {
+        const outer = params?.outer;
+        if (!outer) {
+          return;
+        }
+        const outerX = getRectValue(outer, "x");
+        const outerY = getRectValue(outer, "y");
+        const topY0 = outerY + 3;
+        const topY1 = topY0 + NODE_TEMPLATE.topRowHeight;
+        const leftLimit = outerX + NODE_TEMPLATE.categoryWidth;
+        const stabLeft = outerX + NODE_TEMPLATE.width - NODE_TEMPLATE.stabilityWidth;
+        const stableLineX = Math.min(stabLeft, outerX + NODE_TEMPLATE.width - 1);
+
+        let typeSep = node.querySelector("line.top-sep-type");
+        if (!typeSep) {
+          typeSep = document.createElementNS(SVG_NS, "line");
+          typeSep.setAttribute("class", "top-sep-line top-sep-type");
+          node.appendChild(typeSep);
+        }
+        typeSep.setAttribute("x1", String(leftLimit));
+        typeSep.setAttribute("y1", String(topY0));
+        typeSep.setAttribute("x2", String(leftLimit));
+        typeSep.setAttribute("y2", String(topY1));
+
+        let stabilitySep = node.querySelector("line.top-sep-stability");
+        if (!stabilitySep) {
+          stabilitySep = document.createElementNS(SVG_NS, "line");
+          stabilitySep.setAttribute("class", "top-sep-line top-sep-stability");
+          node.appendChild(stabilitySep);
+        }
+        stabilitySep.setAttribute("x1", String(stableLineX));
+        stabilitySep.setAttribute("y1", String(topY0));
+        stabilitySep.setAttribute("x2", String(stableLineX));
+        stabilitySep.setAttribute("y2", String(topY1));
+      }
+
+      function hideLegacyTopArtifacts(node, config, params) {
+        if (config?.indexText) {
+          config.indexText.classList.add("chip-value-hidden");
+        }
+        if (params?.typeTextRect) {
+          params.typeTextRect.classList.add("chip-value-hidden");
+        }
+        if (!config?.outer) {
+          return;
+        }
+
+        const topBandTop = getRectValue(config.outer, "y") + 1;
+        const topBandBottom = getRectValue(config.outer, "y") + 40;
+        const outerX = getRectValue(config.outer, "x");
+        const outerWidth = getRectValue(config.outer, "width");
+
+        [...node.querySelectorAll("rect")].forEach((rect) => {
+          const width = getRectValue(rect, "width");
+          const height = getRectValue(rect, "height");
+          const x = getRectValue(rect, "x");
+          const y = getRectValue(rect, "y");
+          if (width <= 0 || height <= 0) {
+            return;
+          }
+
+          const isLeftBadge = x > outerX && x < outerX + outerWidth * 0.5;
+          const isRightBadge = x > outerX + outerWidth * 0.5 && x < outerX + outerWidth - 1;
+          if (y >= topBandTop && y <= topBandBottom && width > 18 && width < 70 && height > 12 && height < 35 && (isLeftBadge || isRightBadge)) {
+            rect.classList.add("chip-value-hidden");
+          }
+        });
+      }
+
+      function ensureChipTypeText(node, text) {
+        let typeText = node.querySelector("text.chip-type");
+        const outer = node.querySelector("rect[width='172'][height='96']") || [...node.querySelectorAll("rect")].find((rect) => {
+          const width = getRectValue(rect, "width");
+          const height = getRectValue(rect, "height");
+          return Math.abs(width - NODE_TEMPLATE.width) < 0.5 && Math.abs(height - NODE_TEMPLATE.height) < 0.5;
+        });
+
+        if (!typeText) {
+          if (!outer) {
+            return null;
+          }
+          typeText = document.createElementNS(SVG_NS, "text");
+          typeText.setAttribute("class", "chip-type");
+          typeText.setAttribute("text-anchor", "middle");
+          node.appendChild(typeText);
+        }
+        const outerX = getRectValue(outer, "x");
+        const outerY = getRectValue(outer, "y");
+        typeText.setAttribute("x", String(outerX + NODE_TEMPLATE.categoryWidth / 2 + 0.5));
+        typeText.setAttribute("y", String(outerY + 17.5));
+        typeText.setAttribute("dominant-baseline", "middle");
+        typeText.textContent = getDisplayCategoryCode(text);
+        return typeText;
+      }
+
+      function collectNodeTemplateParams(node, index) {
+        const title = node.dataset.baseTitle || "";
+        const [spaceName, countryName] = title.split(" - ");
+        const outer = [...node.querySelectorAll("rect")].find((rect) => {
+          const width = getRectValue(rect, "width");
+          const height = getRectValue(rect, "height");
+          return Math.abs(width - NODE_TEMPLATE.width) < 0.5 && Math.abs(height - NODE_TEMPLATE.height) < 0.5;
+        });
+        if (!outer) {
+          return null;
+        }
+        const slotRects = getNodeSlotRects(node);
+        if (slotRects.length < 2) {
+          return null;
+        }
+
+        const indexRect = [...node.querySelectorAll("rect")].find((rect) => {
+          const width = getRectValue(rect, "width");
+          const height = getRectValue(rect, "height");
+          return width > 18 && width < 25 && height > 16 && height < 20;
+        });
+        const indexText = node.querySelector("text.node-index");
+        const typeText = node.querySelector("text.chip-type");
+        const typeTextRect = [...node.querySelectorAll("rect")].find((rect) => {
+          const width = getRectValue(rect, "width");
+          const height = getRectValue(rect, "height");
+          return width > 20 && width < 60 && height > 12 && height < 32 && getRectValue(rect, "y") < getRectValue(outer, "y") + 40;
+        });
+        const nameLines = collectNameLines(node, spaceName);
+        const important = [...node.querySelectorAll("text.space-label")].some((line) => {
+          const fill = (line.getAttribute("fill") || "").trim().toLowerCase();
+          return fill === "#b91c1c" || fill === "#dc2626" || fill === "red";
+        });
+        return {
+          node,
+          index,
+          title,
+          spaceName: (spaceName || "").trim(),
+          countryName: (countryName || "").trim(),
+          category: (typeText?.textContent || "").trim(),
+          nameLines,
+          outer,
+          slotRects,
+          slotLeft: slotRects[0],
+          slotRight: slotRects[1],
+          indexText,
+          indexRect,
+          typeText,
+          typeTextRect,
+          position: {
+            x: getRectValue(outer, "x"),
+            y: getRectValue(outer, "y"),
+            width: getRectValue(outer, "width"),
+            height: getRectValue(outer, "height"),
+          },
+          initialInfluence: {
+            D: 0,
+            C: 0,
+          },
+          stability: 0,
+          important,
+          // Name compatibility: the current map label is the space name.
+          name: (spaceName || "").trim(),
+        };
+      }
+
+      function buildCompactNodeTemplate(baseParams, overrides = {}) {
+        const initialInfluence = {
+          D: Number.parseInt(overrides?.initialDem, 10),
+          C: Number.parseInt(overrides?.initialCom, 10),
+        };
+
+        return {
+          node: baseParams.node,
+          index: baseParams.index,
+          position: {
+            x: overrides?.position?.x ?? baseParams.position.x,
+            y: overrides?.position?.y ?? baseParams.position.y,
+            width: overrides?.position?.width ?? baseParams.position.width,
+            height: overrides?.position?.height ?? baseParams.position.height,
+          },
+          name: overrides?.name ?? baseParams.name,
+          category: overrides?.category ?? baseParams.category,
+          spaceName: baseParams.spaceName,
+          countryName: baseParams.countryName,
+          nameLines: overrides?.nameLines ?? baseParams.nameLines,
+          important: overrides?.important ?? baseParams.important,
+          outer: baseParams.outer,
+          slotRects: baseParams.slotRects,
+          slotLeft: baseParams.slotLeft,
+          slotRight: baseParams.slotRight,
+          indexRect: baseParams.indexRect,
+          typeText: baseParams.typeText,
+          typeTextRect: baseParams.typeTextRect,
+          initialInfluence: {
+            D: Number.isFinite(initialInfluence.D) ? initialInfluence.D : baseParams.initialInfluence.D,
+            C: Number.isFinite(initialInfluence.C) ? initialInfluence.C : baseParams.initialInfluence.C,
+          },
+          stability: Number.parseInt(overrides?.stability, 10) || baseParams.stability,
+          title: baseParams.title,
+        };
+      }
+
+      function getPointerSideFromSlots(node, event) {
+        const slotRects = getNodeSlotRects(node);
+        if (slotRects.length < 2 || !event) {
+          const bounds = node.getBoundingClientRect();
+          const halfX = bounds.left + bounds.width / 2;
+          return event && Number.isFinite(event.clientX) ? (event.clientX <= halfX ? "D" : "C") : "D";
+        }
+
+        const { left, right, top, bottom } = node.getBoundingClientRect();
+        const x = Number.isFinite(event.clientX) ? event.clientX : (left + right) / 2;
+        const y = Number.isFinite(event.clientY) ? event.clientY : (top + bottom) / 2;
+        for (let i = 0; i < 2; i += 1) {
+          const slotRect = slotRects[i];
+          const b = slotRect.getBoundingClientRect();
+          if (x >= b.left && x <= b.right && y >= b.top && y <= b.bottom) {
+            return i === 0 ? "D" : "C";
+          }
+        }
+        const splitX = (slotRects[0].getBoundingClientRect().right + slotRects[1].getBoundingClientRect().left) / 2;
+        return x <= splitX ? "D" : "C";
+      }
+
+      function bindSlot(node, slot, side, spaceName) {
+        slot.classList.add("slot-sp");
+        slot.classList.add(side === "D" ? "slot-sp-left" : "slot-sp-right");
+        slot.setAttribute("aria-label", `${spaceName} ${side} area`);
+        slot.setAttribute("data-slot-side", side);
+        slot.style.cursor = "pointer";
+        slot.style.pointerEvents = "all";
+        slot.style.userSelect = "none";
+
+        const onInc = (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          setNodeValue(node, side, +1, spaceName);
+        };
+        const onDec = (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          setNodeValue(node, side, -1, spaceName);
+        };
+
+        slot.addEventListener("click", onInc);
+        slot.addEventListener("contextmenu", onDec);
+      }
+
+      function ensureNodeTemplateElements(node, config, params) {
+        if (!config.slotRects?.length) {
+          return;
+        }
+
+        const slotLeft = config.slotRects[0];
+        const slotRight = config.slotRects[1];
+        ensureValueBg(node, slotLeft, "left");
+        ensureValueBg(node, slotRight, "right");
+        ensureSideValueText(node, slotLeft, "left");
+        ensureSideValueText(node, slotRight, "right");
+        ensureChipTypeText(node, params?.category || params?.type || "");
+        const requestedNameLines = params?.nameLines || config.nameLines || [];
+        ensureNameTexts(node, requestedNameLines, config.outer, params?.important);
+        const displayNameLines = chooseNameLines(node, requestedNameLines, config.outer);
+        ensureNameTexts(node, displayNameLines, config.outer, params?.important);
+        hideLegacyChipArtifacts(node);
+        hideLegacyTopArtifacts(node, config, params);
+        ensureTopSeparators(node, config);
+        layoutNodeTopTexts(node, config, { ...params, nameLines: displayNameLines });
+      }
+
+      function renderCompactNodeFromTemplate(params) {
+        const node = params?.node;
+        if (!node) {
+          return;
+        }
+
+        const initialDem = params?.initialInfluence?.D ?? 0;
+        const initialCom = params?.initialInfluence?.C ?? 0;
+        const spaceName = params.name || params.spaceName || "";
+        const countryName = params.countryName || "";
+        const meta = getSpaceMetaForNode(spaceName, countryName);
+        const countryCode = meta?.country || COUNTRY_CODE[countryName] || "";
+        node.dataset.space = params.name || params.spaceName || "";
+        node.dataset.originalNameLines = JSON.stringify(params.nameLines?.length ? params.nameLines : [spaceName]);
+        node.dataset.countryCode = countryCode;
+        node.dataset.groupCode = meta?.group || "";
+        node.dataset.categoryCode = normalizeCategoryCode(params.category || params.type || "");
+        node.dataset.battleground = meta?.battleground ? "1" : "0";
+        node.dataset.dem = String(Math.max(0, Number.isFinite(Number.parseInt(initialDem, 10)) ? Number.parseInt(initialDem, 10) : 0));
+        node.dataset.com = String(Math.max(0, Number.isFinite(Number.parseInt(initialCom, 10)) ? Number.parseInt(initialCom, 10) : 0));
+        node.dataset.stability = String(params.stability || meta?.stability || 0);
+        node.dataset.initialDem = node.dataset.dem;
+        node.dataset.initialCom = node.dataset.com;
+        node.dataset.initialStability = node.dataset.stability;
+        node.dataset.side = inferInitialSide(node);
+        ensureNodeTemplateElements(node, params, params);
+        applyDominanceStyle(node);
+        updateNodeTooltip(node);
+        node.classList.add("interactive-node");
+        node.style.pointerEvents = "all";
+      }
+
+      function ensureValueBg(node, slotRect, side) {
+        const className = side === "left" ? "value-bg-left" : "value-bg-right";
+        let bg = node.querySelector(`rect.${className}`);
+        if (!bg) {
+          bg = document.createElementNS(SVG_NS, "rect");
+          bg.setAttribute("class", `value-bg ${className}`);
+          node.appendChild(bg);
+        }
+        bg.setAttribute("x", slotRect.getAttribute("x") || "0");
+        bg.setAttribute("y", slotRect.getAttribute("y") || "0");
+        bg.setAttribute("width", slotRect.getAttribute("width") || "0");
+        bg.setAttribute("height", slotRect.getAttribute("height") || "0");
+        bg.setAttribute("rx", slotRect.getAttribute("rx") || "0");
+        bg.setAttribute("class", `value-bg ${className}`);
+        return bg;
+      }
+
+      function ensureSideValueText(node, slotRect, side) {
+        const className = side === "left" ? "chip-value-left" : "chip-value-right";
+        const selector = `text.${className}`;
+        let valueText = node.querySelector(selector);
+        if (!valueText) {
+          valueText = document.createElementNS(SVG_NS, "text");
+          valueText.setAttribute("class", className);
+          valueText.setAttribute("text-anchor", "middle");
+          valueText.setAttribute("dominant-baseline", "middle");
+          node.appendChild(valueText);
+        }
+        valueText.setAttribute("x", String(Number.parseFloat(slotRect.getAttribute("x") || "0") + Number.parseFloat(slotRect.getAttribute("width") || "0") / 2));
+        valueText.setAttribute("y", String(Number.parseFloat(slotRect.getAttribute("y") || "0") + Number.parseFloat(slotRect.getAttribute("height") || "0") / 2 + 1));
+        return valueText;
+      }
+
+      function hideLegacyChipArtifacts(node) {
+        [...node.querySelectorAll("text.chip-value")].forEach((legacyValueText) => {
+          legacyValueText.classList.add("chip-value-hidden");
+          legacyValueText.textContent = "0";
+        });
+        [...node.querySelectorAll("text.sp-count")].forEach((legacySpText) => {
+          legacySpText.classList.add("chip-value-hidden");
+        });
+      }
+
+      function applyDominanceStyle(node) {
+        const dem = Number.parseInt(node.dataset.dem || "0", 10) || 0;
+        const com = Number.parseInt(node.dataset.com || "0", 10) || 0;
+        const stability = Number.parseInt(node.dataset.stability || "0", 10) || 0;
+        const dominantSide = dem - com >= stability ? "D" : com - dem >= stability ? "C" : "none";
+        const demBg = node.querySelector("rect.value-bg-left");
+        const comBg = node.querySelector("rect.value-bg-right");
+        const demText = node.querySelector("text.chip-value-left");
+        const comText = node.querySelector("text.chip-value-right");
+        const demValue = Number.parseInt(node.dataset.dem || "0", 10) || 0;
+        const comValue = Number.parseInt(node.dataset.com || "0", 10) || 0;
+
+        if (demBg) {
+          demBg.setAttribute("class", "value-bg value-bg-left" + (dominantSide === "D" ? " value-bg-dominant-left" : ""));
+        }
+        if (comBg) {
+          comBg.setAttribute("class", "value-bg value-bg-right" + (dominantSide === "C" ? " value-bg-dominant-right" : ""));
+        }
+
+        if (demText) {
+          demText.textContent = String(demValue);
+          demText.classList.toggle("chip-value-hidden", demValue <= 0);
+          demText.classList.toggle("dominant", dominantSide === "D");
+        }
+        if (comText) {
+          comText.textContent = String(comValue);
+          comText.classList.toggle("chip-value-hidden", comValue <= 0);
+          comText.classList.toggle("dominant", dominantSide === "C");
+        }
+        if (demText) {
+          const bounds = getRectBounds(demBg);
+          fitTextToRect(demText, bounds.left, bounds.right, bounds.top, bounds.bottom);
+        }
+        if (comText) {
+          const bounds = getRectBounds(comBg);
+          fitTextToRect(comText, bounds.left, bounds.right, bounds.top, bounds.bottom);
+        }
+
+        upsertStabilityBadge(node, Number.parseInt(node.dataset.stability || "0", 10) || 0);
+      }
+
+      function updateNodeTooltip(node) {
+        const countryName = COUNTRY_BY_CODE[node.dataset.countryCode || ""] || "";
+        const canonicalName = resolveCanonicalNodeName(node.dataset.space || "", countryName);
+        const nodeByCanonicalName = new Map(interactiveNodes.map((candidate) => {
+          const candidateCountry = COUNTRY_BY_CODE[candidate.dataset.countryCode || ""] || "";
+          return [resolveCanonicalNodeName(candidate.dataset.space || "", candidateCountry), candidate];
+        }));
+        let demControlled = 0;
+        let comControlled = 0;
+        (SPACE_ADJACENCY.get(canonicalName) || new Set()).forEach((neighborName) => {
+          const neighborNode = nodeByCanonicalName.get(neighborName);
+          if (!neighborNode) {
+            return;
+          }
+          const side = getNodeControlSide(neighborNode);
+          if (side === "D") demControlled += 1;
+          if (side === "C") comControlled += 1;
+        });
+        const modifier = demControlled - comControlled;
+        const signedModifier = modifier > 0 ? `+${modifier}` : String(modifier);
+        const tooltip = currentLanguage === "zh"
+          ? `支持检定修正：${signedModifier}（邻接 D ${demControlled} - C ${comControlled}）`
+          : `Support Check modifier: ${signedModifier} (adjacent D ${demControlled} - C ${comControlled})`;
+        const titleEl = node.querySelector("title");
+        if (titleEl) {
+          titleEl.textContent = tooltip;
+        }
+      }
+
+      function fitTextToRect(textEl, left, right, top, bottom) {
+        if (!textEl || !Number.isFinite(left) || !Number.isFinite(right) || !Number.isFinite(top) || !Number.isFinite(bottom) || right <= left) {
+          return;
+        }
+
+        const minSize = 3;
+        const maxSize = 64;
+        const availableWidth = Math.max(4, right - left);
+        const availableHeight = Math.max(4, bottom - top);
+
+        let lo = minSize;
+        let hi = maxSize;
+        let best = 2;
+
+        for (let step = 0; step < 14; step += 1) {
+          const mid = Math.floor((lo + hi) / 2);
+          textEl.style.fontSize = `${mid}px`;
+          const widthFit = textEl.getComputedTextLength();
+          const heightFit = Math.max(4, textEl.getBBox().height);
+          if (widthFit <= availableWidth && heightFit <= availableHeight) {
+            best = mid;
+            lo = mid + 1;
+          } else {
+            hi = mid - 1;
+          }
+        }
+
+        textEl.style.fontSize = `${best}px`;
+      }
+
+      function layoutNodeTopTexts(node, config, params = null) {
+        const spaceLabels = [...node.querySelectorAll("text.space-label")].filter((line) => !line.classList.contains("chip-value-hidden"));
+        const typeText = config.typeText || node.querySelector("text.chip-type");
+        const outer = config.outer || node.querySelector("rect[width='172'][height='96']");
+        if (!spaceLabels.length || !outer) {
+          return;
+        }
+
+        const nodeX = getRectValue(outer, "x");
+        const nodeY = getRectValue(outer, "y");
+        const topRowY0 = nodeY + 3;
+        const topRowY1 = topRowY0 + NODE_TEMPLATE.topRowHeight;
+        if (params?.nameLines?.length) {
+          for (let i = 0; i < Math.min(spaceLabels.length, params.nameLines.length); i += 1) {
+            spaceLabels[i].textContent = params.nameLines[i] || "";
+          }
+        }
+        const nameLeft = nodeX + NODE_TEMPLATE.categoryWidth;
+        const stableCellLeft = nodeX + NODE_TEMPLATE.width - NODE_TEMPLATE.stabilityWidth;
+        const stableCellRight = nodeX + NODE_TEMPLATE.width;
+        const nameRight = Math.max(nameLeft + 24, stableCellLeft - 3);
+        const nameTextLeft = nameLeft + 3;
+        const nameTextRight = nameRight - 2;
+
+        const typeY = Number.parseFloat(typeText?.getAttribute("y") || `${nodeY + 15}`);
+        const lines = spaceLabels.slice().sort((a, b) => {
+          return (Number.parseFloat(a.getAttribute("y") || "0") - Number.parseFloat(b.getAttribute("y") || "0"));
+        });
+        const rowCount = lines.length;
+        const slotHeight = (topRowY1 - topRowY0 - 2) / Math.max(1, rowCount);
+        lines.forEach((lineText, lineIndex) => {
+          const lineTop = topRowY0 + 1 + lineIndex * slotHeight;
+          const lineBottom = Math.min(topRowY1 - 1, topRowY0 + 1 + (lineIndex + 1) * slotHeight);
+          lineText.setAttribute("x", String((nameTextLeft + nameTextRight) / 2));
+          lineText.setAttribute("text-anchor", "middle");
+          lineText.setAttribute("y", String((lineTop + lineBottom) / 2));
+          fitTextToRect(lineText, nameTextLeft, nameTextRight, lineTop, lineBottom);
+        });
+        if (typeText) {
+          typeText.setAttribute("x", String((nodeX + nameLeft) / 2));
+          typeText.setAttribute("y", String((topRowY0 + topRowY1) / 2));
+          typeText.setAttribute("dominant-baseline", "middle");
+          fitTextToRect(typeText, nodeX + 1, nameLeft - 1, topRowY0 + 1, topRowY1 - 1);
+        }
+
+        upsertStabilityBadge(node, Number.parseInt(node.dataset.stability || "0", 10) || 0, stableCellLeft, stableCellRight, topRowY0, topRowY1);
+      }
+
+      function upsertStabilityBadge(node, stability, left, right, topRowY0, topRowY1) {
+        let badge = node.querySelector("text.chip-stability");
+        if (!badge) {
+          badge = document.createElementNS("http://www.w3.org/2000/svg", "text");
+          badge.setAttribute("class", "chip-stability");
+          badge.setAttribute("dominant-baseline", "middle");
+          badge.setAttribute("text-anchor", "middle");
+          node.appendChild(badge);
+        }
+
+        const stableLeft = Number.isFinite(left)
+          ? left
+          : (() => {
+            const outer = [...node.querySelectorAll("rect")].find((rect) => {
+              const w = getRectValue(rect, "width");
+              const h = getRectValue(rect, "height");
+              return Math.abs(w - NODE_TEMPLATE.width) < 0.5 && Math.abs(h - NODE_TEMPLATE.height) < 0.5;
+            });
+            return getRectValue(outer, "x") + NODE_TEMPLATE.width - NODE_TEMPLATE.stabilityWidth;
+          })();
+        const stableRight = Number.isFinite(right)
+          ? right
+          : stableLeft + 14;
+        const defaultTop = [...node.querySelectorAll("rect")].find((rect) => {
+          const w = getRectValue(rect, "width");
+          const h = getRectValue(rect, "height");
+          return Math.abs(w - NODE_TEMPLATE.width) < 0.5 && Math.abs(h - NODE_TEMPLATE.height) < 0.5;
+        });
+        const top = Number.isFinite(topRowY0)
+          ? topRowY0
+          : getRectValue(defaultTop, "y") + 3;
+        const bottom = Number.isFinite(topRowY1)
+          ? topRowY1
+          : top + NODE_TEMPLATE.topRowHeight;
+
+        badge.setAttribute("x", String((stableLeft + stableRight) / 2));
+        badge.setAttribute("y", String((top + bottom) / 2));
+        badge.textContent = String(stability);
+        fitTextToRect(badge, stableLeft, stableRight, top + 1, bottom - 1);
+        return badge;
+      }
+
+      function showMapLoadError(message) {
+        if (!root) {
+          return;
+        }
+        root.innerHTML = "";
+        const box = document.createElement("div");
+        box.style.cssText = "margin: 20px; padding: 12px; border: 1px solid #fecaca; border-radius: 8px; background: #fef2f2; color: #991b1b; font-size: 14px; line-height: 1.4;";
+        box.innerHTML = `
+          <strong>Map failed to load</strong><br />
+          ${message || "Check the resource paths and reload."}<br />
+          Start a local server with <code>python3 -m http.server 8000</code>, then open <code>http://127.0.0.1:8000/1989_compact_map_interactive.html</code>.
+        `;
+        root.appendChild(box);
+      }
+
+      function setNodeValue(node, side, delta, title) {
+        const dem = Number.parseInt(node.dataset.dem || "0", 10) || 0;
+        const com = Number.parseInt(node.dataset.com || "0", 10) || 0;
+        if (side === "D") {
+          const next = Math.max(0, dem + delta);
+          node.dataset.dem = String(next);
+        } else {
+          const next = Math.max(0, com + delta);
+          node.dataset.com = String(next);
+        }
+        node.dataset.side = side;
+        applyDominanceStyle(node);
+        interactiveNodes.forEach(updateNodeTooltip);
+        refreshCountryPanels();
+        persistGameState();
+        logDebugLine(`${title}: ${side} ${delta > 0 ? "+" : "-"}1, D=${node.dataset.dem}, C=${node.dataset.com}, S=${node.dataset.stability}`);
+        setStatus(
+          `${title}: D ${node.dataset.dem} / C ${node.dataset.com}; clicked ${side}`,
+        );
+      }
+
+      function createMouseEvt(type, button = 0) {
+        return new MouseEvent(type, {
+          bubbles: true,
+          cancelable: true,
+          view: window,
+          button,
+        });
+      }
+
+      function trimLoadedMap(svgEl) {
+        svgEl.querySelectorAll(".title, .subtitle").forEach((element) => element.remove());
+        svgEl.querySelectorAll(".score-label").forEach((label) => {
+          const scoreBox = label.previousElementSibling;
+          const scoreValue = label.nextElementSibling;
+          if (scoreBox?.tagName?.toLowerCase() === "rect") {
+            scoreBox.remove();
+          }
+          if (scoreValue?.classList?.contains("score-value")) {
+            scoreValue.remove();
+          }
+          label.remove();
+        });
+        svgEl.querySelectorAll(".score-value").forEach((element) => element.remove());
+        const pageWidth = Number.parseFloat(svgEl.getAttribute("width") || "1710") || 1710;
+        const pageHeight = Number.parseFloat(svgEl.getAttribute("height") || "2020") || 2020;
+        const topTrim = 110;
+        const bottomTrim = 45;
+        const viewHeight = Math.max(1, pageHeight - topTrim - bottomTrim);
+        svgEl.setAttribute("viewBox", `0 ${topTrim} ${pageWidth} ${viewHeight}`);
+        svgEl.setAttribute("width", String(pageWidth));
+        svgEl.setAttribute("height", String(viewHeight));
+      }
+
+      function runSmokeClickTest(nodes) {
+        const tested = nodes.slice(0, Math.min(6, nodes.length));
+        let ok = 0;
+        let fail = 0;
+
+        tested.forEach((node, index) => {
+          const demText = node.querySelector("text.chip-value-left");
+          const comText = node.querySelector("text.chip-value-right");
+          if (!demText && !comText) {
+            return;
+          }
+          const title = node.dataset.baseTitle || `Node #${index + 1}`;
+          const initialDem = Number.parseInt(node.dataset.dem || "0", 10) || 0;
+          const initialCom = Number.parseInt(node.dataset.com || "0", 10) || 0;
+          const initialStability = Number.parseInt(node.dataset.stability || "0", 10) || 0;
+          const slotRects = getNodeSlotRects(node);
+          if (slotRects.length < 2) {
+            return;
+          }
+
+          slotRects[0].dispatchEvent(createMouseEvt("click", 0));
+          const afterDemInc = Number.parseInt(node.dataset.dem || "0", 10) || 0;
+          const stabAfterDemInc = Number.parseInt(node.dataset.stability || "0", 10) || 0;
+
+          if (afterDemInc === initialDem + 1 && stabAfterDemInc === initialStability) {
+            ok += 1;
+          } else {
+            fail += 1;
+            logDebugLine(`[Smoke] ${title} D+1 failed: ${initialDem}/${initialCom}/${initialStability} -> ${afterDemInc}/${node.dataset.com}/${stabAfterDemInc}`);
+          }
+
+          slotRects[0].dispatchEvent(createMouseEvt("contextmenu", 2));
+          const afterDemBack = Number.parseInt(node.dataset.dem || "0", 10) || 0;
+          const stabAfterDemBack = Number.parseInt(node.dataset.stability || "0", 10) || 0;
+          if (afterDemBack === initialDem && stabAfterDemBack === initialStability) {
+            ok += 1;
+          } else {
+            fail += 1;
+            logDebugLine(`[Smoke] ${title} D-1 failed: ${initialDem}/${initialCom}/${initialStability} -> ${afterDemBack}/${node.dataset.com}/${stabAfterDemBack}`);
+          }
+
+          slotRects[1].dispatchEvent(createMouseEvt("click", 0));
+          const afterComInc = Number.parseInt(node.dataset.com || "0", 10) || 0;
+          const stabAfterComInc = Number.parseInt(node.dataset.stability || "0", 10) || 0;
+          if (afterComInc === initialCom + 1 && stabAfterComInc === initialStability) {
+            ok += 1;
+          } else {
+            fail += 1;
+            logDebugLine(`[Smoke] ${title} C+1 failed: ${initialDem}/${initialCom}/${initialStability} -> ${node.dataset.dem}/${afterComInc}/${stabAfterComInc}`);
+          }
+
+          slotRects[1].dispatchEvent(createMouseEvt("contextmenu", 2));
+          const afterComBack = Number.parseInt(node.dataset.com || "0", 10) || 0;
+          const stabAfterComBack = Number.parseInt(node.dataset.stability || "0", 10) || 0;
+          if (afterComBack === initialCom && stabAfterComBack === initialStability) {
+            ok += 1;
+          } else {
+            fail += 1;
+            logDebugLine(`[Smoke] ${title} C-1 failed: ${initialDem}/${initialCom}/${initialStability} -> ${node.dataset.dem}/${afterComBack}/${stabAfterComBack}`);
+          }
+        });
+
+        logDebugLine(`Smoke test complete: passed ${ok}, failed ${fail}`);
+        setStatus(`Smoke test complete: passed ${ok}, failed ${fail}`);
+      }
+
+      async function loadMap() {
+        try {
+          await loadGameData();
+          const response = await fetch(MAP_URL);
+          if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+          }
+          const svgText = await response.text();
+          const parsed = new DOMParser().parseFromString(svgText, "image/svg+xml");
+          const parseError = parsed.querySelector("parsererror");
+          if (parseError) {
+            throw new Error("SVG parse failed");
+          }
+
+          const svgEl = parsed.documentElement;
+          svgEl.id = "compact-map-svg";
+          svgEl.setAttribute("role", "img");
+          svgEl.setAttribute("aria-label", "1989 compact map");
+          svgEl.setAttribute("preserveAspectRatio", "xMidYMid meet");
+          trimLoadedMap(svgEl);
+          root.innerHTML = "";
+          root.appendChild(svgEl);
+          mountMapTrackers(svgEl);
+          mountStaticInfoPanels(svgEl);
+          mountCountryInfoPanels(svgEl);
+
+          const nodes = [...svgEl.querySelectorAll("g.node")];
+          let bound = 0;
+          const nodeTemplates = nodes.map((node, idx) => {
+            const title = (node.querySelector("title")?.textContent || `Node #${idx + 1}`).trim();
+            node.dataset.baseTitle = title;
+            const config = collectNodeTemplateParams(node, idx + 1);
+            if (!config) {
+              return null;
+            }
+            const setup = getPartyForNode(config.spaceName, config.countryName || "");
+            const stability = getStabilityForNode(config.spaceName, config.countryName || "");
+            return buildCompactNodeTemplate(config, {
+              name: config.name,
+              category: config.category,
+              important: config.important,
+              initialDem: setup ? setup.dem : 0,
+              initialCom: setup ? setup.com : 0,
+              stability,
+            });
+          }).filter(Boolean);
+
+          nodeTemplates.forEach((template) => {
+            const node = template.node;
+            const title = template.name || template.spaceName || "Unknown space";
+            renderCompactNodeFromTemplate(template);
+
+            const slotRects = template.slotRects;
+            if (slotRects.length >= 2) {
+              bindSlot(node, slotRects[0], "D", title);
+              bindSlot(node, slotRects[1], "C", title);
+            } else {
+              const onIncrease = (event) => {
+                event.preventDefault();
+                const currentSide = getPointerSideFromSlots(node, event);
+                setNodeValue(node, currentSide, +1, title);
+              };
+              const onDecrease = (event) => {
+                event.preventDefault();
+                const currentSide = getPointerSideFromSlots(node, event);
+                setNodeValue(node, currentSide, -1, title);
+              };
+              node.addEventListener("click", onIncrease);
+              node.addEventListener("contextmenu", onDecrease);
+            }
+            bound += 1;
+          });
+          interactiveNodes = nodeTemplates.map((template) => template.node).filter(Boolean);
+          refreshCountryPanels();
+
+
+          setStatus(`Loaded ${bound} interactive spaces (${bound} of 75 spaces can edit SP).`);
+          if (vpValue) {
+            updateVp(0);
+            vpTracker.addEventListener("click", (event) => {
+              event.preventDefault();
+              updateVp(-1);
+            });
+            vpTracker.addEventListener("contextmenu", (event) => {
+              event.preventDefault();
+              updateVp(+1);
+            });
+          }
+          if (phaseValue) {
+            updatePhase(0);
+            phaseTracker.addEventListener("click", (event) => {
+              event.preventDefault();
+              updatePhase(-1);
+            });
+            phaseTracker.addEventListener("contextmenu", (event) => {
+              event.preventDefault();
+              updatePhase(+1);
+            });
+          }
+          if (tiananmenTracker) {
+            renderTiananmenTrack();
+          }
+          if (tiananmenDemFailed) {
+            tiananmenDemFailed.addEventListener("click", (event) => {
+              event.preventDefault();
+              event.stopPropagation();
+              toggleTiananmenFailure("D");
+            });
+          }
+          if (tiananmenComFailed) {
+            tiananmenComFailed.addEventListener("click", (event) => {
+              event.preventDefault();
+              event.stopPropagation();
+              toggleTiananmenFailure("C");
+            });
+          }
+          if (tiananmenDemAttempted) {
+            tiananmenDemAttempted.addEventListener("click", (event) => {
+              event.preventDefault();
+              event.stopPropagation();
+              toggleTiananmenAttempted("D");
+            });
+          }
+          if (tiananmenComAttempted) {
+            tiananmenComAttempted.addEventListener("click", (event) => {
+              event.preventDefault();
+              event.stopPropagation();
+              toggleTiananmenAttempted("C");
+            });
+          }
+          if (diceButton) {
+            diceButton.addEventListener("click", (event) => {
+              event.preventDefault();
+              openDiceModal();
+            });
+          }
+          if (languageButton) {
+            languageButton.addEventListener("click", (event) => {
+              event.preventDefault();
+              toggleLanguage();
+            });
+          }
+          if (diceReroll) {
+            diceReroll.addEventListener("click", (event) => {
+              event.preventDefault();
+              rollDie();
+            });
+          }
+          [diceClose, diceCloseIcon].forEach((button) => {
+            button?.addEventListener("click", (event) => {
+              event.preventDefault();
+              closeDiceModal();
+            });
+          });
+          diceModal?.addEventListener("click", (event) => {
+            if (event.target === diceModal) {
+              closeDiceModal();
+            }
+          });
+          document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && diceModal && !diceModal.hidden) {
+              closeDiceModal();
+            }
+          });
+          if (saveButton) {
+            saveButton.addEventListener("click", (event) => {
+              event.preventDefault();
+              saveGameState();
+            });
+          }
+          if (loadButton) {
+            loadButton.addEventListener("click", (event) => {
+              event.preventDefault();
+              loadGameState();
+            });
+          }
+          if (resetButton) {
+            resetButton.addEventListener("click", (event) => {
+              event.preventDefault();
+              resetGameToStart();
+            });
+          }
+          applyLanguage({ persist: false });
+          autoSaveReady = true;
+
+          if (SMOKE_TEST) {
+            runSmokeClickTest(nodes);
+          }
+        } catch (error) {
+          const message = [
+            "Map failed to load: ",
+            String(error.message || error),
+            ". Open this page through a local HTTP server, such as python -m http.server.",
+          ].join("");
+          showMapLoadError(message);
+          setStatus(message);
+        }
+      }
+
+      loadMap();
+    </script>
+  </body>
+</html>
